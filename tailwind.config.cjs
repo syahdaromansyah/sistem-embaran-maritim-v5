@@ -11,6 +11,10 @@ module.exports = {
       ...twDefaultTheme.screens,
     },
     extend: {
+      backgroundImage: {
+        'semar-logo-bg':
+          "linear-gradient(rgba(241, 245, 249, 0.88), rgba(241, 245, 249, 1)), url('/assets/images/semar.png')",
+      },
       fontFamily: {
         inter: ['Inter', ...twDefaultTheme.fontFamily.sans],
       },
