@@ -10,6 +10,11 @@ module.exports = {
       '2xs': '475px',
       ...twDefaultTheme.screens,
     },
+    backgroundPosition: {
+      'center_t-300px&r-100px': 'center, top -300px right -100px',
+      'center_t-560px&r-100px': 'center, top -560px right -100px',
+      ...twDefaultTheme.backgroundPosition,
+    },
     extend: {
       backgroundImage: {
         'semar-logo-bg':
