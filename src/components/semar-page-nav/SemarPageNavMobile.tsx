@@ -40,7 +40,7 @@ export default function SemarPageNavMobile({
         <ul className="text-center">
           <li className="mb-4">
             <a
-              href="/"
+              href="/pages/login/"
               className="inline-block w-full rounded-md bg-slate-200 px-6 py-3 text-lg shadow shadow-slate-300"
             >
               Masuk
