@@ -15,6 +15,11 @@ module.exports = {
       'center_t-560px&r-100px': 'center, top -560px right -100px',
       ...twDefaultTheme.backgroundPosition,
     },
+    backgroundSize: {
+      'cover_100%': 'cover, 100%',
+      'cover_160%': 'cover, 160%',
+      ...twDefaultTheme.backgroundSize,
+    },
     extend: {
       backgroundImage: {
         'semar-logo-bg':
