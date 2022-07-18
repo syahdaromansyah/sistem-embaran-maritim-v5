@@ -49,7 +49,7 @@ export default function SemarPageNavMobile({
 
           <li>
             <a
-              href="/"
+              href="/pages/contact/"
               className="inline-block w-full rounded-md bg-slate-200 px-6 py-3 text-lg shadow shadow-slate-300"
             >
               Kontak Kami
