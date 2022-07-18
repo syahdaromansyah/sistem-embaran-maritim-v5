@@ -17,6 +17,7 @@ export default defineConfig({
       input: {
         homepage: resolve(root, 'index.html'),
         loginpage: resolve(root, 'pages/login/index.html'),
+        contactpage: resolve(root, 'pages/contact/index.html'),
       },
     },
   },
