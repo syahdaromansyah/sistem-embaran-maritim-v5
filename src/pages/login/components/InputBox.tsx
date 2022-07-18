@@ -2,7 +2,7 @@ import { type HTMLInputTypeAttribute, useState } from 'react';
 import { type IconProp } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-interface TextInputProps {
+interface InputBoxProps {
   type: HTMLInputTypeAttribute;
   htmlFor: string;
   iconPlaceholder: IconProp;
@@ -10,13 +10,13 @@ interface TextInputProps {
   cbInputHandler: (inputValue: string) => void;
 }
 
-export default function TextInput({
+export default function InputBox({
   type,
   htmlFor,
   iconPlaceholder,
   placeholder,
   cbInputHandler,
-}: TextInputProps) {
+}: InputBoxProps) {
   const [inputVal, setInputVal] = useState('');
 
   const inputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
