@@ -47,7 +47,7 @@ export default function SemarPageNavMobile({
             </a>
           </li>
 
-          <li>
+          <li className="mb-4">
             <a
               href="/pages/contact/"
               className="inline-block w-full rounded-md bg-slate-200 px-6 py-3 text-lg shadow shadow-slate-300"
@@ -56,7 +56,7 @@ export default function SemarPageNavMobile({
             </a>
           </li>
 
-          <li className="absolute bottom-2 right-2">
+          <li>
             <button
               type="button"
               className="px-4 py-3 text-2xl text-red-500"
