@@ -4,7 +4,23 @@ import LoginForm from './LoginForm';
 
 export default function App() {
   return (
-    <main>
+    <main className="relative">
+      {/* Back to Homepage Link */}
+      <div className="absolute top-2 left-2 z-40 md:top-4 md:left-4">
+        <a
+          href="/"
+          className="inline-block rounded-md bg-slate-200 text-4xl shadow shadow-slate-300 transition duration-300 hover:bg-slate-300 focus:bg-slate-300 focus:outline-none focus:ring focus:ring-sky-300 focus:ring-offset-2 focus:ring-offset-slate-100"
+        >
+          <div className="flex h-10 w-10 items-center justify-center">
+            <FontAwesomeIcon
+              icon={faCaretLeft}
+              role="presentation"
+              aria-hidden="true"
+            />
+          </div>
+        </a>
+      </div>
+
       <div className="h-screen w-full lg:flex">
         <div className="hidden bg-semar-logo-bg bg-center bg-no-repeat lg:flex lg:flex-1 lg:items-center lg:justify-center">
           <div>
@@ -19,22 +35,6 @@ export default function App() {
         <div className="h-full w-full lg:flex-1">
           <div className="container mx-auto h-full w-full px-4">
             <div className="relative flex h-full w-full items-center justify-center">
-              {/* Back to Homepage Link */}
-              <div className="absolute top-2 left-0 md:top-4 md:left-4">
-                <a
-                  href="/"
-                  className="inline-block rounded-md bg-slate-200 text-4xl shadow shadow-slate-300 transition duration-300 hover:bg-slate-300 focus:bg-slate-300 focus:outline-none focus:ring focus:ring-sky-300 focus:ring-offset-2 focus:ring-offset-slate-100"
-                >
-                  <div className="flex h-10 w-10 items-center justify-center">
-                    <FontAwesomeIcon
-                      icon={faCaretLeft}
-                      role="presentation"
-                      aria-hidden="true"
-                    />
-                  </div>
-                </a>
-              </div>
-
               {/* Login Form */}
               <div className="w-full md:max-w-md">
                 <div className="mb-6 text-center text-6xl">
