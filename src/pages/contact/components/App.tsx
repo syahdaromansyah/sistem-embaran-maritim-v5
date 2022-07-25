@@ -16,8 +16,8 @@ export default function App() {
                 </h1>
 
                 <p>
-                  Layanan feedback ini dibuat sebagai sarana untuk menyampaikan
-                  keluhan, diskusi atau pembuatan akun untuk Semar.
+                  Layanan <i>feedback</i> ini dibuat sebagai sarana untuk
+                  menyampaikan keluhan, diskusi atau pembuatan akun Semar.
                 </p>
               </div>
 
