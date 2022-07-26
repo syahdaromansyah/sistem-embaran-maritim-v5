@@ -1,53 +1,51 @@
 import { useState } from 'react';
 import { faUser, faLock } from '@fortawesome/free-solid-svg-icons';
-import InputBox from './InputBox';
-import CheckBox from './CheckBox';
+import SemarInputBox from '../../../components/semar-page-input/InputBox';
+import SemarCheckbox from '../../../components/semar-page-input/CheckBox';
 
 export default function LoginForm() {
-  const [, setUsername] = useState('');
-  const [, setPassword] = useState('');
-  const [, setRememberMe] = useState(false);
+  const [uName, setUName] = useState('');
+  const [uPwd, setPwd] = useState('');
+  const [uRememberbMe, setRememberMe] = useState(false);
 
-  const unameInputHandler = (unameValue: string) => {
-    setUsername(unameValue);
-  };
-
-  const pwdInputHandler = (pwdValue: string) => {
-    setPassword(pwdValue);
-  };
-
-  const rbmeInputHandler = (rbmeValue: boolean) => {
-    setRememberMe(rbmeValue);
-  };
+  const uNameInHandler = (e: React.ChangeEvent<HTMLInputElement>) =>
+    setUName(e.target.value);
+  const uPwdInHandler = (e: React.ChangeEvent<HTMLInputElement>) =>
+    setPwd(e.target.value);
+  const uRbMeInHandler = (e: React.ChangeEvent<HTMLInputElement>) =>
+    setRememberMe(e.target.checked);
 
   return (
     <form>
       <div className="mb-4">
-        <InputBox
+        <SemarInputBox
           type="email"
           htmlFor="username"
           iconPlaceholder={faUser}
           placeholder="Email"
-          cbInputHandler={unameInputHandler}
+          value={uName}
+          inputBoxHandler={uNameInHandler}
         />
       </div>
 
       <div className="mb-6">
-        <InputBox
+        <SemarInputBox
           type="password"
           htmlFor="password"
           iconPlaceholder={faLock}
           placeholder="Password"
-          cbInputHandler={pwdInputHandler}
+          value={uPwd}
+          inputBoxHandler={uPwdInHandler}
         />
       </div>
 
       <div className="mb-6 md:flex md:items-center md:justify-between">
         <div className="mb-2 md:mb-0">
-          <CheckBox
+          <SemarCheckbox
             htmlFor="rememberme"
-            labelCheckbox="Ingat saya"
-            cbCheckboxHandler={rbmeInputHandler}
+            checkboxLabel="Ingat saya"
+            checkboxState={uRememberbMe}
+            checkBoxHandler={uRbMeInHandler}
           />
         </div>
 
