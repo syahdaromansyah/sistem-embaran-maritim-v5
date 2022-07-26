@@ -1,26 +1,19 @@
-import { useState } from 'react';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 interface CheckBoxProps {
   htmlFor: string;
-  labelCheckbox: string;
-  cbCheckboxHandler: (state: boolean) => void;
+  checkboxLabel: string;
+  checkboxState: boolean;
+  checkBoxHandler: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export default function CheckBox({
   htmlFor,
-  labelCheckbox,
-  cbCheckboxHandler,
+  checkboxLabel,
+  checkboxState = false,
+  checkBoxHandler = () => {},
 }: CheckBoxProps) {
-  const [checkboxState, setCheckboxState] = useState(false);
-
-  const checkboxHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const currentCheckboxStatus = e.target.checked;
-    setCheckboxState(currentCheckboxStatus);
-    cbCheckboxHandler(currentCheckboxStatus);
-  };
-
   return (
     <label htmlFor={htmlFor} className="inline-block cursor-pointer">
       <div className="flex items-center justify-center gap-2">
@@ -30,7 +23,7 @@ export default function CheckBox({
             id={htmlFor}
             className="peer absolute top-0 left-0 h-full w-full opacity-0"
             checked={checkboxState}
-            onChange={checkboxHandler}
+            onChange={checkBoxHandler}
           />
 
           <div className="h-6 w-6 rounded-md bg-slate-200 shadow shadow-slate-300 transition duration-300 peer-focus:outline-none peer-focus:ring peer-focus:ring-sky-300 peer-focus:ring-offset-2 peer-focus:ring-offset-slate-100" />
@@ -44,7 +37,7 @@ export default function CheckBox({
           </div>
         </div>
 
-        {labelCheckbox && <p className="select-none">{labelCheckbox}</p>}
+        {checkboxLabel && <p className="select-none">{checkboxLabel}</p>}
       </div>
     </label>
   );

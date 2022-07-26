@@ -1,53 +1,4 @@
-const footerOtherLinks = [
-  {
-    href: '/',
-    linkText: 'LAPOR',
-  },
-  {
-    href: '/',
-    linkText: 'MENPAN',
-  },
-  {
-    href: '/',
-    linkText: 'LHKPN',
-  },
-  {
-    href: '/',
-    linkText: 'BATAN',
-  },
-  {
-    href: '/',
-    linkText: 'BIG',
-  },
-  {
-    href: '/',
-    linkText: 'BPPT',
-  },
-  {
-    href: '/',
-    linkText: 'BMKG',
-  },
-  {
-    href: '/',
-    linkText: 'RISTEK/BRIN',
-  },
-  {
-    href: '/',
-    linkText: 'BNPB',
-  },
-  {
-    href: '/',
-    linkText: 'LIPI',
-  },
-  {
-    href: '/',
-    linkText: 'BKN',
-  },
-  {
-    href: '/',
-    linkText: 'SETNEG',
-  },
-];
+import FooterRelatedLinks from './FooterRelatedLinks';
 
 export default function SemarPageFooter() {
   return (
@@ -92,16 +43,7 @@ export default function SemarPageFooter() {
             <section className="mb-10 md:mb-0 md:flex-1">
               <h3 className="mb-4 text-xl font-bold">Tautan Terkait</h3>
               <ul className="grid grid-cols-2 gap-y-2">
-                {footerOtherLinks.map((footerOtherLink) => (
-                  <li key={footerOtherLink.linkText}>
-                    <a
-                      href={footerOtherLink.href}
-                      className="underline transition duration-300 focus:outline-none focus:ring focus:ring-sky-300 focus:ring-offset-2 focus:ring-offset-sky-100"
-                    >
-                      {footerOtherLink.linkText}
-                    </a>
-                  </li>
-                ))}
+                <FooterRelatedLinks />
               </ul>
             </section>
 
