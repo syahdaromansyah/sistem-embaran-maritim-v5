@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import SemarPageNavMobile from './SemarPageNavMobile';
-import SemarPageNavMenu from './SemarPageNavMenu';
+import NavMenuMobile from './NavMenuMobile';
+import NavMenuDesktop from './NavMenuDesktop';
 
 export default function SemarPageNav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -48,13 +48,13 @@ export default function SemarPageNav() {
             </button>
 
             {/* Navigation Right (Navigation Mobile Menu) */}
-            <SemarPageNavMobile
+            <NavMenuMobile
               navMenuBtnHandler={navMenuBtnHandler}
               isOpen={isOpen}
             />
 
             {/* Navigation Right (Navigation (Tablet | Desktop) Menu) */}
-            <SemarPageNavMenu />
+            <NavMenuDesktop />
           </div>
         </div>
       </div>
