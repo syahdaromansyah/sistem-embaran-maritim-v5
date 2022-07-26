@@ -1,5 +1,5 @@
 import SemarPageNav from '../../../components/semar-page-nav/Nav';
-import SemarPageFooter from '../../../components/SemarPageFooter';
+import SemarPageFooter from '../../../components/semar-page-footer/Footer';
 import ContactForm from './ContactForm';
 
 export default function App() {
