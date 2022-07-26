@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 
@@ -39,21 +40,21 @@ export default function SemarPageNavMobile({
       <div className="flex h-full w-full items-center justify-center">
         <ul className="text-center">
           <li className="mb-4">
-            <a
-              href="/pages/login/"
+            <Link
+              to="/login"
               className="inline-block w-full rounded-md bg-slate-200 px-6 py-3 text-lg shadow shadow-slate-300"
             >
               Masuk
-            </a>
+            </Link>
           </li>
 
           <li className="mb-4">
-            <a
-              href="/pages/contact/"
+            <Link
+              to="/contact"
               className="inline-block w-full rounded-md bg-slate-200 px-6 py-3 text-lg shadow shadow-slate-300"
             >
               Kontak Kami
-            </a>
+            </Link>
           </li>
 
           <li>

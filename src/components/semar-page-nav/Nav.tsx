@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import NavMenuMobile from './NavMenuMobile';
@@ -18,8 +19,8 @@ export default function SemarPageNav() {
           <div className="flex items-center justify-between py-2">
             {/* Navigation Left */}
             <div className="flex items-center justify-center">
-              <a
-                href="/"
+              <Link
+                to="/"
                 className="inline-block py-2 transition duration-300 focus:outline-none focus:ring focus:ring-sky-300 focus:ring-offset-2 focus:ring-offset-slate-50"
               >
                 <img
@@ -27,7 +28,7 @@ export default function SemarPageNav() {
                   alt="Semar - Sistem Embaran Maritim. Kembali ke beranda."
                   className="w-full max-w-[140px] md:max-w-[180px]"
                 />
-              </a>
+              </Link>
             </div>
 
             {/* Navigation Right (Navigation Mobile Button) */}
