@@ -38,7 +38,7 @@ export default function SemarPageNavMobile({
       className="fixed top-0 left-0 z-20 hidden h-screen w-full scale-95 bg-slate-100/50 opacity-0 backdrop-blur transition duration-300"
     >
       <div className="flex h-full w-full items-center justify-center">
-        <ul className="text-center">
+        <ul className="pt-14 text-center">
           <li className="mb-4">
             <Link
               to="/login"
