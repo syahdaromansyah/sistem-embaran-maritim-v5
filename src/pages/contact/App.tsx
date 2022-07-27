@@ -20,9 +20,10 @@ export default function App() {
                   Kontak Kami
                 </h1>
 
-                <p>
-                  Layanan feedback ini dibuat sebagai sarana untuk menyampaikan
-                  keluhan, diskusi atau pembuatan akun untuk Semar.
+                <p className="max-w-4xl">
+                  Layanan <i>feedback</i> ini dibuat sebagai sarana untuk
+                  menyampaikan keluhan, diskusi dalam pembuatan akun serta
+                  penggunaan aplikasi laman dengan Semar.
                 </p>
               </div>
 
