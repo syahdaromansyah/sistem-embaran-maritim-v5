@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Semar</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/pages/user-manage/style.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/216b2461f6.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top bg-white shadow-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <img
+            src="asset/images/LOGO-SEMAR.png"
+            alt=""
+            width="150"
+            height="40"
+          />
+          <!-- <img src="asset/images/SEMAR-02.png" alt="" width="100" height="40"> -->
+        </a>
+      </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- user management -->
+    <div class="card-content">
+      <div class="card-title">
+        <h3><b>Manajemen Pengguna</b></h3>
+        <a href="/pages/user-manage/add_user/"
+          ><i
+            class="fa-solid fa-user-plus fa-2x fa-pull-right"
+            style="color: rgb(41, 41, 71)"
+          ></i
+        ></a>
+        <hr width="150px" size="7" color="aqua" />
+        <div class="wrapper">
+          <div class="input-search-group">
+            <label for="search" class="input-search-label">
+              <input type="search" class="input-search-box" id="search" />
+              <div class="input-search-icon">
+                <i class="fa-solid fa-magnifying-glass" style="color: gray"></i>
+              </div>
+            </label>
+            <button class="input-search-btn">cari</button>
+          </div>
+          <p class="count-result">Count: 5</p>
+        </div>
+        <table rules="rows" class="table-bondered table">
+          <thead>
+            <tr>
+              <th style="text-align: center">No</th>
+              <th style="text-align: center">Nama</th>
+              <th style="text-align: center">Username</th>
+              <th style="text-align: center">Instansi</th>
+              <th style="text-align: center">Role</th>
+              <th style="text-align: center">
+                <i class="fa-solid fa-gear"></i>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1.</td>
+              <td>Fajar Noor Ilham</td>
+              <td>Fajarnrm</td>
+              <td>Dinas Perikanan</td>
+              <td>Shabandar</td>
+              <td>
+                <a href="/pages/user-manage/update_user/"
+                  ><i
+                    class="fa-solid fa-pen-to-square"
+                    style="color: rgb(41, 41, 71)"
+                  ></i
+                ></a>
+                <a class="delete" title="Delete" data-toggle="tooltip"
+                  ><i class="material-icons">&#xE872;</i></a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td>2.</td>
+              <td>Heri Setyo Nugroho</td>
+              <td>Heryoho69</td>
+              <td>Militer</td>
+              <td>TNI</td>
+              <td>
+                <a href="/pages/user-manage/update_user/"
+                  ><i
+                    class="fa-solid fa-pen-to-square"
+                    style="color: rgb(41, 41, 71)"
+                  ></i
+                ></a>
+                <a class="delete" title="Delete" data-toggle="tooltip"
+                  ><i class="material-icons">&#xE872;</i></a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td>3.</td>
+              <td>Messi</td>
+              <td>Messiah1</td>
+              <td>BMKG</td>
+              <td>Peneliti</td>
+              <td>
+                <a href="/pages/user-manage/update_user/"
+                  ><i
+                    class="fa-solid fa-pen-to-square"
+                    style="color: rgb(41, 41, 71)"
+                  ></i
+                ></a>
+                <a class="delete" title="Delete" data-toggle="tooltip"
+                  ><i class="material-icons">&#xE872;</i></a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td>4.</td>
+              <td>Deddy Corbudzier</td>
+              <td>Admin</td>
+              <td>LAPAN</td>
+              <td>Admin</td>
+              <td>
+                <a href="/pages/user-manage/update_user/"
+                  ><i
+                    class="fa-solid fa-pen-to-square"
+                    style="color: rgb(41, 41, 71)"
+                  ></i
+                ></a>
+                <a class="delete" title="Delete" data-toggle="tooltip"
+                  ><i class="material-icons">&#xE872;</i></a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td>5.</td>
+              <td>Ridwan Kamil</td>
+              <td>Ridwankamil01</td>
+              <td>Pemerintah</td>
+              <td>Lain-lain</td>
+              <td>
+                <a href="/pages/user-manage/update_user/"
+                  ><i
+                    class="fa-solid fa-pen-to-square"
+                    style="color: rgb(41, 41, 71)"
+                  ></i
+                ></a>
+                <a class="delete" title="Delete" data-toggle="tooltip"
+                  ><i class="material-icons">&#xE872;</i></a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div id="footer">
+      <p><b>&copy;</b> BRIN, Hak cipta dilindungi.</p>
+    </div>
+    <!-- user management End -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="/pages/user-manage/script.js"></script>
+  </body>
+</html>

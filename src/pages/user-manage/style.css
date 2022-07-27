@@ -1,0 +1,132 @@
+.card-content {
+  background: white;
+  border-radius: 30px;
+  box-shadow: 0px 0px 3px rgba(145, 123, 123, 0.65);
+  height: 600px;
+  margin: 10rem auto 8.1rem auto;
+  width: 80%;
+}
+.card-title {
+  text-align: left;
+  padding: 50px;
+  color: rgb(41, 41, 71);
+}
+*margin {
+  margin: 0;
+}
+body {
+  font-family: Arial;
+  padding: 8px 12px;
+  color: #404e67;
+  background: #f5f7fa;
+}
+h3 {
+  margin-bottom: 8px;
+}
+.wrapper {
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 8px 12px;
+}
+.input-search-group {
+  margin-bottom: 12px;
+}
+.input-search-label {
+  display: inline-block;
+  position: relative;
+}
+.input-search-box {
+  display: inline-block;
+}
+.input-search-box::-webkit-search-cancel-button {
+  display: none;
+}
+.input-search-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 8px;
+  height: 100%;
+}
+.input-search-box {
+  border: 2px solid #242424;
+  border-radius: 100px;
+  padding: 4px 28px 4px 12px;
+}
+.count-result {
+  border: 2px solid gray;
+  border-radius: 20px;
+  padding: 0em;
+  width: 100px;
+  text-align: center;
+  color: gray;
+}
+.input-search-box {
+  border: 2px solid gray;
+  border-radius: 20px;
+  padding-right: 40px;
+}
+.input-search-btn {
+  border: 2px solid rgb(41, 41, 71);
+  border-radius: 20px;
+  color: white;
+  background: rgb(41, 41, 71);
+  width: 60px;
+}
+table,
+th,
+td {
+  /* border: 1px solid black; */
+  border-collapse: collapse;
+  text-align: center;
+}
+table {
+  width: 100%;
+}
+tr {
+  background-color: rgb(126, 220, 236);
+}
+tr:hover {
+  background-color: rgb(52, 149, 167);
+}
+#footer {
+  text-align: center;
+  position: absolute;
+  margin-top: 0;
+  width: 100%;
+  color: rgb(87, 87, 121);
+  font-weight: bold;
+  font-size: 15px;
+}
+table.table {
+  table-layout: fixed;
+}
+table.table th:last-child {
+  width: 100px;
+}
+table.table td a {
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 5px;
+  min-width: 24px;
+}
+table.table td a.edit {
+  color: rgb(41, 41, 71);
+}
+table.table td a.delete {
+  color: rgb(41, 41, 71);
+}
+table.table td i {
+  font-size: 19px;
+}
+table.table .form-control {
+  height: 32px;
+  line-height: 32px;
+  box-shadow: none;
+  border-radius: 2px;
+}
