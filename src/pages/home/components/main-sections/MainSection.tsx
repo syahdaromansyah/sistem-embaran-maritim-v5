@@ -19,12 +19,11 @@ export default function MainSection() {
                 sebuah sistem pendukung keputusan terkait keselamatan pelayaran
                 dan peningkatan produksi perikanan tangkap. SEMAR merupakan
                 prototipe produk kerjasama pengembangan sistem pendukung
-                keputusan antara Pusat Sains dan Teknologi Atmosfer (PSTA),
-                Pusat Pemanfaatan Penginderaan Jauh (Pusfatja), Pusat Teknologi
-                Satelit (Pusteksat), dan Pusat Sains Antariksa (Pussainsa) LAPAN
-                dengan Dinas Kelautan dan Perikanan Propinsi Daerah Istimewa
-                Yogyakarta DKP (DIY), Kementerian Kelautan dan Perikanan (KKP),
-                dan Badan Meteorologi, Geofisika, dan Klimatologi (BMKG).
+                keputusan antara Pusat Sains dan Teknologi Atmosfer BRIN, Pusat
+                Riset Penginderaan Jauh BRIN, Pusat Riset Satelit BRIN, Pusat
+                Riset Antariksa BRIN, Pemerintah Provinsi DIY, Kementerian
+                Kelautan dan Perikanan (KKP), dan Badan Meteorologi, Geofisika,
+                dan Klimatologi (BMKG).
               </p>
             </header>
 
