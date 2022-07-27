@@ -56,7 +56,7 @@ export default function App() {
                 </div>
 
                 <p className="text-center">
-                  &copy; LAPAN, hak cipta dilindungi.
+                  &copy; BRIN. Hak cipta dilindungi.
                 </p>
               </div>
             </div>
