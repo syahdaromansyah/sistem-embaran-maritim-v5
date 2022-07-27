@@ -1,14 +1,20 @@
+import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretLeft, faUsers } from '@fortawesome/free-solid-svg-icons';
-import LoginForm from './LoginForm';
+import LoginForm from './components/LoginForm';
 
 export default function App() {
+  useEffect(() => {
+    document.title = `Semar - Sistem Embaran Maritim | Masuk`;
+  }, []);
+
   return (
     <main className="relative">
       {/* Back to Homepage Link */}
       <div className="absolute top-2 left-2 z-40 md:top-4 md:left-4">
-        <a
-          href="/"
+        <Link
+          to="/"
           className="inline-block rounded-md bg-slate-200 text-4xl shadow shadow-slate-300 transition duration-300 hover:bg-slate-300 focus:bg-slate-300 focus:outline-none focus:ring focus:ring-sky-300 focus:ring-offset-2 focus:ring-offset-slate-100"
         >
           <div className="flex h-10 w-10 items-center justify-center">
@@ -18,7 +24,7 @@ export default function App() {
               aria-hidden="true"
             />
           </div>
-        </a>
+        </Link>
       </div>
 
       <div className="h-screen w-full lg:flex">

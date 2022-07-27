@@ -15,9 +15,7 @@ export default defineConfig({
     outDir,
     rollupOptions: {
       input: {
-        homepage: resolve(root, 'index.html'),
-        loginpage: resolve(root, 'pages/login/index.html'),
-        contactpage: resolve(root, 'pages/contact/index.html'),
+        main: resolve(root, 'index.html'),
       },
     },
   },

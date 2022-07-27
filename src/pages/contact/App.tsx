@@ -1,8 +1,13 @@
-import SemarPageNav from '../../../components/semar-page-nav/Nav';
-import SemarPageFooter from '../../../components/semar-page-footer/Footer';
-import ContactForm from './ContactForm';
+import { useEffect } from 'react';
+import SemarPageNav from '../../components/semar-page-nav/Nav';
+import SemarPageFooter from '../../components/semar-page-footer/Footer';
+import ContactForm from './components/ContactForm';
 
 export default function App() {
+  useEffect(() => {
+    document.title = `Semar - Sistem Embaran Maritim | Kontak Kami`;
+  }, []);
+
   return (
     <>
       <SemarPageNav />
