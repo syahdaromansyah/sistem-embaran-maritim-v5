@@ -11,21 +11,25 @@
       crossorigin="anonymous"
     ></script>
     <!-- CSS -->
-    <!-- <link rel="stylesheet" href="./css/output.css" /> -->
+
     <!-- Leaflet -->
-    <link
+    <!-- <link
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
       integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
       crossorigin=""
-    />
+    /> -->
 
     <!-- Make sure you put this AFTER Leaflet's CSS -->
-    <script
+    <!-- <script
       src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
       integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
       crossorigin=""
-    ></script>
+    ></script> -->
+
+    <!-- Windy API -->
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+    <script src="https://api.windy.com/assets/map-forecast/libBoot.js"></script>
 
     <script type="module" src="/pages/user/js/script.js"></script>
   </head>
@@ -150,7 +154,8 @@
     </div>
 
     <!-- Peta -->
-    <div id="map" class="z-0 h-[580px] w-full"></div>
+    <!-- <div id="map" class="z-0 h-[580px] w-full"></div> -->
+    <div id="windy" class="z-0 h-[580px] w-full"></div>
 
     <!-- Footer -->
     <footer class="bg-slate-50">
@@ -160,24 +165,59 @@
     </footer>
 
     <script type="module">
-      let map = L.map('map').fitWorld();
+      // Leaflet
+      // let map = L.map('map').fitWorld();
 
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution:
-          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-      }).addTo(map);
+      // L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      //   attribution:
+      //     '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      // }).addTo(map);
 
-      map.locate({ setView: true, maxZoom: 16 });
+      // map.locate({ setView: true, maxZoom: 16 });
 
-      function onLocationFound(e) {
-        var radius = e.accuracy;
-        L.marker(e.latlng)
-          .addTo(map)
-          .bindPopup('You are within ' + radius + ' meters from this point')
-          .openPopup();
-      }
+      // function onLocationFound(e) {
+      //   var radius = e.accuracy;
+      //   L.marker(e.latlng)
+      //     .addTo(map)
+      //     .bindPopup('You are within ' + radius + ' meters from this point')
+      //     .openPopup();
+      // }
 
-      map.on('locationfound', onLocationFound);
+      // map.on('locationfound', onLocationFound);
+
+      // Windy
+      const options = {
+        // Required: API key
+        key: '',
+
+        // Put additional console output
+        verbose: true,
+      };
+
+      // Initialize Windy API
+      windyInit(options, (windyAPI) => {
+        // windyAPI is ready, and contain 'map', 'store',
+        // 'picker' and other usefull stuff
+
+        const { map } = windyAPI;
+        // .map is instance of Leaflet map
+
+        map.fitWorld().locate({ setView: true, maxZoom: 16 });
+
+        function onLocationFound(e) {
+          var radius = e.accuracy;
+
+          L.marker(e.latlng).addTo(map).bindPopup(`You are here`).openPopup();
+        }
+
+        map.on('locationfound', onLocationFound);
+
+        function onLocationError(e) {
+          alert(e.message);
+        }
+
+        map.on('locationerror', onLocationError);
+      });
     </script>
   </body>
 </html>
