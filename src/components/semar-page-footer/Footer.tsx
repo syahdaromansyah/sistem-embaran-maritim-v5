@@ -61,7 +61,9 @@ export default function SemarPageFooter() {
             </section>
           </div>
 
-          <p className="text-center">&copy;BRIN. Hak cipta dilindungi.</p>
+          <p className="text-center font-bold">
+            &copy;BRIN. Hak cipta dilindungi.
+          </p>
         </div>
       </div>
     </footer>

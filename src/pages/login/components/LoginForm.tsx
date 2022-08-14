@@ -64,7 +64,7 @@ export default function LoginForm() {
 
       <div>
         <a
-          href="/pages/user/"
+          href="/pages/user/dashboardpeta/"
           type="button"
           className="inline-block w-full rounded-full bg-sky-600 py-2 text-center text-xl text-slate-100 shadow shadow-sky-600 transition duration-300 hover:bg-sky-700 focus:bg-sky-700 focus:outline-none focus:ring focus:ring-sky-300 focus:ring-offset-2 focus:ring-offset-sky-100"
         >

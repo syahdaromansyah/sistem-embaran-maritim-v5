@@ -5,7 +5,9 @@ import MainSection from './main-sections/MainSection';
 export default function App() {
   return (
     <>
-      <SemarPageNav />
+      <div className="sticky top-0">
+        <SemarPageNav />
+      </div>
       <MainSection />
       <SemarPageFooter />
     </>

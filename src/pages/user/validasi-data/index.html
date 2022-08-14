@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SEMAR-Sistem Embaran Maritim</title>
+
+    <!-- Fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/10bc053434.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/pages/user/dist/css/output.css" />
+  </head>
+  <body class="bg-slate-100 shadow shadow-slate-200">
+    <div class="app">
+      <!-- Navigation Page -->
+      <nav
+        class="fixed top-0 left-0 w-full bg-slate-50/25 shadow shadow-slate-200 backdrop-blur"
+      >
+        <!-- Navigation Page Container -->
+        <div class="container mx-auto px-8">
+          <div class="flex items-center justify-between py-3.5">
+            <!-- Navigation Page Left -->
+            <a
+              href="/"
+              class="inline-block py-1 transition duration-300 focus:outline-none focus:ring focus:ring-sky-300 focus:ring-offset-2 focus:ring-offset-slate-50"
+            >
+              <img
+                src="/pages/user/dist/img/LOGO-SEMAR.png"
+                alt="SEMAR-Sistem Embaran Maritim"
+                class="h-11"
+              />
+            </a>
+            <!-- Navigation Page Right -->
+            <div class="flex items-center px-4">
+              <button id="hamburger" name="hamburger" type="button">
+                <span
+                  class="hamburger-line origin-top-left transition duration-300 ease-in-out"
+                ></span>
+                <span
+                  class="hamburger-line transition duration-300 ease-in-out"
+                ></span>
+                <span
+                  class="hamburger-line origin-bottom-left transition duration-300 ease-in-out"
+                ></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- Navigation Menu -->
+      <div
+        id="nav-menu"
+        class="fixed right-0 top-20 hidden h-full w-72 items-center bg-sky-900 text-slate-50"
+      >
+        <div class="p-7">
+          <div class="flex items-center py-5">
+            <img
+              src="/pages/user/dist/img/user.png"
+              alt="Profile"
+              class="mr-4 w-11 rounded"
+            />
+            <div>
+              <p class="text-lg font-semibold">Admin</p>
+              <p class="text-xs">Role : Admin</p>
+            </div>
+          </div>
+          <ul class="p-4">
+            <li class="p-2">
+              <a
+                href="/pages/user/dashboardrangkuman/"
+                class="flex items-center"
+              >
+                <i class="fa-solid fa-grip icon-slate-50 fa-lg mr-2"></i>
+                <p>Dashboard</p>
+              </a>
+            </li>
+            <li class="p-2">
+              <!-- Toggle Product -->
+              <button id="produk" class="flex items-center">
+                <i class="fa-solid fa-box icon-slate-50 fa-lg mr-2"></i>
+                <p>Produk</p>
+              </button>
+              <!-- Product -->
+              <div id="nav-produk" class="hidden">
+                <ul class="px-5 pt-2">
+                  <li class="py-2">
+                    <a
+                      href="/pages/user/dashboardpeta/"
+                      class="flex items-center"
+                    >
+                      <i class="fa-solid fa-cloud mr-2"></i>
+                      <p>Atmosfer</p>
+                    </a>
+                  </li>
+                  <li class="py-2">
+                    <a
+                      href="/pages/user/dashboardpeta/"
+                      class="flex items-center"
+                    >
+                      <i class="fa-solid fa-water mr-2"></i>
+                      <p>Kelautan</p>
+                    </a>
+                  </li>
+                  <li class="py-2">
+                    <a
+                      href="/pages/user/produk/transportasi/"
+                      class="flex items-center"
+                    >
+                      <i class="fa-solid fa-ferry mr-2"></i>
+                      <p>Transportasi</p>
+                    </a>
+                  </li>
+                  <li class="py-2">
+                    <a
+                      href="/pages/user/produk/nelayan/"
+                      class="flex items-center"
+                    >
+                      <i class="fa-solid fa-fish-fins mr-2"></i>
+                      <p>Nelayan</p>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="p-2">
+              <a href="/pages/user-manage/" class="flex items-center">
+                <i class="fa-solid fa-user-gear icon-slate-50 fa-lg mr-2"></i>
+                <p>Management User</p>
+              </a>
+            </li>
+            <li class="p-2">
+              <a href="/pages/user/validasi-data/" class="flex items-center">
+                <i class="fa-solid fa-clipboard icon-slate-50 fa-lg mr-2"></i>
+                <p>Validasi Data</p>
+              </a>
+            </li>
+            <li class="p-2">
+              <a href="/pages/user/info/" class="flex items-center">
+                <i class="fa-solid fa-circle-info icon-slate-50 fa-lg mr-2"></i>
+                <p>Info</p>
+              </a>
+            </li>
+            <li class="p-2">
+              <a href="/" class="flex items-center">
+                <i
+                  class="fa-solid fa-right-from-bracket icon-slate-50 fa-lg mr-2"
+                ></i>
+                <p>Logout</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Content  Page-->
+      <div class="container mx-auto my-28 lg:px-36">
+        <!-- Content Judul -->
+        <div class="my-10 flex items-center justify-center">
+          <div>
+            <p class="text-center text-2xl font-bold">Validasi Data</p>
+            <div class="my-2 flex items-center justify-center">
+              <hr class="w-12 border-2 border-sky-800" />
+            </div>
+          </div>
+        </div>
+        <!-- Content Page-->
+        <div class="mx-5">
+          <table class="w-full table-auto border-separate border-spacing-y-4">
+            <thead>
+              <tr class="bg-sky-100 text-slate-700">
+                <th>#</th>
+                <th>Nama Data</th>
+                <th>Update</th>
+                <th>Pengirim</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bg-sky-200 text-center">
+                <td>1</td>
+                <td>Hujan</td>
+                <td class="tanggaljam"></td>
+                <td>BMKG</td>
+                <td>
+                  <button
+                    class="rounded-full bg-rose-600 px-5 py-0.5 text-slate-50"
+                  >
+                    Gagal
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="5" class="bg-slate-200 px-5 py-2">
+                  Keterangan : BMKG tidak memberikan data terbaru
+                </td>
+              </tr>
+              <tr class="bg-sky-200 text-center">
+                <td class="py-5">2</td>
+                <td>Angin</td>
+                <td class="tanggaljam"></td>
+                <td>Perikanan</td>
+                <td>
+                  <button
+                    class="rounded-full bg-green-400 px-5 py-0.5 text-slate-50"
+                  >
+                    Sukses
+                  </button>
+                </td>
+              </tr>
+              <tr class="bg-sky-200 text-center">
+                <td class="py-5">3</td>
+                <td>Temperatur</td>
+                <td class="tanggaljam"></td>
+                <td>BMKG</td>
+                <td>
+                  <button
+                    class="rounded-full bg-green-400 px-5 py-0.5 text-slate-50"
+                  >
+                    Sukses
+                  </button>
+                </td>
+              </tr>
+              <tr class="bg-sky-200 text-center">
+                <td class="py-5">4</td>
+                <td>Gelombang</td>
+                <td class="tanggaljam"></td>
+                <td>BMKG</td>
+                <td>
+                  <button
+                    class="rounded-full bg-green-400 px-5 py-0.5 text-slate-50"
+                  >
+                    Sukses
+                  </button>
+                </td>
+              </tr>
+              <tr class="bg-sky-200 text-center">
+                <td class="py-5">5</td>
+                <td>Arus</td>
+                <td class="tanggaljam"></td>
+                <td>Perikanan</td>
+                <td>
+                  <button
+                    class="rounded-full bg-green-400 px-5 py-0.5 text-slate-50"
+                  >
+                    Sukses
+                  </button>
+                </td>
+              </tr>
+              <tr class="bg-sky-200 text-center">
+                <td class="py-5">6</td>
+                <td>Ikan</td>
+                <td class="tanggaljam"></td>
+                <td>BMKG</td>
+                <td>
+                  <button
+                    class="rounded-full bg-green-400 px-5 py-0.5 text-slate-50"
+                  >
+                    Sukses
+                  </button>
+                </td>
+              </tr>
+              <tr class="bg-sky-200 text-center">
+                <td class="py-5">7</td>
+                <td>Kapal</td>
+                <td class="tanggaljam"></td>
+                <td>BMKG</td>
+                <td>
+                  <button
+                    class="rounded-full bg-green-400 px-5 py-0.5 text-slate-50"
+                  >
+                    Sukses
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer>
+        <p class="py-7 text-center font-bold">
+          &#169;BRIN, Hak cipta dilindungi.
+        </p>
+      </footer>
+    </div>
+
+    <!-- JS -->
+    <script type="module" src="/pages/user/dist/js/script.js"></script>
+
+    <script type="module">
+      // tanggal jam
+      var dt = new Date();
+      document.querySelectorAll('.tanggaljam')[0].innerHTML =
+        ('0' + dt.getDate()).slice(-2) +
+        '/' +
+        ('0' + (dt.getMonth() + 1)).slice(-2) +
+        '/' +
+        dt.getFullYear() +
+        ' ' +
+        ('0' + dt.getHours()).slice(-2) +
+        ':' +
+        ('0' + dt.getMinutes()).slice(-2) +
+        ':' +
+        ('0' + dt.getSeconds()).slice(-2);
+      document.querySelectorAll('.tanggaljam')[1].innerHTML =
+        ('0' + dt.getDate()).slice(-2) +
+        '/' +
+        ('0' + (dt.getMonth() + 1)).slice(-2) +
+        '/' +
+        dt.getFullYear() +
+        ' ' +
+        ('0' + dt.getHours()).slice(-2) +
+        ':' +
+        ('0' + dt.getMinutes()).slice(-2) +
+        ':' +
+        ('0' + dt.getSeconds()).slice(-2);
+      document.querySelectorAll('.tanggaljam')[2].innerHTML =
+        ('0' + dt.getDate()).slice(-2) +
+        '/' +
+        ('0' + (dt.getMonth() + 1)).slice(-2) +
+        '/' +
+        dt.getFullYear() +
+        ' ' +
+        ('0' + dt.getHours()).slice(-2) +
+        ':' +
+        ('0' + dt.getMinutes()).slice(-2) +
+        ':' +
+        ('0' + dt.getSeconds()).slice(-2);
+      document.querySelectorAll('.tanggaljam')[3].innerHTML =
+        ('0' + dt.getDate()).slice(-2) +
+        '/' +
+        ('0' + (dt.getMonth() + 1)).slice(-2) +
+        '/' +
+        dt.getFullYear() +
+        ' ' +
+        ('0' + dt.getHours()).slice(-2) +
+        ':' +
+        ('0' + dt.getMinutes()).slice(-2) +
+        ':' +
+        ('0' + dt.getSeconds()).slice(-2);
+      document.querySelectorAll('.tanggaljam')[4].innerHTML =
+        ('0' + dt.getDate()).slice(-2) +
+        '/' +
+        ('0' + (dt.getMonth() + 1)).slice(-2) +
+        '/' +
+        dt.getFullYear() +
+        ' ' +
+        ('0' + dt.getHours()).slice(-2) +
+        ':' +
+        ('0' + dt.getMinutes()).slice(-2) +
+        ':' +
+        ('0' + dt.getSeconds()).slice(-2);
+      document.querySelectorAll('.tanggaljam')[5].innerHTML =
+        ('0' + dt.getDate()).slice(-2) +
+        '/' +
+        ('0' + (dt.getMonth() + 1)).slice(-2) +
+        '/' +
+        dt.getFullYear() +
+        ' ' +
+        ('0' + dt.getHours()).slice(-2) +
+        ':' +
+        ('0' + dt.getMinutes()).slice(-2) +
+        ':' +
+        ('0' + dt.getSeconds()).slice(-2);
+      document.querySelectorAll('.tanggaljam')[6].innerHTML =
+        ('0' + dt.getDate()).slice(-2) +
+        '/' +
+        ('0' + (dt.getMonth() + 1)).slice(-2) +
+        '/' +
+        dt.getFullYear() +
+        ' ' +
+        ('0' + dt.getHours()).slice(-2) +
+        ':' +
+        ('0' + dt.getMinutes()).slice(-2) +
+        ':' +
+        ('0' + dt.getSeconds()).slice(-2);
+    </script>
+  </body>
+</html>

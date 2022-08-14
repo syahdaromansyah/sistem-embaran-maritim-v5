@@ -5,7 +5,10 @@ import ContactForm from './ContactForm';
 export default function App() {
   return (
     <>
-      <SemarPageNav />
+      <div className="sticky top-0 z-50">
+        <SemarPageNav />
+      </div>
+
       <main className="bg-semar-logo-bg bg-cover_160% bg-center bg-no-repeat md:bg-cover_100% md:bg-center_t-300px&r-100px xl:bg-center_t-560px&r-100px">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-6xl">
