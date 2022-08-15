@@ -26,7 +26,7 @@
           <div class="flex items-center justify-between py-3.5">
             <!-- Navigation Page Left -->
             <a
-              href="/"
+              href="/pages/user/dashboardrangkuman/"
               class="inline-block py-1 transition duration-300 focus:outline-none focus:ring focus:ring-sky-300 focus:ring-offset-2 focus:ring-offset-slate-50"
             >
               <img
@@ -65,8 +65,8 @@
               class="mr-4 w-11 rounded"
             />
             <div>
-              <p class="text-lg font-semibold">Admin</p>
-              <p class="text-xs">Role : Admin</p>
+              <p class="profile-name text-lg font-semibold">Admin</p>
+              <p class="profile-role text-xs">Role : Admin</p>
             </div>
           </div>
           <ul class="p-4">
@@ -127,13 +127,13 @@
                 </ul>
               </div>
             </li>
-            <li class="p-2">
+            <li class="admin-menu-only p-2">
               <a href="/pages/user-manage/" class="flex items-center">
                 <i class="fa-solid fa-user-gear icon-slate-50 fa-lg mr-2"></i>
                 <p>Management User</p>
               </a>
             </li>
-            <li class="p-2">
+            <li class="admin-menu-only p-2">
               <a href="/pages/user/validasi-data/" class="flex items-center">
                 <i class="fa-solid fa-clipboard icon-slate-50 fa-lg mr-2"></i>
                 <p>Validasi Data</p>
@@ -146,12 +146,12 @@
               </a>
             </li>
             <li class="p-2">
-              <a href="/" class="flex items-center">
+              <button class="logout-btn flex items-center">
                 <i
                   class="fa-solid fa-right-from-bracket icon-slate-50 fa-lg mr-2"
                 ></i>
                 <p>Logout</p>
-              </a>
+              </button>
             </li>
           </ul>
         </div>
@@ -610,31 +610,40 @@
     <!-- JS -->
     <script type="module" src="/pages/user/dist/js/script.js"></script>
     <script type="module">
-      var dt = new Date();
-      document.querySelectorAll('.tanggal')[0].innerHTML =
-        ('0' + dt.getDate()).slice(-2) +
-        '/' +
-        ('0' + (dt.getMonth() + 1)).slice(-2) +
-        '/' +
-        dt.getFullYear();
-      document.querySelectorAll('.tanggal')[1].innerHTML =
-        ('0' + dt.getDate()).slice(-2) +
-        '/' +
-        ('0' + (dt.getMonth() + 1)).slice(-2) +
-        '/' +
-        dt.getFullYear();
-      document.querySelectorAll('.tanggal')[2].innerHTML =
-        ('0' + dt.getDate()).slice(-2) +
-        '/' +
-        ('0' + (dt.getMonth() + 1)).slice(-2) +
-        '/' +
-        dt.getFullYear();
-      document.querySelectorAll('.tanggal')[3].innerHTML =
-        ('0' + dt.getDate()).slice(-2) +
-        '/' +
-        ('0' + (dt.getMonth() + 1)).slice(-2) +
-        '/' +
-        dt.getFullYear();
+      import { format } from 'date-fns';
+
+      document.querySelectorAll('.tanggal').forEach((elementDate) => {
+        elementDate.textContent = format(new Date(), 'dd/MM/yyyy');
+      });
+
+      const profileName = document.querySelector('.profile-name');
+      const profileRole = document.querySelector('.profile-role');
+
+      profileName.textContent =
+        window.localStorage.getItem('current-user-name');
+      profileRole.textContent =
+        window.localStorage.getItem('current-user-role');
+
+      const logOutBtn = document.querySelector('.logout-btn');
+
+      logOutBtn.addEventListener('click', () => {
+        window.localStorage.setItem('current-user-name', '');
+        window.localStorage.setItem('current-user-role', '');
+        window.localStorage.setItem('current-user-remember', 'false');
+
+        window.location.replace('/');
+      });
+
+      const adminMenuOnly = document.querySelectorAll('.admin-menu-only');
+      const isAdmin = window.localStorage.getItem('current-user-role');
+      if (isAdmin.toLowerCase() !== 'admin') {
+        adminMenuOnly.forEach((menu) => menu.classList.add('hidden'));
+      }
+
+      const isLogin = window.localStorage.getItem('current-user-name');
+      if (isLogin === '') {
+        window.location.replace('/');
+      }
     </script>
   </body>
 </html>

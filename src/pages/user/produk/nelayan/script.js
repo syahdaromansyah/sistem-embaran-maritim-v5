@@ -79,3 +79,30 @@ document.querySelector('.tanggaljam').textContent = format(
   new Date(),
   'P, kk:mm:ss'
 );
+
+const profileName = document.querySelector('.profile-name');
+const profileRole = document.querySelector('.profile-role');
+
+profileName.textContent = window.localStorage.getItem('current-user-name');
+profileRole.textContent = window.localStorage.getItem('current-user-role');
+
+const logOutBtn = document.querySelector('.logout-btn');
+
+logOutBtn.addEventListener('click', () => {
+  window.localStorage.setItem('current-user-name', '');
+  window.localStorage.setItem('current-user-role', '');
+  window.localStorage.setItem('current-user-remember', 'false');
+
+  window.location.replace('/');
+});
+
+const adminMenuOnly = document.querySelectorAll('.admin-menu-only');
+const isAdmin = window.localStorage.getItem('current-user-role');
+if (isAdmin.toLowerCase() !== 'admin') {
+  adminMenuOnly.forEach((menu) => menu.classList.add('hidden'));
+}
+
+const isLogin = window.localStorage.getItem('current-user-name');
+if (isLogin === '') {
+  window.location.replace('/');
+}

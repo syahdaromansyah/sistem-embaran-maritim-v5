@@ -8,7 +8,7 @@
       src="https://kit.fontawesome.com/216b2461f6.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/pages/user-manage/add_user/style.css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
@@ -25,7 +25,7 @@
         <h3><b>Tambahkan Pengguna</b></h3>
         <hr width="55px" size="7" color="aqua" />
         <div class="container">
-          <form>
+          <form class="form-add-user">
             <table>
               <tr>
                 <td><i class="fa-solid fa-user"></i></td>
@@ -78,10 +78,10 @@
               </tr>
             </table>
 
-            <button type="submit" onclick="false">
-              <a href="/pages/user-manage/">Simpan</a>
+            <button type="submit">Simpan</button>
+            <button type="button">
+              <a href="/pages/user-manage/">Batal</a>
             </button>
-            <button type="reset">Batal</button>
           </form>
         </div>
       </div>
@@ -90,6 +90,80 @@
     <div id="footer">
       <p><b>&copy;</b> BRIN,Hak cipta dilindungi.</p>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script type="module">
+      const formAddUser = document.querySelector('.form-add-user');
+      formAddUser.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const eventTarget = e.target;
+        const nameValue = eventTarget['0'].value;
+        const unameValue = eventTarget['1'].value
+          .split('')
+          .filter((char) => char !== ' ')
+          .join('')
+          .toLowerCase();
+        const uAgencyValue = eventTarget['2'].value;
+        const uEmailValue = eventTarget['3'].value
+          .split('')
+          .filter((char) => char !== ' ')
+          .join('')
+          .toLowerCase();
+        const uRoleValue = eventTarget['4'].value;
+        const atmosphereValue = eventTarget['5'].checked;
+        const oceanValue = eventTarget['6'].checked;
+        const fishermanValue = eventTarget['7'].checked;
+        const transportationValue = eventTarget['8'].checked;
+        const uPwdValue = eventTarget['9'].value;
+
+        const inputTextEmpty =
+          nameValue === '' ||
+          unameValue === '' ||
+          uAgencyValue === '' ||
+          uEmailValue === '' ||
+          uRoleValue === '' ||
+          uPwdValue === '';
+
+        const fiturEmpty =
+          !atmosphereValue &&
+          !transportationValue &&
+          !oceanValue &&
+          !fishermanValue;
+
+        if (inputTextEmpty) return alert('Isi seluruh form dengan benar.');
+        if (fiturEmpty)
+          return alert('Mohon untuk pilih salah satu atau semua fitur.');
+
+        const usersLocalStorage = JSON.parse(
+          window.localStorage.getItem('users')
+        );
+
+        usersLocalStorage.push({
+          name: nameValue,
+          username: unameValue,
+          agency: uAgencyValue,
+          email: uEmailValue,
+          role: uRoleValue,
+          password: uPwdValue,
+          feature: {
+            atmosphere: atmosphereValue,
+            ocean: oceanValue,
+            transportation: transportationValue,
+            fisherman: fishermanValue,
+          },
+        });
+
+        window.localStorage.setItem('users', JSON.stringify(usersLocalStorage));
+        window.localStorage.setItem('current-change-user', '');
+
+        window.location.replace('/pages/user-manage/');
+      });
+
+      const isLogin = window.localStorage.getItem('current-user-name');
+      if (isLogin === '') {
+        window.location.replace('/');
+      }
+    </script>
   </body>
 </html>

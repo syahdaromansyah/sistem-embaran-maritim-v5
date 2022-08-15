@@ -1,0 +1,73 @@
+#card-content {
+  background: white;
+  border-radius: 30px;
+  box-shadow: 0px 0px 3px rgba(145, 123, 123, 0.65);
+  height: 600px;
+  margin: 10rem auto 8.1rem auto;
+  width: 80%;
+}
+#card-title {
+  padding-bottom: 23px;
+  padding-top: 13px;
+  text-align: left;
+  padding: 50px;
+  color: rgb(41, 41, 71);
+}
+.container {
+  padding: 20px;
+}
+.container form table input {
+  margin-bottom: 10px;
+  padding-right: 600px;
+  border: 1px solid #dde3e6;
+  outline: none;
+  border-radius: 50px;
+  padding-left: 10px;
+}
+.container form table td input[type='text'] {
+  margin-left: 5px;
+  margin-top: 10px;
+}
+.container form table td input[type='email'] {
+  margin-left: 5px;
+  margin-top: 10px;
+}
+.container form table td input[type='password'] {
+  margin-left: 5px;
+  margin-top: 10px;
+}
+.container form table td input[type='checkbox'] {
+  margin-left: 5px;
+  margin-top: 10px;
+  color: #052f57;
+}
+.container form button {
+  border: 0;
+  padding: 5px 25px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 60px;
+  font-size: 14px;
+  margin: 2px;
+  float: right;
+}
+.container form button[type='submit'] {
+  background: #052f57;
+}
+a:link {
+  color: white;
+  underline: none;
+  text-decoration: none;
+}
+.container form button[type='reset'] {
+  background: #6b6d6e;
+}
+#footer {
+  text-align: center;
+  position: absolute;
+  margin-top: 0;
+  width: 100%;
+  color: rgb(113, 113, 122);
+  font-weight: bold;
+  font-size: 15px;
+}

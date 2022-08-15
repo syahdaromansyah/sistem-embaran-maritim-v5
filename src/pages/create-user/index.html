@@ -8,7 +8,7 @@
       src="https://kit.fontawesome.com/216b2461f6.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="/pages/user-manage/update_user/style.css" />
+    <link rel="stylesheet" href="/pages/create-user/style.css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
@@ -22,7 +22,7 @@
     <!-- add user -->
     <div id="card-content">
       <div id="card-title">
-        <h3><b>Ubah Pengguna</b></h3>
+        <h3><b>Buat akun</b></h3>
         <hr width="55px" size="7" color="aqua" />
         <div class="container">
           <form class="form-add-user">
@@ -80,7 +80,7 @@
 
             <button type="submit">Simpan</button>
             <button type="button">
-              <a href="/pages/user-manage/">Batal</a>
+              <a href="/pages/login/">Batal</a>
             </button>
           </form>
         </div>
@@ -95,47 +95,8 @@
 
     <script type="module">
       const formAddUser = document.querySelector('.form-add-user');
-
-      const currentChangeUser = window.localStorage.getItem(
-        'current-change-user'
-      );
-
-      const usersLocalStorage = JSON.parse(
-        window.localStorage.getItem('users')
-      );
-
-      const userIdx = usersLocalStorage.findIndex(
-        (user) => user.username === currentChangeUser
-      );
-
-      const currentUserData = usersLocalStorage[userIdx];
-
-      formAddUser['0'].value = currentUserData.name;
-      formAddUser['1'].value = currentUserData.username;
-      formAddUser['2'].value = currentUserData.agency;
-      formAddUser['3'].value = currentUserData.email;
-      formAddUser['4'].value = currentUserData.role;
-      formAddUser['5'].checked = currentUserData.feature.atmosphere;
-      formAddUser['6'].checked = currentUserData.feature.ocean;
-      formAddUser['7'].checked = currentUserData.feature.fisherman;
-      formAddUser['8'].checked = currentUserData.feature.transportation;
-      formAddUser['9'].value = currentUserData.password;
-
       formAddUser.addEventListener('submit', (e) => {
         e.preventDefault();
-
-        const currentChangeUser = window.localStorage.getItem(
-          'current-change-user'
-        );
-
-        const usersLocalStorage = JSON.parse(
-          window.localStorage.getItem('users')
-        );
-
-        const userIdx = usersLocalStorage.findIndex(
-          (user) => user.username === currentChangeUser
-        );
-
         const eventTarget = e.target;
         const nameValue = eventTarget['0'].value;
         const unameValue = eventTarget['1'].value
@@ -156,38 +117,47 @@
         const transportationValue = eventTarget['8'].checked;
         const uPwdValue = eventTarget['9'].value;
 
-        const updatedUsers = usersLocalStorage.map((user, idx) => {
-          if (idx === userIdx) {
-            const updateUserData = {
-              name: nameValue || user.name,
-              username: unameValue || user.username,
-              agency: uAgencyValue || user.agency,
-              email: uEmailValue || user.email,
-              role: uRoleValue || user.role,
-              password: uPwdValue || user.password,
-              feature: {
-                atmosphere: atmosphereValue || user.feature.atmosphere,
-                ocean: oceanValue || user.feature.ocean,
-                transportation:
-                  transportationValue || user.feature.transportation,
-                fisherman: fishermanValue || user.feature.fisherman,
-              },
-            };
-            return updateUserData;
-          }
-          return user;
+        const inputTextEmpty =
+          nameValue === '' ||
+          unameValue === '' ||
+          uAgencyValue === '' ||
+          uEmailValue === '' ||
+          uRoleValue === '' ||
+          uPwdValue === '';
+
+        const fiturEmpty =
+          !atmosphereValue &&
+          !transportationValue &&
+          !oceanValue &&
+          !fishermanValue;
+
+        if (inputTextEmpty) return alert('Isi seluruh form dengan benar.');
+        if (fiturEmpty)
+          return alert('Mohon untuk pilih salah satu atau semua fitur.');
+
+        const usersLocalStorage = JSON.parse(
+          window.localStorage.getItem('users')
+        );
+
+        usersLocalStorage.push({
+          name: nameValue,
+          username: unameValue,
+          agency: uAgencyValue,
+          email: uEmailValue,
+          role: uRoleValue,
+          password: uPwdValue,
+          feature: {
+            atmosphere: atmosphereValue,
+            ocean: oceanValue,
+            transportation: transportationValue,
+            fisherman: fishermanValue,
+          },
         });
 
-        window.localStorage.setItem('users', JSON.stringify(updatedUsers));
-        window.localStorage.setItem('current-change-user', '');
+        window.localStorage.setItem('users', JSON.stringify(usersLocalStorage));
 
-        window.location.replace('/pages/user-manage/');
+        window.location.replace('/pages/login/');
       });
-
-      const isLogin = window.localStorage.getItem('current-user-name');
-      if (isLogin === '') {
-        window.location.replace('/');
-      }
     </script>
   </body>
 </html>

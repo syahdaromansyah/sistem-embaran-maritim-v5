@@ -29,7 +29,7 @@
         <div class="flex items-center justify-between py-3.5">
           <!-- Navigation Page Left -->
           <a
-            href=""
+            href="/pages/user/dashboardrangkuman/"
             class="inline-block py-1 transition duration-300 focus:outline-none focus:ring focus:ring-sky-300 focus:ring-offset-2 focus:ring-offset-slate-50"
           >
             <img
@@ -69,8 +69,8 @@
               class="mr-4 w-11 rounded"
             />
             <div>
-              <p class="text-lg font-semibold">Admin01</p>
-              <p class="text-xs">Role : Admin</p>
+              <p class="profile-name text-lg font-semibold">Admin01</p>
+              <p class="profile-role text-xs">Role : Admin</p>
             </div>
           </div>
           <ul class="p-4">
@@ -125,13 +125,13 @@
                 </ul>
               </div>
             </li>
-            <li class="p-2">
+            <li class="admin-menu-only p-2">
               <a href="/pages/user-manage/" class="flex items-center">
                 <i class="fa-solid fa-user-gear icon-slate-50 fa-lg mr-2"></i>
                 <p>Management User</p>
               </a>
             </li>
-            <li class="p-2">
+            <li class="admin-menu-only p-2">
               <a href="/pages/user/validasi-data/" class="flex items-center">
                 <i class="fa-solid fa-clipboard icon-slate-50 fa-lg mr-2"></i>
                 <p>Validasi Data</p>
@@ -144,12 +144,12 @@
               </a>
             </li>
             <li class="p-2">
-              <a href="/" class="flex items-center">
+              <button class="logout-btn flex items-center">
                 <i
                   class="fa-solid fa-right-from-bracket icon-slate-50 fa-lg mr-2"
                 ></i>
                 <p>Logout</p>
-              </a>
+              </button>
             </li>
           </ul>
         </div>
