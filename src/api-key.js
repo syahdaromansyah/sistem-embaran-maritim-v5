@@ -1,7 +1,7 @@
 const apiKey = {
-  weatherAPI: '24deb7fbc02644bd8e581953222109',
+  weatherAPI: '75a6a3b2e64545d0a0f33637223008',
   marineAPI: '75a6a3b2e64545d0a0f33637223008',
-  // windyAPI: 'RfwfiRS7pZ60Ulhu20tnBdevuVlmJJGj',
+  windyAPI: 'G3OcHDbf792aw6sfkX3L6XVCOj3WyA4M',
 };
 
 export default apiKey;

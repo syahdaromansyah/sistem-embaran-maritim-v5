@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/favicon.png" type="image/png" />
-    <title>SEMAR-Sistem Embaran Maritim</title>
+    <title>Semar - Sistem Embaran Maritim | Dashboard</title>
 
     <!-- Fontawesome -->
     <script
@@ -15,25 +15,24 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="/pages/user/dist/css/output.css" />
-
-    <!-- leaflet -->
-     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
-        integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
-        crossorigin=""/>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+      integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+      crossorigin=""
+    />
 
     <!-- Windy -->
     <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
     <script src="https://api.windy.com/assets/map-forecast/libBoot.js"></script>
-
-    <script src="http://leaflet.github.io/Leaflet.markercluster/example/realworld.10000.js"></script>
   </head>
-  <body class="bg-slate-100 font-inter text-slate-700">
+  <body class="bg-slate-100 font-inter text-slate-600">
     <!-- Navigation Page -->
     <nav
       class="sticky top-0 left-0 z-50 w-full bg-slate-50/25 shadow shadow-slate-200 backdrop-blur"
     >
       <!-- Navigation Page Container -->
-      <div class="container mx-auto px-8">
+      <div class="container mx-auto">
         <div class="flex items-center justify-between py-3.5">
           <!-- Navigation Page Left -->
           <a
@@ -46,18 +45,16 @@
               class="h-11"
             />
           </a>
-          
           <!-- Navigation Page Right -->
           <div class="flex items-center px-4">
-            <!-- navigation icon -->
-            <button id="icon" name="icon" type="button">
+            <button class="profil">
               <img
-              src="/pages/user/dist/img/user.png"
-              alt="Profile"
-              class="mr-4 w-11 rounded"
-            />
+                src="/pages/user/dist/img/user.png"
+                alt="Profile"
+                class="border-5 mr-4 w-11 rounded"
+              />
             </button>
-            <button id="hamburger" name="hamburger" type="button">
+            <button class="peta" name="hamburger" type="button">
               <span
                 class="hamburger-line origin-top-left transition duration-300 ease-in-out"
               ></span>
@@ -72,11 +69,11 @@
         </div>
       </div>
     </nav>
-    <!-- Navigation Menu -->
+
+    <!-- Navigation Page -->
     <div class="flex justify-end">
       <div
-        id="nav-menu"
-        class="fixed right-0 top-20 z-50 hidden h-full w-72 items-center bg-sky-900 text-slate-50"
+        class="navprofil fixed right-0 top-20 z-50 hidden h-full w-72 items-center bg-sky-700 text-slate-50"
       >
         <div class="p-7">
           <div class="flex items-center py-5">
@@ -86,39 +83,46 @@
               class="mr-4 w-11 rounded"
             />
             <div>
-              <p class="profile-name text-lg font-semibold">Admin01</p>
-              <p class="profile-role text-xs">Role : Admin</p>
+              <p class="profile-name text-lg font-semibold"></p>
+              <p class="profile-role text-xs"></p>
             </div>
           </div>
-          <ul class="p-4">
-            <li class="p-2">
-              <a
-                href="/pages/user/dashboardpeta/"
-                class="flex items-center"
-              >
-                <i class="fa-solid fa-grip icon-slate-50 fa-lg mr-2"></i>
+          <ul class="mt-4">
+            <li
+              class="my-2 rounded-xl py-1 px-7 hover:bg-slate-100 hover:text-sky-600"
+            >
+              <a href="/pages/user/dashboardpeta/" class="flex items-center">
+                <i class="fa-solid fa-grip icon-slate-50 fa-lg pr-2"></i>
                 <p>Dashboard</p>
               </a>
             </li>
-            <li class="admin-menu-only p-2">
+            <li
+              class="admin-menu-only my-2 rounded-xl py-1 px-7 hover:bg-slate-100 hover:text-sky-600"
+            >
               <a href="/pages/user-manage/" class="flex items-center">
                 <i class="fa-solid fa-user-gear icon-slate-50 fa-lg mr-2"></i>
                 <p>Management User</p>
               </a>
             </li>
-            <li class="admin-menu-only p-2">
+            <li
+              class="admin-menu-only my-2 rounded-xl py-1 px-7 hover:bg-slate-100 hover:text-sky-600"
+            >
               <a href="/pages/user/validasi-data/" class="flex items-center">
                 <i class="fa-solid fa-clipboard icon-slate-50 fa-lg mr-2"></i>
                 <p>Validasi Data</p>
               </a>
             </li>
-            <li class="p-2">
+            <li
+              class="my-2 rounded-xl py-1 px-7 hover:bg-slate-100 hover:text-sky-600"
+            >
               <a href="/pages/user/info/" class="flex items-center">
                 <i class="fa-solid fa-circle-info icon-slate-50 fa-lg mr-2"></i>
                 <p>Info</p>
               </a>
             </li>
-            <li class="p-2">
+            <li
+              class="my-2 rounded-xl py-1 px-7 hover:bg-slate-100 hover:text-sky-600"
+            >
               <button class="logout-btn flex items-center">
                 <i
                   class="fa-solid fa-right-from-bracket icon-slate-50 fa-lg mr-2"
@@ -131,84 +135,91 @@
       </div>
     </div>
 
-    <!-- Navigation Menu Cuaca -->
+    <!-- Navigation Produk -->
     <div class="flex justify-end">
       <div
-        id="nav-data"
-        class="fixed right-0 top-20 z-50 hidden h-full w-72 items-center bg-sky-100/60 text-slate-50"
+        class="menuproduk fixed right-0 top-20 z-50 hidden h-full w-72 items-center bg-slate-50/75 text-sky-600"
       >
         <div>
-          <div class="flex items-center">
+          <button
+            class="atmosfer w-full border-b-2 border-sky-500 bg-sky-600 py-2"
+          >
+            <p class="text-slate-100">Atmosfer</p>
+          </button>
+          <div class="data-atmosfer hidden py-4 px-8">
             <div>
-              <button id="dropdownCheckboxButton" data-dropdown-toggle="dropdownDefaultCheckbox" class="text-white bg-blue-900 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm px-32 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Atmosfer</button>
-              <ul id="dropdown" class="hidden p-3 space-y-3 text-sm text-gray-800 dark:text-gray-200" aria-labelledby="dropdownCheckboxButton">
-                <li>
-                  <div class="flex items-center">
-                    <input id="checkbox-item-1" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                    <label for="checkbox-item-1" class="ml-1 text-sm font-bold text-gray-800 dark:text-gray-300">Angin</label>
-                  </div>
-                </li>
-                <li>
-                  <div class="flex items-center">
-                    <input id="temperatur" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                    <label for="temperatur" class="ml-1 text-sm font-bold text-gray-800 dark:text-gray-300">Temperatur Udara</label>
-                  </div>
-                </li>
-                <li>
-                  <div class="flex items-center">
-                    <input id="curahhujan" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                    <label for="curahhujan" class="ml-1 text-sm font-bold text-gray-800 dark:text-gray-300">Curah Hujan</label>
-                  </div>
-                </li>
-              </ul>
-              <button id="dropdownCheckboxButton1" data-dropdown-toggle="dropdownDefaultCheckbox" class="text-white bg-blue-900 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm px-32 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Kelautan</button>
-              <ul id="dropdown1" class="hidden p-3 space-y-3 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownCheckboxButton">
-                <li>
-                  <div class="flex items-center">
-                    <input id="suhulaut" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                    <label for="suhulaut" class="ml-1 text-sm font-bold text-gray-800 dark:text-gray-300" checked>Suhu Laut</label>
-                  </div>
-                </li>
-                <li>
-                  <div class="flex items-center">
-                    <input id="checkbox-item-1" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                    <label for="checkbox-item-1" class="ml-1 text-sm font-bold text-gray-800 dark:text-gray-300">Arus Laut</label>
-                  </div>
-                </li>
-                <li>
-                  <div class="flex items-center">
-                    <input id="checkbox-item-3" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                    <label for="checkbox-item-3" class="ml-1 text-sm font-bold text-gray-800 dark:text-gray-300">Gelombang</label>
-                  </div>
-                </li>
-              </ul>
-              <button id="dropdownCheckboxButton2" data-dropdown-toggle="dropdownDefaultCheckbox" class="text-white bg-blue-900 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm px-32 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Transportasi</button>
-              <ul id="dropdown2" class="hidden p-3 space-y-3 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownCheckboxButton">
-                <li>
-                  <div class="flex items-center">
-                    <input id="transportasi" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                    <label for="transportasi" class="ml-1 text-sm font-bold text-gray-800 dark:text-gray-300">Posisi Kapal</label>
-                  </div>
-                </li>
-                <li>
-                </li>
-              </ul>
-              <button id="dropdownCheckboxButton3" data-dropdown-toggle="dropdownDefaultCheckbox" class="text-white bg-blue-900 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm px-32 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Nelayan</button>
-              <ul id="dropdown3" class="hidden p-3 space-y-3 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownCheckboxButton">
-                <li>
-                  <div class=" items-center">
-                    <input id="nelayan" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                    <label for="nelayan" class="ml-1 text-sm font-bold text-gray-800 dark:text-gray-300">Zona Potensi Penangkapan Ikan</label>
-                  </div>
-                </li>
-              </ul>
+              <input type="checkbox" name="angin" id="angin" />
+              <label for="angin">Angin</label>
+            </div>
+            <div class="my-1">
+              <input type="checkbox" name="" id="temperatur-udara" />
+              <label for="temperatur-udara">Temperatur Udara</label>
+            </div>
+            <div>
+              <input type="checkbox" name="" id="curah-hujan" />
+              <label for="curah-hujan">Curah Hujan</label>
+            </div>
+          </div>
+        </div>
+        <div>
+          <button
+            class="kelautan w-full border-b-2 border-sky-500 bg-sky-600 py-2"
+          >
+            <p class="text-slate-100">Kelautan</p>
+          </button>
+          <div class="data-kelautan hidden py-4 px-8">
+            <div>
+              <input type="checkbox" name="" id="suhu-laut" />
+              <label for="suhu-laut">Suhu Laut</label>
+            </div>
+            <div class="my-1">
+              <input type="checkbox" name="" id="arus-laut" />
+              <label for="arus-laut">Arus Laut</label>
+            </div>
+            <div>
+              <input type="checkbox" name="" id="gelombang" />
+              <label for="gelombang">Gelombang</label>
+            </div>
+          </div>
+        </div>
+        <div>
+          <button
+            class="transportasi w-full border-b-2 border-sky-500 bg-sky-600 py-2"
+          >
+            <p class="text-slate-100">Transportasi</p>
+          </button>
+          <div class="data-kapal hidden py-4 px-8">
+            <div>
+              <button class="posisi-kapal">
+                <input
+                  type="checkbox"
+                  name="posisi-kapal"
+                  id="posisi-kapal"
+                  value="posisi-kapal"
+                />
+                <label for="posisi-kapal">Posisi Kapal</label>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div>
+          <button
+            class="nelayan w-full border-b-2 border-sky-500 bg-sky-600 py-2"
+          >
+            <p class="text-slate-100">Nelayan</p>
+          </button>
+          <div class="data-nelayan hidden py-4 px-8">
+            <div>
+              <input type="checkbox" name="" id="ZPPI" />
+              <label for="ZPPI">Zona Potensi Penangkapan Ikan</label>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <button id="informasi" class="absolute top-40 z-10 m-3 bg-slate-50/50 p-2">
+    <!-- Informasi -->
+    <button id="informasi" class="absolute top-40 z-10 m-3 bg-slate-50/75 p-2">
       <span>
         <i class="fa-solid fa-caret-right fa-lg"></i>
       </span>
@@ -219,48 +230,49 @@
 
     <div
       id="nav-informasi"
-      class="absolute top-40 z-10 m-3 hidden min-w-[480px] bg-slate-50/50 p-5"
+      class="absolute top-40 z-10 m-3 hidden min-w-[480px] bg-slate-50/75 p-5"
     >
       <p class="nilai-lokasi text-2xl font-semibold"></p>
       <p class="tanggaljam my-2"><span></span></p>
 
-      <div class="my-3">
-        <div class="mb-1 flex items-center justify-between text-lg">
-          <p>Temperatur Udara</p>
-          <p class="font-bold"><span class="nilai-temp-darat"></span> &deg;C</p>
-        </div>
-      </div>
-
-      <div class="my-3">
       <div class="mb-1 flex items-center justify-between text-lg">
-        <p>Gelombang </p>
-        <p class="font-bold"><span class="nilai-k-swell"></span> 
-           m <i class="fa-solid fa-location-arrow"></i>
+        <p>Temperatur Udara</p>
+        <p class="font-bold">
+          <span class="nilai-temp-darat"></span>
+          &deg;C
         </p>
       </div>
+
+      <div class="mb-1 flex items-center justify-between text-lg">
+        <p>Gelombang</p>
+        <p class="font-bold">
+          <span class="nilai-k-swell"></span> m
+          <i class="fa-solid fa-location-arrow fa-rotate-by"></i>
+        </p>
       </div>
 
-      <div class="my-3">
       <div class="mb-1 flex items-center justify-between text-lg">
         <p>Angin</p>
-        <p class="font-bold"><span class="nilai-angin-laut"></span> 
-           kmph <i class="fa-solid fa-location-arrow"></i>
+        <p class="font-bold">
+          <span class="nilai-angin-laut"></span> kmph
+          <i class="fa-solid fa-location-arrow fa-rotate-by"></i>
         </p>
       </div>
-      </div>
 
-      <div class="my-3">
       <div class="mb-1 flex items-center justify-between text-lg">
         <p>Curah Hujan</p>
-        <p class="font-bold"><span class="nilai-curah-hujan"></span> mm</p>
-      </div>
+        <p class="font-bold">
+          <span class="nilai-curah-hujan"></span>
+          mm
+        </p>
       </div>
 
-      <div class="my-3">
-        <div class="mb-1 flex items-center justify-between text-lg">
-          <p>Temperatur Laut</p>
-          <p class="font-bold"><span class="nilai-temp-laut"></span> &deg;C</p>
-        </div>
+      <div class="mb-1 flex items-center justify-between text-lg">
+        <p>Temperatur Laut</p>
+        <p class="font-bold">
+          <span class="nilai-temp-laut"></span>
+          &deg;C
+        </p>
       </div>
     </div>
 
@@ -269,28 +281,19 @@
 
     <!-- Footer -->
     <footer class="relative">
-      <p class="py-7 text-center font-bold">
+      <p class="py-5 text-center font-bold">
         &#169;BRIN, Hak cipta dilindungi.
       </p>
     </footer>
-    
+
     <!-- js -->
     <script type="module" src="/pages/user/dist/js/script.js"></script>
 
     <script type="module" src="/pages/user/dashboardpeta/script.js"></script>
+
     <script
       type="module"
       src="/pages/user/dist/js/getCurrentWeather.js"
     ></script>
-    <script
-    type="module"
-    src="/pages/user/dist/js/getWeather.js"
-  ></script>
-  <script src="/pages/user/dashboardpeta/indonesia.js"></script>
-  <script src="/pages/user/dashboardpeta/hujan.js"></script>
-  <script src="/pages/user/dashboardpeta/data.js"></script>
   </body>
-  <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
-   integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
-   crossorigin=""></script>
 </html>

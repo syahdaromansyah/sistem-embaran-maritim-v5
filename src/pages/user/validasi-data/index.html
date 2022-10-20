@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/favicon.png" type="image/png" />
-    <title>SEMAR-Sistem Embaran Maritim</title>
+    <title>Semar - Sistem Embaran Maritim | Validasi Data</title>
 
     <!-- Fontawesome -->
     <script
@@ -17,43 +17,41 @@
     <link rel="stylesheet" href="/pages/user/dist/css/output.css" />
   </head>
   <body class="bg-slate-100 shadow shadow-slate-200">
-    <div class="app">
-      <!-- Navigation Page -->
-      <nav
-        class="fixed top-0 left-0 w-full bg-slate-50/25 shadow shadow-slate-200 backdrop-blur"
-      >
-        <!-- Navigation Page Container -->
-        <div class="container mx-auto px-8">
-          <div class="flex items-center justify-between py-3.5">
-            <!-- Navigation Page Left -->
-            <a
-              href="/pages/user/dashboardpeta/"
-              class="inline-block py-1 transition duration-300 focus:outline-none focus:ring focus:ring-sky-300 focus:ring-offset-2 focus:ring-offset-slate-50"
-            >
-              <img
-                src="/pages/user/dist/img/LOGO-SEMAR.png"
-                alt="SEMAR-Sistem Embaran Maritim"
-                class="h-11"
-              />
-            </a>
-            <!-- Navigation Page Right -->
-            <div class="flex items-center px-4">
-               <!-- navigation icon -->
-            <button id="icon" name="icon" type="button">
-              <img
-              src="/pages/user/dist/img/user.png"
-              alt="Profile"
-              class="mr-4 w-11 rounded"
+    <!-- Navigation Page -->
+    <nav
+      class="sticky top-0 left-0 z-50 w-full bg-slate-50/25 shadow shadow-slate-200 backdrop-blur"
+    >
+      <!-- Navigation Page Container -->
+      <div class="container mx-auto">
+        <div class="flex items-center justify-between py-3.5">
+          <!-- Navigation Page Left -->
+          <a
+            href="/pages/user/dashboardpeta/"
+            class="inline-block py-1 transition duration-300 focus:outline-none focus:ring focus:ring-sky-300 focus:ring-offset-2 focus:ring-offset-slate-50"
+          >
+            <img
+              src="/pages/user/dist/img/LOGO-SEMAR.png"
+              alt="SEMAR-Sistem Embaran Maritim"
+              class="h-11"
             />
+          </a>
+          <!-- Navigation Page Right -->
+          <div class="flex items-center px-4">
+            <button class="profil">
+              <img
+                src="/pages/user/dist/img/user.png"
+                alt="Profile"
+                class="border-5 mr-4 w-11 rounded"
+              />
             </button>
-            </div>
           </div>
         </div>
-      </nav>
-      <!-- Navigation Menu -->
+      </div>
+    </nav>
+    <!-- Navigation Menu -->
+    <div class="flex justify-end">
       <div
-        id="nav-menu"
-        class="fixed right-0 top-20 hidden h-full w-72 items-center bg-sky-900 text-slate-50"
+        class="navprofil fixed right-0 top-20 z-50 hidden h-full w-72 items-center bg-sky-700 text-slate-50"
       >
         <div class="p-7">
           <div class="flex items-center py-5">
@@ -63,39 +61,46 @@
               class="mr-4 w-11 rounded"
             />
             <div>
-              <p class="profile-name text-lg font-semibold">Admin</p>
-              <p class="profile-role text-xs">Role : Admin</p>
+              <p class="profile-name text-lg font-semibold"></p>
+              <p class="profile-role text-xs"></p>
             </div>
           </div>
-          <ul class="p-4">
-            <li class="p-2">
-              <a
-                href="/pages/user/dashboardpeta/"
-                class="flex items-center"
-              >
-                <i class="fa-solid fa-grip icon-slate-50 fa-lg mr-2"></i>
+          <ul class="mt-4">
+            <li
+              class="my-2 rounded-xl py-1 px-7 hover:bg-slate-100 hover:text-sky-600"
+            >
+              <a href="/pages/user/dashboardpeta/" class="flex items-center">
+                <i class="fa-solid fa-grip icon-slate-50 fa-lg pr-2"></i>
                 <p>Dashboard</p>
               </a>
             </li>
-            <li class="p-2">
+            <li
+              class="admin-menu-only my-2 rounded-xl py-1 px-7 hover:bg-slate-100 hover:text-sky-600"
+            >
               <a href="/pages/user-manage/" class="flex items-center">
                 <i class="fa-solid fa-user-gear icon-slate-50 fa-lg mr-2"></i>
                 <p>Management User</p>
               </a>
             </li>
-            <li class="admin-menu-only p-2">
+            <li
+              class="admin-menu-only my-2 rounded-xl py-1 px-7 hover:bg-slate-100 hover:text-sky-600"
+            >
               <a href="/pages/user/validasi-data/" class="flex items-center">
                 <i class="fa-solid fa-clipboard icon-slate-50 fa-lg mr-2"></i>
                 <p>Validasi Data</p>
               </a>
             </li>
-            <li class="admin-menu-only p-2">
+            <li
+              class="my-2 rounded-xl py-1 px-7 hover:bg-slate-100 hover:text-sky-600"
+            >
               <a href="/pages/user/info/" class="flex items-center">
                 <i class="fa-solid fa-circle-info icon-slate-50 fa-lg mr-2"></i>
                 <p>Info</p>
               </a>
             </li>
-            <li class="p-2">
+            <li
+              class="my-2 rounded-xl py-1 px-7 hover:bg-slate-100 hover:text-sky-600"
+            >
               <button class="logout-btn flex items-center">
                 <i
                   class="fa-solid fa-right-from-bracket icon-slate-50 fa-lg mr-2"
@@ -106,178 +111,141 @@
           </ul>
         </div>
       </div>
-
-      <!-- Content  Page-->
-      <div class="container mx-auto my-28 lg:px-36">
-        <!-- Content Judul -->
-        <div class="my-10 flex items-center justify-center">
-          <div>
-            <p class="text-center text-2xl font-bold">Validasi Data</p>
-            <div class="my-2 flex items-center justify-center">
-              <hr class="w-12 border-2 border-sky-800" />
-            </div>
-          </div>
-        </div>
-        <!-- Content Page-->
-        <div class="mx-5">
-          <table class="w-full table-auto border-separate border-spacing-y-4">
-            <thead>
-              <tr class="bg-sky-100 text-slate-700">
-                <th>#</th>
-                <th>Nama Data</th>
-                <th>Update</th>
-                <th>Pengirim</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="bg-sky-200 text-center">
-                <td>1</td>
-                <td>Hujan</td>
-                <td class="tanggaljam"></td>
-                <td>BMKG</td>
-                <td>
-                  <button
-                    class="rounded-full bg-rose-600 px-5 py-0.5 text-slate-50"
-                  >
-                    Gagal
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <td colspan="5" class="bg-slate-200 px-5 py-2">
-                  Keterangan : BMKG tidak memberikan data terbaru
-                </td>
-              </tr>
-              <tr class="bg-sky-200 text-center">
-                <td class="py-5">2</td>
-                <td>Angin</td>
-                <td class="tanggaljam"></td>
-                <td>Perikanan</td>
-                <td>
-                  <button
-                    class="rounded-full bg-green-400 px-5 py-0.5 text-slate-50"
-                  >
-                    Sukses
-                  </button>
-                </td>
-              </tr>
-              <tr class="bg-sky-200 text-center">
-                <td class="py-5">3</td>
-                <td>Temperatur</td>
-                <td class="tanggaljam"></td>
-                <td>BMKG</td>
-                <td>
-                  <button
-                    class="rounded-full bg-green-400 px-5 py-0.5 text-slate-50"
-                  >
-                    Sukses
-                  </button>
-                </td>
-              </tr>
-              <tr class="bg-sky-200 text-center">
-                <td class="py-5">4</td>
-                <td>Gelombang</td>
-                <td class="tanggaljam"></td>
-                <td>BMKG</td>
-                <td>
-                  <button
-                    class="rounded-full bg-green-400 px-5 py-0.5 text-slate-50"
-                  >
-                    Sukses
-                  </button>
-                </td>
-              </tr>
-              <tr class="bg-sky-200 text-center">
-                <td class="py-5">5</td>
-                <td>Arus</td>
-                <td class="tanggaljam"></td>
-                <td>Perikanan</td>
-                <td>
-                  <button
-                    class="rounded-full bg-green-400 px-5 py-0.5 text-slate-50"
-                  >
-                    Sukses
-                  </button>
-                </td>
-              </tr>
-              <tr class="bg-sky-200 text-center">
-                <td class="py-5">6</td>
-                <td>Ikan</td>
-                <td class="tanggaljam"></td>
-                <td>BMKG</td>
-                <td>
-                  <button
-                    class="rounded-full bg-green-400 px-5 py-0.5 text-slate-50"
-                  >
-                    Sukses
-                  </button>
-                </td>
-              </tr>
-              <tr class="bg-sky-200 text-center">
-                <td class="py-5">7</td>
-                <td>Kapal</td>
-                <td class="tanggaljam"></td>
-                <td>BMKG</td>
-                <td>
-                  <button
-                    class="rounded-full bg-green-400 px-5 py-0.5 text-slate-50"
-                  >
-                    Sukses
-                  </button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <!-- Footer -->
-      <footer>
-        <p class="py-7 text-center font-bold">
-          &#169;BRIN, Hak cipta dilindungi.
-        </p>
-      </footer>
     </div>
 
-    <!-- JS -->
-    <script type="module" src="/pages/user/dist/js/script.js"></script>
+    <!-- Main Section -->
+    <div class="container mx-auto my-16 lg:px-36">
+      <!-- Content Judul -->
+      <div class="my-10 flex items-center justify-center">
+        <div>
+          <p class="text-center text-2xl font-bold">Validasi Data</p>
+          <div class="my-2 flex items-center justify-center">
+            <hr class="w-12 border-2 border-sky-800" />
+          </div>
+        </div>
+      </div>
+      <!-- Content Page-->
+      <div class="mx-5">
+        <table class="w-full table-auto border-separate border-spacing-y-4">
+          <thead>
+            <tr class="bg-sky-100 text-slate-700">
+              <th>#</th>
+              <th>Nama Data</th>
+              <th>Update</th>
+              <th>Pengirim</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="bg-sky-200 text-center">
+              <td>1</td>
+              <td>Hujan</td>
+              <td class="tanggaljam"></td>
+              <td>BMKG</td>
+              <td>
+                <button
+                  class="rounded-full bg-rose-600 px-5 py-0.5 text-slate-50"
+                >
+                  Gagal
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="5" class="bg-slate-200 px-5 py-2">
+                Keterangan : BMKG tidak memberikan data terbaru
+              </td>
+            </tr>
+            <tr class="bg-sky-200 text-center">
+              <td class="py-5">2</td>
+              <td>Angin</td>
+              <td class="tanggaljam"></td>
+              <td>Perikanan</td>
+              <td>
+                <button
+                  class="rounded-full bg-green-400 px-5 py-0.5 text-slate-50"
+                >
+                  Sukses
+                </button>
+              </td>
+            </tr>
+            <tr class="bg-sky-200 text-center">
+              <td class="py-5">3</td>
+              <td>Temperatur</td>
+              <td class="tanggaljam"></td>
+              <td>BMKG</td>
+              <td>
+                <button
+                  class="rounded-full bg-green-400 px-5 py-0.5 text-slate-50"
+                >
+                  Sukses
+                </button>
+              </td>
+            </tr>
+            <tr class="bg-sky-200 text-center">
+              <td class="py-5">4</td>
+              <td>Gelombang</td>
+              <td class="tanggaljam"></td>
+              <td>BMKG</td>
+              <td>
+                <button
+                  class="rounded-full bg-green-400 px-5 py-0.5 text-slate-50"
+                >
+                  Sukses
+                </button>
+              </td>
+            </tr>
+            <tr class="bg-sky-200 text-center">
+              <td class="py-5">5</td>
+              <td>Arus</td>
+              <td class="tanggaljam"></td>
+              <td>Perikanan</td>
+              <td>
+                <button
+                  class="rounded-full bg-green-400 px-5 py-0.5 text-slate-50"
+                >
+                  Sukses
+                </button>
+              </td>
+            </tr>
+            <tr class="bg-sky-200 text-center">
+              <td class="py-5">6</td>
+              <td>Ikan</td>
+              <td class="tanggaljam"></td>
+              <td>BMKG</td>
+              <td>
+                <button
+                  class="rounded-full bg-green-400 px-5 py-0.5 text-slate-50"
+                >
+                  Sukses
+                </button>
+              </td>
+            </tr>
+            <tr class="bg-sky-200 text-center">
+              <td class="py-5">7</td>
+              <td>Kapal</td>
+              <td class="tanggaljam"></td>
+              <td>BMKG</td>
+              <td>
+                <button
+                  class="rounded-full bg-green-400 px-5 py-0.5 text-slate-50"
+                >
+                  Sukses
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
 
-    <script type="module">
-      import { format } from 'date-fns';
+    <!-- Footer -->
+    <footer>
+      <p class="py-7 text-center font-bold">
+        &#169;BRIN, Hak cipta dilindungi.
+      </p>
+    </footer>
 
-      document.querySelectorAll('.tanggaljam').forEach((elementDate) => {
-        elementDate.textContent = format(new Date(), 'dd/MM/yyyy k:mm:ss');
-      });
-
-      const profileName = document.querySelector('.profile-name');
-      const profileRole = document.querySelector('.profile-role');
-
-      profileName.textContent =
-        window.localStorage.getItem('current-user-name');
-      profileRole.textContent =
-        window.localStorage.getItem('current-user-role');
-
-      const logOutBtn = document.querySelector('.logout-btn');
-
-      logOutBtn.addEventListener('click', () => {
-        window.localStorage.setItem('current-user-name', '');
-        window.localStorage.setItem('current-user-role', '');
-        window.localStorage.setItem('current-user-remember', 'false');
-
-        window.location.replace('/');
-      });
-
-      const adminMenuOnly = document.querySelectorAll('.admin-menu-only');
-      const isAdmin = window.localStorage.getItem('current-user-role');
-      if (isAdmin.toLowerCase() !== 'admin') {
-        adminMenuOnly.forEach((menu) => menu.classList.add('hidden'));
-      }
-
-      const isLogin = window.localStorage.getItem('current-user-name');
-      if (isLogin === '') {
-        window.location.replace('/');
-      }
-    </script>
+    <!-- Js -->
+    <script type="module" src="/pages/user/validasi-data/script.js"></script>
   </body>
 </html>

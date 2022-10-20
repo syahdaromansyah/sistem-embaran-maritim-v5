@@ -23,7 +23,6 @@ export default function updateInformasiCuaca(dataCuacaLokal, dataCuacaLaut) {
   nilaiKSwell.textContent = dataCuacaLaut.swellHeight_m;
   // nilaiASwell.textContent = sixteenCompassDirID[dataCuacaLaut.swellDir16Point];
   nilaiAnginLaut.textContent = dataCuacaLaut.windspeedKmph;
-  // nilaiAAnginLaut.textContent = sixteenCompassDirID[dataCuacaLaut.winddir16Point];
   nilaiCurahHujan.textContent = dataCuacaLaut.precipMM;
   nilaiTempLaut.textContent = dataCuacaLaut.tempC;
 }

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/favicon.png" type="image/png" />
-    <title>SEMAR-Sistem Embaran Maritim</title>
+    <title>Semar - Sistem Embaran Maritim | Info</title>
 
     <!-- Fontawesome -->
     <script
@@ -17,602 +17,550 @@
     <link rel="stylesheet" href="/pages/user/dist/css/output.css" />
   </head>
   <body class="bg-slate-100 shadow shadow-slate-200">
-    <div class="app">
-      <!-- Navigation Page -->
-      <nav
-        class="fixed top-0 left-0 w-full bg-slate-50/25 shadow shadow-slate-200 backdrop-blur"
-      >
-        <!-- Navigation Page Container -->
-        <div class="container mx-auto px-8">
-          <div class="flex items-center justify-between py-3.5">
-            <!-- Navigation Page Left -->
-            <a
-              href="/pages/user/dashboardpeta/"
-              class="inline-block py-1 transition duration-300 focus:outline-none focus:ring focus:ring-sky-300 focus:ring-offset-2 focus:ring-offset-slate-50"
-            >
+    <!-- Navigation Page -->
+    <nav
+      class="sticky top-0 left-0 z-50 w-full bg-slate-50/25 shadow shadow-slate-200 backdrop-blur"
+    >
+      <!-- Navigation Page Container -->
+      <div class="container mx-auto">
+        <div class="flex items-center justify-between py-3.5">
+          <!-- Navigation Page Left -->
+          <a
+            href="/pages/user/dashboardpeta/"
+            class="inline-block py-1 transition duration-300 focus:outline-none focus:ring focus:ring-sky-300 focus:ring-offset-2 focus:ring-offset-slate-50"
+          >
+            <img
+              src="/pages/user/dist/img/LOGO-SEMAR.png"
+              alt="SEMAR-Sistem Embaran Maritim"
+              class="h-11"
+            />
+          </a>
+          <!-- Navigation Page Right -->
+          <div class="flex items-center px-4">
+            <button class="profil">
               <img
-                src="/pages/user/dist/img/LOGO-SEMAR.png"
-                alt="SEMAR-Sistem Embaran Maritim"
-                class="h-11"
+                src="/pages/user/dist/img/user.png"
+                alt="Profile"
+                class="border-5 mr-4 w-11 rounded"
               />
-            </a>
-            <!-- Navigation Page Right -->
-            <div class="flex items-center px-4">
-               <!-- navigation icon -->
-            <button id="icon" name="icon" type="button">
-              <img
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Navigation Menu -->
+    <div class="flex justify-end">
+      <div
+        class="navprofil fixed right-0 top-20 z-50 hidden h-full w-72 items-center bg-sky-700 text-slate-50"
+      >
+        <div class="p-7">
+          <div class="flex items-center py-5">
+            <img
               src="/pages/user/dist/img/user.png"
               alt="Profile"
               class="mr-4 w-11 rounded"
             />
-            </button>
+            <div>
+              <p class="profile-name text-lg font-semibold"></p>
+              <p class="profile-role text-xs"></p>
             </div>
           </div>
-        </div>
-      </nav>
-      <!-- Navigation Menu -->
-      <div
-        id="nav-menu"
-        class="fixed right-0 top-20 hidden h-full w-72 items-center bg-sky-900 text-slate-50"
-      >
-      <div class="p-7">
-        <div class="flex items-center py-5">
-          <img
-            src="/pages/user/dist/img/user.png"
-            alt="Profile"
-            class="mr-4 w-11 rounded"
-          />
-          <div>
-            <p class="profile-name text-lg font-semibold"></p>
-            <p class="profile-role text-xs"></p>
-          </div>
-        </div>
-        <ul class="mt-4">
-          <li
-            class="my-2 rounded-xl py-1 px-7 hover:bg-slate-100 hover:text-sky-600"
-          >
-            <a 
-              href="/pages/user/dashboardpeta/" 
-              class="flex items-center"
+          <ul class="mt-4">
+            <li
+              class="my-2 rounded-xl py-1 px-7 hover:bg-slate-100 hover:text-sky-600"
             >
-              <i class="fa-solid fa-grip icon-slate-50 fa-lg pr-2"></i>
-              <p>Dashboard</p>
-            </a>
-          </li>
-          <li
-            class="admin-menu-only my-2 rounded-xl py-1 px-7 hover:bg-slate-100 hover:text-sky-600"
-          >
-            <a 
-              href="/pages/user-manage/" 
-              class="flex items-center"
+              <a href="/pages/user/dashboardpeta/" class="flex items-center">
+                <i class="fa-solid fa-grip icon-slate-50 fa-lg pr-2"></i>
+                <p>Dashboard</p>
+              </a>
+            </li>
+            <li
+              class="admin-menu-only my-2 rounded-xl py-1 px-7 hover:bg-slate-100 hover:text-sky-600"
             >
-              <i class="fa-solid fa-user-gear icon-slate-50 fa-lg mr-2"></i>
-              <p>Management User</p>
-            </a>
-          </li>
-          <li
-            class="admin-menu-only my-2 rounded-xl py-1 px-7 hover:bg-slate-100 hover:text-sky-600"
-          >
-            <a 
-              href="/pages/user/validasi-data/" 
-              class="flex items-center"
+              <a href="/pages/user-manage/" class="flex items-center">
+                <i class="fa-solid fa-user-gear icon-slate-50 fa-lg mr-2"></i>
+                <p>Management User</p>
+              </a>
+            </li>
+            <li
+              class="admin-menu-only my-2 rounded-xl py-1 px-7 hover:bg-slate-100 hover:text-sky-600"
             >
-              <i class="fa-solid fa-clipboard icon-slate-50 fa-lg mr-2"></i>
-              <p>Validasi Data</p>
-            </a>
-          </li>
-          <li
-            class="my-2 rounded-xl py-1 px-7 hover:bg-slate-100 hover:text-sky-600"
-          >
-            <a 
-              href="/pages/user/info/" 
-              class="flex items-center"
+              <a href="/pages/user/validasi-data/" class="flex items-center">
+                <i class="fa-solid fa-clipboard icon-slate-50 fa-lg mr-2"></i>
+                <p>Validasi Data</p>
+              </a>
+            </li>
+            <li
+              class="my-2 rounded-xl py-1 px-7 hover:bg-slate-100 hover:text-sky-600"
             >
-              <i class="fa-solid fa-circle-info icon-slate-50 fa-lg mr-2"></i>
-              <p>Info</p>
-            </a>
-          </li>
-          <li
-            class="my-2 rounded-xl py-1 px-7 hover:bg-slate-100 hover:text-sky-600"
-          >
-            <button class="logout-btn flex items-center">
-              <i
-                class="fa-solid fa-right-from-bracket icon-slate-50 fa-lg mr-2"
-              ></i>
-              <p>Logout</p>
-            </button>
+              <a href="/pages/user/info/" class="flex items-center">
+                <i class="fa-solid fa-circle-info icon-slate-50 fa-lg mr-2"></i>
+                <p>Info</p>
+              </a>
+            </li>
+            <li
+              class="my-2 rounded-xl py-1 px-7 hover:bg-slate-100 hover:text-sky-600"
+            >
+              <button class="logout-btn flex items-center">
+                <i
+                  class="fa-solid fa-right-from-bracket icon-slate-50 fa-lg mr-2"
+                ></i>
+                <p>Logout</p>
+              </button>
             </li>
           </ul>
         </div>
       </div>
+    </div>
 
-      <!-- Content  Page-->
-      <div class="container mx-auto my-28 lg:px-36">
-        <!-- Content Judul -->
-        <div class="my-10 flex items-center justify-center">
+    <!-- Main Section -->
+    <div class="container mx-auto my-16 lg:px-36">
+      <!-- Content Judul -->
+      <div class="my-10 flex items-center justify-center">
+        <div>
+          <p class="text-center text-2xl font-bold">Info</p>
+          <div class="my-2 flex items-center justify-center">
+            <hr class="w-12 border-2 border-sky-800" />
+          </div>
+        </div>
+      </div>
+      <!-- Content Top -->
+      <div class="mt-4 md:flex md:justify-between">
+        <!-- Content Top Left -->
+        <div
+          class="flex justify-start px-9 md:items-center md:justify-center md:px-0"
+        >
+          <div class="mr-4 rounded-full bg-sky-800 px-5 pt-4 md:py-4">
+            <i
+              class="fa-solid fa-location-dot icon-slate-50 fa-2x text-slate-100"
+            ></i>
+          </div>
           <div>
-            <p class="text-center text-2xl font-bold">Info</p>
-            <div class="my-2 flex items-center justify-center">
-              <hr class="w-12 border-2 border-sky-800" />
-            </div>
+            <p class="text-xl font-semibold">Lokasi Anda</p>
+            <p class="text-xs leading-5">Laut Selatan Yogjakarta</p>
+            <p class="text-xs">Waktu : <span class="tanggal"></span></p>
           </div>
         </div>
-        <!-- Content Top -->
-        <div class="mt-4 md:flex md:justify-between">
-          <!-- Content Top Left -->
-          <div
-            class="flex justify-start px-9 md:items-center md:justify-center md:px-0"
-          >
-            <div class="mr-4 rounded-full bg-sky-800 px-5 pt-4 md:py-4">
-              <i
-                class="fa-solid fa-location-dot icon-slate-50 fa-2x text-slate-100"
-              ></i>
-            </div>
-            <div>
-              <p class="text-xl font-semibold">Lokasi Anda</p>
-              <p class="text-xs leading-5">Laut Selatan Yogjakarta</p>
-              <p class="text-xs">Waktu : <span class="tanggal"></span></p>
-            </div>
+        <!-- Content Top Right -->
+        <div
+          class="mt-7 flex items-center justify-start px-5 lg:justify-center lg:p-0"
+        >
+          <div class="mr-4 rounded-full bg-sky-800 p-4 shadow shadow-slate-200">
+            <i
+              class="fa-solid fa-map-location-dot icon-slate-50 fa-2x text-slate-100"
+            ></i>
           </div>
-          <!-- Content Top Right -->
-          <div
-            class="mt-7 flex items-center justify-start px-5 lg:justify-center lg:p-0"
-          >
-            <div
-              class="mr-4 rounded-full bg-sky-800 p-4 shadow shadow-slate-200"
-            >
-              <i
-                class="fa-solid fa-map-location-dot icon-slate-50 fa-2x text-slate-100"
-              ></i>
-            </div>
-            <div>
-              <p class="mb-1 text-xl font-semibold">Cari Lokasi</p>
-              <input
-                type="search"
-                placeholder="Cari lokasi"
-                class="mb-1.5 w-56 rounded-lg border-2 bg-transparent px-1 focus:outline-none focus:ring"
-              /><br />
-              <input
-                type="date"
-                class="w-36 rounded-lg border-2 bg-transparent px-1 focus:outline-none focus:ring"
-              />
-              <button class="ml-3 rounded bg-sky-800 px-5 py-0.5 text-slate-50">
-                Cari
-              </button>
-            </div>
+          <div>
+            <p class="mb-1 text-xl font-semibold">Cari Lokasi</p>
+            <input
+              type="search"
+              placeholder="Cari lokasi"
+              class="mb-1.5 w-56 rounded-lg border-2 bg-transparent px-1 focus:outline-none focus:ring"
+            /><br />
+            <input
+              type="date"
+              class="w-36 rounded-lg border-2 bg-transparent px-1 focus:outline-none focus:ring"
+            />
+            <button class="ml-3 rounded bg-sky-800 px-5 py-0.5 text-slate-50">
+              Cari
+            </button>
           </div>
         </div>
-        <!-- Content bottom -->
-        <div class="mt-14">
-          <p class="m-2 text-xl font-bold">Hasil Pencarian :</p>
-          <!-- Hail Pencarian-->
-          <div class="gap-11 lg:flex lg:justify-between">
-            <!-- Hasil Pencarian Left -->
-            <div class="lg:w-1/2">
-              <!-- Hasil Pencarian Left Top-->
-              <div>
-                <!-- Titile hujan -->
-                <p class="text-semibold bg-sky-800 py-1 px-3 text-slate-50">
-                  Prakiraan hujan <span class="tanggal"></span>, Laut Selatan
-                  Jogja
-                </p>
-                <!-- Container data hujan -->
-                <div>
-                  <!-- Data hujan -->
-                  <div class="shadow-slate-150 m-3 bg-slate-100 shadow">
-                    <p class="bg-sky-200 py-1 px-3 text-sky-800">
-                      Prakiraan dinihari
-                    </p>
-                    <div class="py-2 px-3 text-sm">
-                      <p class="leading-3">Sebagian kecil hujan</p>
-                      <p>Berkisar Antara 0.54 mm/jam sampai 4.7 mm/jam</p>
-                    </div>
-                  </div>
-                  <div class="shadow-slate-150 m-3 bg-slate-100 shadow">
-                    <p class="bg-sky-200 py-1 px-3 text-sky-800">
-                      Prakiraan pagi
-                    </p>
-                    <div class="py-2 px-3 text-sm">
-                      <p class="leading-3">Sebagian kecil hujan</p>
-                      <p>Berkisar Antara 0.64 mm/jam sampai 4.7 mm/jam</p>
-                    </div>
-                  </div>
-                  <div class="shadow-slate-150 m-3 bg-slate-100 shadow">
-                    <p class="bg-sky-200 py-1 px-3 text-sky-800">
-                      Prakiraan Siang
-                    </p>
-                    <div class="py-2 px-3 text-sm">
-                      <p class="leading-3">Tidak ada hujan</p>
-                    </div>
-                  </div>
-                  <div class="shadow-slate-150 m-3 bg-slate-100 shadow">
-                    <p class="bg-sky-200 py-1 px-3 text-sky-800">
-                      Prakiraan sore
-                    </p>
-                    <div class="py-2 px-3 text-sm">
-                      <p class="leading-3">Tidak ada hujan</p>
-                    </div>
-                  </div>
-                  <div class="shadow-slate-150 m-3 bg-slate-100 shadow">
-                    <p class="bg-sky-200 py-1 px-3 text-sky-800">
-                      Prakiraan malam
-                    </p>
-                    <div class="py-2 px-3 text-sm">
-                      <p class="leading-3">Sebagian kecil hujan</p>
-                      <p>Berkisar Antara 0.53 mm/jam sampai 5.1 mm/jam</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Hasil Pencarian Left Bottom -->
-              <div class="mt-14">
-                <!-- Title Angin -->
-                <p class="text-semibold bg-sky-800 py-1 px-3 text-slate-50">
-                  Prakiraan angin <span class="tanggal"></span>, Laut Selatan
-                  Jogja
-                </p>
-                <!-- Container data Angin -->
-                <div>
-                  <!-- Data Angin -->
-                  <div class="shadow-slate-150 m-3 bg-slate-100 shadow">
-                    <p class="bg-sky-200 py-1 px-3 text-sky-800">
-                      Prakiraan dinihari (Jam 1 hingga 5)
-                    </p>
-                    <div class="py-2 px-3 text-sm">
-                      <p class="leading-3">
-                        Kecepatan angin berkisar dari 6.23 hingga 7.79 m/s
-                      </p>
-                      <p>Arah angin dominan mengarah ke Utara</p>
-                    </div>
-                  </div>
-                  <div class="shadow-slate-150 m-3 bg-slate-100 shadow">
-                    <p class="bg-sky-200 py-1 px-3 text-sky-800">
-                      Prakiraan angin pagi (Jam 6 hingga 10)
-                    </p>
-                    <div class="py-2 px-3 text-sm">
-                      <p class="leading-3">
-                        Sebagian angin berkisar dari 6.47 hingga 8.09 m/s
-                      </p>
-                      <p>Arah angin dominan mengarah ke Utara</p>
-                    </div>
-                  </div>
-                  <div class="shadow-slate-150 m-3 bg-slate-100 shadow">
-                    <p class="bg-sky-200 py-1 px-3 text-sky-800">
-                      Prakiraan siang (Jam 11 hingga 14)
-                    </p>
-                    <div class="py-2 px-3 text-sm">
-                      <p class="leading-3">
-                        Sebagian angin berkisar dari 6.22 hingga 7.66 m/s
-                      </p>
-                      <p>Arah angin dominan mengarah ke Utara</p>
-                    </div>
-                  </div>
-                  <div class="shadow-slate-150 m-3 bg-slate-100 shadow">
-                    <p class="bg-sky-200 py-1 px-3 text-sky-800">
-                      Prakiraan sore (Jam 15 hingga 18)
-                    </p>
-                    <div class="py-2 px-3 text-sm">
-                      <p class="leading-3">
-                        Sebagian angin berkisar dari 5.51 hingga 7.55 m/s
-                      </p>
-                      <p>Arah angin dominan mengarah ke Utara</p>
-                    </div>
-                  </div>
-                  <div class="shadow-slate-150 m-3 bg-slate-100 shadow">
-                    <p class="bg-sky-200 py-1 px-3 text-sky-800">
-                      Prakiraan malam (Jam 19 hingga 24)
-                    </p>
-                    <div class="py-2 px-3 text-sm">
-                      <p class="leading-3">
-                        Sebagian angin berkisar dari 5.45 hingga 7.19 m/s
-                      </p>
-                      <p>Arah angin dominan mengarah ke Utara</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Container Hasil Pencarian Right -->
-            <div class="mt-14 lg:mt-0 lg:w-1/2">
-              <!-- Tittle Longitude dan latitude -->
+      </div>
+      <!-- Content bottom -->
+      <div class="mt-14">
+        <p class="m-2 text-xl font-bold">Hasil Pencarian :</p>
+        <!-- Hail Pencarian-->
+        <div class="gap-11 lg:flex lg:justify-between">
+          <!-- Hasil Pencarian Left -->
+          <div class="lg:w-1/2">
+            <!-- Hasil Pencarian Left Top-->
+            <div>
+              <!-- Titile hujan -->
               <p class="text-semibold bg-sky-800 py-1 px-3 text-slate-50">
-                List ZPPI <span class="tanggal"></span>, Laut Selatan Jogja
+                Prakiraan hujan <span class="tanggal"></span>, Laut Selatan
+                Jogja
               </p>
-              <!-- Container Data Longitude dan Latitude-->
+              <!-- Container data hujan -->
               <div>
-                <!-- Data Longitud dan Latitude -->
-                <div class="m-3">
-                  <div
-                    class="flex w-auto items-center justify-between gap-4 border-y-2"
-                  >
-                    <p>-8888.999</p>
-                    <p>-6008.899</p>
-                    <p>-6999.999</p>
-                    <p>-8869.989</p>
+                <!-- Data hujan -->
+                <div class="shadow-slate-150 m-3 bg-slate-100 shadow">
+                  <p class="bg-sky-200 py-1 px-3 text-sky-800">
+                    Prakiraan dinihari
+                  </p>
+                  <div class="py-2 px-3 text-sm">
+                    <p class="cuaca leading-3">Sebagian kecil hujan</p>
+                    <p>Berkisar Antara 0.54 mm/jam sampai 4.7 mm/jam</p>
                   </div>
                 </div>
-                <div class="m-3">
-                  <div
-                    class="flex w-auto items-center justify-between gap-4 border-y-2"
-                  >
-                    <p>-8888.999</p>
-                    <p>-6008.899</p>
-                    <p>-6999.999</p>
-                    <p>-8869.989</p>
+                <div class="shadow-slate-150 m-3 bg-slate-100 shadow">
+                  <p class="bg-sky-200 py-1 px-3 text-sky-800">
+                    Prakiraan pagi
+                  </p>
+                  <div class="py-2 px-3 text-sm">
+                    <p class="leading-3">Sebagian kecil hujan</p>
+                    <p>Berkisar Antara 0.64 mm/jam sampai 4.7 mm/jam</p>
                   </div>
                 </div>
-                <div class="m-3">
-                  <div
-                    class="flex w-auto items-center justify-between gap-4 border-y-2"
-                  >
-                    <p>-8888.999</p>
-                    <p>-6008.899</p>
-                    <p>-6999.999</p>
-                    <p>-8869.989</p>
+                <div class="shadow-slate-150 m-3 bg-slate-100 shadow">
+                  <p class="bg-sky-200 py-1 px-3 text-sky-800">
+                    Prakiraan Siang
+                  </p>
+                  <div class="py-2 px-3 text-sm">
+                    <p class="leading-3">Tidak ada hujan</p>
                   </div>
                 </div>
-                <div class="m-3">
-                  <div
-                    class="flex w-auto items-center justify-between gap-4 border-y-2"
-                  >
-                    <p>-8888.999</p>
-                    <p>-6008.899</p>
-                    <p>-6999.999</p>
-                    <p>-8869.989</p>
+                <div class="shadow-slate-150 m-3 bg-slate-100 shadow">
+                  <p class="bg-sky-200 py-1 px-3 text-sky-800">
+                    Prakiraan sore
+                  </p>
+                  <div class="py-2 px-3 text-sm">
+                    <p class="leading-3">Tidak ada hujan</p>
                   </div>
                 </div>
-                <div class="m-3">
-                  <div
-                    class="flex w-auto items-center justify-between gap-4 border-y-2"
-                  >
-                    <p>-8888.999</p>
-                    <p>-6008.899</p>
-                    <p>-6999.999</p>
-                    <p>-8869.989</p>
+                <div class="shadow-slate-150 m-3 bg-slate-100 shadow">
+                  <p class="bg-sky-200 py-1 px-3 text-sky-800">
+                    Prakiraan malam
+                  </p>
+                  <div class="py-2 px-3 text-sm">
+                    <p class="leading-3">Sebagian kecil hujan</p>
+                    <p>Berkisar Antara 0.53 mm/jam sampai 5.1 mm/jam</p>
                   </div>
                 </div>
-                <div class="m-3">
-                  <div
-                    class="flex w-auto items-center justify-between gap-4 border-y-2"
-                  >
-                    <p>-8888.999</p>
-                    <p>-6008.899</p>
-                    <p>-6999.999</p>
-                    <p>-8869.989</p>
+              </div>
+            </div>
+
+            <!-- Hasil Pencarian Left Bottom -->
+            <div class="mt-14">
+              <!-- Title Angin -->
+              <p class="text-semibold bg-sky-800 py-1 px-3 text-slate-50">
+                Prakiraan angin <span class="tanggal"></span>, Laut Selatan
+                Jogja
+              </p>
+              <!-- Container data Angin -->
+              <div>
+                <!-- Data Angin -->
+                <div class="shadow-slate-150 m-3 bg-slate-100 shadow">
+                  <p class="bg-sky-200 py-1 px-3 text-sky-800">
+                    Prakiraan dinihari (Jam 1 hingga 5)
+                  </p>
+                  <div class="py-2 px-3 text-sm">
+                    <p class="leading-3">
+                      Kecepatan angin berkisar dari 6.23 hingga 7.79 m/s
+                    </p>
+                    <p>Arah angin dominan mengarah ke Utara</p>
                   </div>
                 </div>
-                <div class="m-3">
-                  <div
-                    class="flex w-auto items-center justify-between gap-4 border-y-2"
-                  >
-                    <p>-8888.999</p>
-                    <p>-6008.899</p>
-                    <p>-6999.999</p>
-                    <p>-8869.989</p>
+                <div class="shadow-slate-150 m-3 bg-slate-100 shadow">
+                  <p class="bg-sky-200 py-1 px-3 text-sky-800">
+                    Prakiraan angin pagi (Jam 6 hingga 10)
+                  </p>
+                  <div class="py-2 px-3 text-sm">
+                    <p class="leading-3">
+                      Sebagian angin berkisar dari 6.47 hingga 8.09 m/s
+                    </p>
+                    <p>Arah angin dominan mengarah ke Utara</p>
                   </div>
                 </div>
-                <div class="m-3">
-                  <div
-                    class="flex w-auto items-center justify-between gap-4 border-y-2"
-                  >
-                    <p>-8888.999</p>
-                    <p>-6008.899</p>
-                    <p>-6999.999</p>
-                    <p>-8869.989</p>
+                <div class="shadow-slate-150 m-3 bg-slate-100 shadow">
+                  <p class="bg-sky-200 py-1 px-3 text-sky-800">
+                    Prakiraan siang (Jam 11 hingga 14)
+                  </p>
+                  <div class="py-2 px-3 text-sm">
+                    <p class="leading-3">
+                      Sebagian angin berkisar dari 6.22 hingga 7.66 m/s
+                    </p>
+                    <p>Arah angin dominan mengarah ke Utara</p>
                   </div>
                 </div>
-                <div class="m-3">
-                  <div
-                    class="flex w-auto items-center justify-between gap-4 border-y-2"
-                  >
-                    <p>-8888.999</p>
-                    <p>-6008.899</p>
-                    <p>-6999.999</p>
-                    <p>-8869.989</p>
+                <div class="shadow-slate-150 m-3 bg-slate-100 shadow">
+                  <p class="bg-sky-200 py-1 px-3 text-sky-800">
+                    Prakiraan sore (Jam 15 hingga 18)
+                  </p>
+                  <div class="py-2 px-3 text-sm">
+                    <p class="leading-3">
+                      Sebagian angin berkisar dari 5.51 hingga 7.55 m/s
+                    </p>
+                    <p>Arah angin dominan mengarah ke Utara</p>
                   </div>
                 </div>
-                <div class="m-3">
-                  <div
-                    class="flex w-auto items-center justify-between gap-4 border-y-2"
-                  >
-                    <p>-8888.999</p>
-                    <p>-6008.899</p>
-                    <p>-6999.999</p>
-                    <p>-8869.989</p>
+                <div class="shadow-slate-150 m-3 bg-slate-100 shadow">
+                  <p class="bg-sky-200 py-1 px-3 text-sky-800">
+                    Prakiraan malam (Jam 19 hingga 24)
+                  </p>
+                  <div class="py-2 px-3 text-sm">
+                    <p class="leading-3">
+                      Sebagian angin berkisar dari 5.45 hingga 7.19 m/s
+                    </p>
+                    <p>Arah angin dominan mengarah ke Utara</p>
                   </div>
                 </div>
-                <div class="m-3">
-                  <div
-                    class="flex w-auto items-center justify-between gap-4 border-y-2"
-                  >
-                    <p>-8888.999</p>
-                    <p>-6008.899</p>
-                    <p>-6999.999</p>
-                    <p>-8869.989</p>
-                  </div>
+              </div>
+            </div>
+          </div>
+          <!-- Container Hasil Pencarian Right -->
+          <div class="mt-14 lg:mt-0 lg:w-1/2">
+            <!-- Tittle Longitude dan latitude -->
+            <p class="text-semibold bg-sky-800 py-1 px-3 text-slate-50">
+              List ZPPI <span class="tanggal"></span>, Laut Selatan Jogja
+            </p>
+            <!-- Container Data Longitude dan Latitude-->
+            <div>
+              <!-- Data Longitud dan Latitude -->
+              <div class="m-3">
+                <div
+                  class="flex w-auto items-center justify-between gap-4 border-y-2"
+                >
+                  <p>-8888.999</p>
+                  <p>-6008.899</p>
+                  <p>-6999.999</p>
+                  <p>-8869.989</p>
                 </div>
-                <div class="m-3">
-                  <div
-                    class="flex w-auto items-center justify-between gap-4 border-y-2"
-                  >
-                    <p>-8888.999</p>
-                    <p>-6008.899</p>
-                    <p>-6999.999</p>
-                    <p>-8869.989</p>
-                  </div>
+              </div>
+              <div class="m-3">
+                <div
+                  class="flex w-auto items-center justify-between gap-4 border-y-2"
+                >
+                  <p>-8888.999</p>
+                  <p>-6008.899</p>
+                  <p>-6999.999</p>
+                  <p>-8869.989</p>
                 </div>
-                <div class="m-3">
-                  <div
-                    class="flex w-auto items-center justify-between gap-4 border-y-2"
-                  >
-                    <p>-8888.999</p>
-                    <p>-6008.899</p>
-                    <p>-6999.999</p>
-                    <p>-8869.989</p>
-                  </div>
+              </div>
+              <div class="m-3">
+                <div
+                  class="flex w-auto items-center justify-between gap-4 border-y-2"
+                >
+                  <p>-8888.999</p>
+                  <p>-6008.899</p>
+                  <p>-6999.999</p>
+                  <p>-8869.989</p>
                 </div>
-                <div class="m-3">
-                  <div
-                    class="flex w-auto items-center justify-between gap-4 border-y-2"
-                  >
-                    <p>-8888.999</p>
-                    <p>-6008.899</p>
-                    <p>-6999.999</p>
-                    <p>-8869.989</p>
-                  </div>
+              </div>
+              <div class="m-3">
+                <div
+                  class="flex w-auto items-center justify-between gap-4 border-y-2"
+                >
+                  <p>-8888.999</p>
+                  <p>-6008.899</p>
+                  <p>-6999.999</p>
+                  <p>-8869.989</p>
                 </div>
-                <div class="m-3">
-                  <div
-                    class="flex w-auto items-center justify-between gap-4 border-y-2"
-                  >
-                    <p>-8888.999</p>
-                    <p>-6008.899</p>
-                    <p>-6999.999</p>
-                    <p>-8869.989</p>
-                  </div>
+              </div>
+              <div class="m-3">
+                <div
+                  class="flex w-auto items-center justify-between gap-4 border-y-2"
+                >
+                  <p>-8888.999</p>
+                  <p>-6008.899</p>
+                  <p>-6999.999</p>
+                  <p>-8869.989</p>
                 </div>
-                <div class="m-3">
-                  <div
-                    class="flex w-auto items-center justify-between gap-4 border-y-2"
-                  >
-                    <p>-8888.999</p>
-                    <p>-6008.899</p>
-                    <p>-6999.999</p>
-                    <p>-8869.989</p>
-                  </div>
+              </div>
+              <div class="m-3">
+                <div
+                  class="flex w-auto items-center justify-between gap-4 border-y-2"
+                >
+                  <p>-8888.999</p>
+                  <p>-6008.899</p>
+                  <p>-6999.999</p>
+                  <p>-8869.989</p>
                 </div>
-                <div class="m-3">
-                  <div
-                    class="flex w-auto items-center justify-between gap-4 border-y-2"
-                  >
-                    <p>-8888.999</p>
-                    <p>-6008.899</p>
-                    <p>-6999.999</p>
-                    <p>-8869.989</p>
-                  </div>
+              </div>
+              <div class="m-3">
+                <div
+                  class="flex w-auto items-center justify-between gap-4 border-y-2"
+                >
+                  <p>-8888.999</p>
+                  <p>-6008.899</p>
+                  <p>-6999.999</p>
+                  <p>-8869.989</p>
                 </div>
-                <div class="m-3">
-                  <div
-                    class="flex w-auto items-center justify-between gap-4 border-y-2"
-                  >
-                    <p>-8888.999</p>
-                    <p>-6008.899</p>
-                    <p>-6999.999</p>
-                    <p>-8869.989</p>
-                  </div>
+              </div>
+              <div class="m-3">
+                <div
+                  class="flex w-auto items-center justify-between gap-4 border-y-2"
+                >
+                  <p>-8888.999</p>
+                  <p>-6008.899</p>
+                  <p>-6999.999</p>
+                  <p>-8869.989</p>
                 </div>
-                <div class="m-3">
-                  <div
-                    class="flex w-auto items-center justify-between gap-4 border-y-2"
-                  >
-                    <p>-8888.999</p>
-                    <p>-6008.899</p>
-                    <p>-6999.999</p>
-                    <p>-8869.989</p>
-                  </div>
+              </div>
+              <div class="m-3">
+                <div
+                  class="flex w-auto items-center justify-between gap-4 border-y-2"
+                >
+                  <p>-8888.999</p>
+                  <p>-6008.899</p>
+                  <p>-6999.999</p>
+                  <p>-8869.989</p>
                 </div>
-                <div class="m-3">
-                  <div
-                    class="flex w-auto items-center justify-between gap-4 border-y-2"
-                  >
-                    <p>-8888.999</p>
-                    <p>-6008.899</p>
-                    <p>-6999.999</p>
-                    <p>-8869.989</p>
-                  </div>
+              </div>
+              <div class="m-3">
+                <div
+                  class="flex w-auto items-center justify-between gap-4 border-y-2"
+                >
+                  <p>-8888.999</p>
+                  <p>-6008.899</p>
+                  <p>-6999.999</p>
+                  <p>-8869.989</p>
                 </div>
-                <div class="m-3">
-                  <div
-                    class="flex w-auto items-center justify-between gap-4 border-y-2"
-                  >
-                    <p>-8888.999</p>
-                    <p>-6008.899</p>
-                    <p>-6999.999</p>
-                    <p>-8869.989</p>
-                  </div>
+              </div>
+              <div class="m-3">
+                <div
+                  class="flex w-auto items-center justify-between gap-4 border-y-2"
+                >
+                  <p>-8888.999</p>
+                  <p>-6008.899</p>
+                  <p>-6999.999</p>
+                  <p>-8869.989</p>
                 </div>
-                <div class="m-3">
-                  <div
-                    class="flex w-auto items-center justify-between gap-4 border-y-2"
-                  >
-                    <p>-8888.999</p>
-                    <p>-6008.899</p>
-                    <p>-6999.999</p>
-                    <p>-8869.989</p>
-                  </div>
+              </div>
+              <div class="m-3">
+                <div
+                  class="flex w-auto items-center justify-between gap-4 border-y-2"
+                >
+                  <p>-8888.999</p>
+                  <p>-6008.899</p>
+                  <p>-6999.999</p>
+                  <p>-8869.989</p>
                 </div>
-                <div class="m-3">
-                  <div
-                    class="flex w-auto items-center justify-between gap-4 border-y-2"
-                  >
-                    <p>-8888.999</p>
-                    <p>-6008.899</p>
-                    <p>-6999.999</p>
-                    <p>-8869.989</p>
-                  </div>
+              </div>
+              <div class="m-3">
+                <div
+                  class="flex w-auto items-center justify-between gap-4 border-y-2"
+                >
+                  <p>-8888.999</p>
+                  <p>-6008.899</p>
+                  <p>-6999.999</p>
+                  <p>-8869.989</p>
                 </div>
-                <div class="m-3">
-                  <div
-                    class="flex w-auto items-center justify-between gap-4 border-y-2"
-                  >
-                    <p>-8888.999</p>
-                    <p>-6008.899</p>
-                    <p>-6999.999</p>
-                    <p>-8869.989</p>
-                  </div>
+              </div>
+              <div class="m-3">
+                <div
+                  class="flex w-auto items-center justify-between gap-4 border-y-2"
+                >
+                  <p>-8888.999</p>
+                  <p>-6008.899</p>
+                  <p>-6999.999</p>
+                  <p>-8869.989</p>
+                </div>
+              </div>
+              <div class="m-3">
+                <div
+                  class="flex w-auto items-center justify-between gap-4 border-y-2"
+                >
+                  <p>-8888.999</p>
+                  <p>-6008.899</p>
+                  <p>-6999.999</p>
+                  <p>-8869.989</p>
+                </div>
+              </div>
+              <div class="m-3">
+                <div
+                  class="flex w-auto items-center justify-between gap-4 border-y-2"
+                >
+                  <p>-8888.999</p>
+                  <p>-6008.899</p>
+                  <p>-6999.999</p>
+                  <p>-8869.989</p>
+                </div>
+              </div>
+              <div class="m-3">
+                <div
+                  class="flex w-auto items-center justify-between gap-4 border-y-2"
+                >
+                  <p>-8888.999</p>
+                  <p>-6008.899</p>
+                  <p>-6999.999</p>
+                  <p>-8869.989</p>
+                </div>
+              </div>
+              <div class="m-3">
+                <div
+                  class="flex w-auto items-center justify-between gap-4 border-y-2"
+                >
+                  <p>-8888.999</p>
+                  <p>-6008.899</p>
+                  <p>-6999.999</p>
+                  <p>-8869.989</p>
+                </div>
+              </div>
+              <div class="m-3">
+                <div
+                  class="flex w-auto items-center justify-between gap-4 border-y-2"
+                >
+                  <p>-8888.999</p>
+                  <p>-6008.899</p>
+                  <p>-6999.999</p>
+                  <p>-8869.989</p>
+                </div>
+              </div>
+              <div class="m-3">
+                <div
+                  class="flex w-auto items-center justify-between gap-4 border-y-2"
+                >
+                  <p>-8888.999</p>
+                  <p>-6008.899</p>
+                  <p>-6999.999</p>
+                  <p>-8869.989</p>
+                </div>
+              </div>
+              <div class="m-3">
+                <div
+                  class="flex w-auto items-center justify-between gap-4 border-y-2"
+                >
+                  <p>-8888.999</p>
+                  <p>-6008.899</p>
+                  <p>-6999.999</p>
+                  <p>-8869.989</p>
+                </div>
+              </div>
+              <div class="m-3">
+                <div
+                  class="flex w-auto items-center justify-between gap-4 border-y-2"
+                >
+                  <p>-8888.999</p>
+                  <p>-6008.899</p>
+                  <p>-6999.999</p>
+                  <p>-8869.989</p>
+                </div>
+              </div>
+              <div class="m-3">
+                <div
+                  class="flex w-auto items-center justify-between gap-4 border-y-2"
+                >
+                  <p>-8888.999</p>
+                  <p>-6008.899</p>
+                  <p>-6999.999</p>
+                  <p>-8869.989</p>
+                </div>
+              </div>
+              <div class="m-3">
+                <div
+                  class="flex w-auto items-center justify-between gap-4 border-y-2"
+                >
+                  <p>-8888.999</p>
+                  <p>-6008.899</p>
+                  <p>-6999.999</p>
+                  <p>-8869.989</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      <!-- Footer -->
-      <footer>
-        <p class="py-7 text-center font-bold">
-          &#169;BRIN, Hak cipta dilindungi.
-        </p>
-      </footer>
     </div>
 
+    <!-- Footer -->
+    <footer>
+      <p class="py-7 text-center font-bold">
+        &#169;BRIN, Hak cipta dilindungi.
+      </p>
+    </footer>
+
     <!-- JS -->
-    <script type="module" src="/pages/user/dist/js/script.js"></script>
-    <script type="module">
-      import { format } from 'date-fns';
-
-      document.querySelectorAll('.tanggal').forEach((elementDate) => {
-        elementDate.textContent = format(new Date(), 'dd/MM/yyyy');
-      });
-
-      const profileName = document.querySelector('.profile-name');
-      const profileRole = document.querySelector('.profile-role');
-
-      profileName.textContent =
-        window.localStorage.getItem('current-user-name');
-      profileRole.textContent =
-        window.localStorage.getItem('current-user-role');
-
-      const logOutBtn = document.querySelector('.logout-btn');
-
-      logOutBtn.addEventListener('click', () => {
-        window.localStorage.setItem('current-user-name', '');
-        window.localStorage.setItem('current-user-role', '');
-        window.localStorage.setItem('current-user-remember', 'false');
-
-        window.location.replace('/');
-      });
-
-      const adminMenuOnly = document.querySelectorAll('.admin-menu-only');
-      const isAdmin = window.localStorage.getItem('current-user-role');
-      if (isAdmin.toLowerCase() !== 'admin') {
-        adminMenuOnly.forEach((menu) => menu.classList.add('hidden'));
-      }
-
-      const isLogin = window.localStorage.getItem('current-user-name');
-      if (isLogin === '') {
-        window.location.replace('/');
-      }
-    </script>
+    <script type="module" src="/pages/user/Info/script.js"></script>
   </body>
 </html>
