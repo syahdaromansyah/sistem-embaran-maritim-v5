@@ -7,10 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" href="/favicon.png" type="image/png" />
     <title>SEMAR-Sistem Embaran Maritim</title>
-    <link
-    rel="stylesheet" 
-    href="/pages/user-manage/style.css"
-    />
+    <link rel="stylesheet" href="/pages/user-manage/style.css" />
 
     <link
       rel="stylesheet"
@@ -27,154 +24,164 @@
     ></script>
   </head>
   <body class="bg-slate-100 shadow shadow-slate-200">
-   <!-- Navigation Page -->
-   <nav
-   class="fixed top-0 left-0 w-full bg-slate-50/25 shadow shadow-slate-200 backdrop-blur"
- >
-   <!-- Navigation Page Container -->
-   <div class="container mx-auto px-8">
-     <div class="flex items-center justify-between py-3.5">
-       <!-- Navigation Page Left -->
-       <a
-         href="/pages/user/dashboardpeta/"
-         class="inline-block py-1 transition duration-300 focus:outline-none focus:ring focus:ring-sky-300 focus:ring-offset-2 focus:ring-offset-slate-50"
-       >
-         <img
-           src="/pages/user/dist/img/LOGO-SEMAR.png"
-           alt="SEMAR-Sistem Embaran Maritim"
-           class="h-11"
-         />
-       </a>
-       <!-- Navigation Page Right -->
-       <div class="flex items-center px-4">
-          <!-- navigation icon -->
-       <button id="icon" name="icon" type="button">
-         <img
-         src="/pages/user/dist/img/user.png"
-         alt="Profile"
-         class="mr-4 w-11 rounded"
-       />
-       </button>
-       </div>
-     </div>
-   </div>
- </nav>
- <!-- Navigation Menu -->
- <div
- id="nav-menu"
- class="fixed right-0 top-20 hidden h-full w-72 items-center bg-sky-900 text-slate-50"
->
- <div class="p-7">
-   <div class="flex items-center py-5">
-     <img
-       src="/pages/user/dist/img/user.png"
-       alt="Profile"
-       class="mr-4 w-11 rounded"
-     />
-     <div>
-       <p class="profile-name text-lg font-semibold">Admin</p>
-       <p class="profile-role text-xs">Role : Admin</p>
-     </div>
-   </div>
-   <ul class="mt-4">
-    <li
-    class="my-2 rounded-xl py-1 px-7 hover:bg-slate-100 hover:text-sky-600"
-  >
-       <a
-         href="/pages/user/dashboardpeta/"
-         class="flex items-center"
-       >
-         <i class="fa-solid fa-grip icon-slate-50 fa-lg mr-2"></i>
-         <p>Dashboard</p>
-       </a>
-     </li>
-     <li
-          class="my-2 rounded-xl py-1 px-7 hover:bg-slate-100 hover:text-sky-600"
-        >
-     <a 
-       href="/pages/user-manage/" 
-       class="flex items-center"
-     >
-       <i class="fa-solid fa-user-gear icon-slate-50 fa-lg mr-2"></i>
-       <p>Management User</p>
-     </a>
-   </li>
-   <li
-   class="admin-menu-only my-2 rounded-xl py-1 px-7 hover:bg-slate-100 hover:text-sky-600"
- >
-       <a href="/pages/user/validasi-data/" class="flex items-center">
-         <i class="fa-solid fa-clipboard icon-slate-50 fa-lg mr-2"></i>
-         <p>Validasi Data</p>
-       </a>
-     </li>
-     <li
-          class="my-2 rounded-xl py-1 px-7 hover:bg-slate-100 hover:text-sky-600"
-        >
-       <a href="/pages/user/info/" class="flex items-center">
-         <i class="fa-solid fa-circle-info icon-slate-50 fa-lg mr-2"></i>
-         <p>Info</p>
-       </a>
-     </li>
-     <li
-     class="my-2 rounded-xl py-1 px-7 hover:bg-slate-100 hover:text-sky-600"
-   >
-       <button class="logout-btn flex items-center">
-         <i
-           class="fa-solid fa-right-from-bracket icon-slate-50 fa-lg mr-2"
-         ></i>
-         <p>Logout</p>
-       </button>
-     </li>
-   </ul>
- </div>
-</div>
-
-    <!-- user management -->
-<div class="mx-36">
-  <div class="container mx-auto my-44 p-10 h-full border-2 rounded-3xl">
-      <div class="h-full flex">
-          <div>
-              <h2 class=" text-2xl font-bold">Manajemen Pengguna</h2>
-              <hr class="border-2 border-sky-900 w-32 flex justify-center mt-2" />
-              <div class="flex">
-                  <div>
-                      <input type="search" class="px-3 py-1 border rounded-full w-72 mt-4 bg-transparent focus:outline-none focus:ring focus:ring-sky-800 text-slate-900" placeholder="🔎 cari.....">
-                      <button class="px-3 py-1 border rounded-full w-28 mt-4 bg-sky-800"><span class="text-white">Cari</span></button>
-                  </div>
-              </div>
-          </div>
-          <div class="ml-96">
-              <div>
-                  <a href="/pages/user-manage/add_user/"><i class="fa-solid fa-user-plus fa-3x text-sky-900 ml-20"></i></a>
-                  <p class="count-result px-4 py-1 border rounded-full w-28 mt-4"><span class="text-slate-500 font-semibold">Count:5</span></p>
-              </div>
-          </div>
-      </div>
-      <div>
-          <div>
-              <table class="table-auto border-5 mx-auto my-5 w-full border-spacing-y-2 border-separate ">
-                  <thead class=" text-sky-400 font-bold">
-                    <tr class="bg-sky-100 h-10 text-center">
-                      <th>No</th>
-                      <th>Nama</th>
-                      <th>Username</th>
-                      <th>Instansi</th>
-                      <th>Role</th>
-                      <th>
-                        <i class="fa-solid fa-gear"></i>
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody class="table-users text-center"></tbody>
-                </table>
+    <!-- Navigation Page -->
+    <nav
+      class="fixed top-0 left-0 w-full bg-slate-50/25 shadow shadow-slate-200 backdrop-blur"
+    >
+      <!-- Navigation Page Container -->
+      <div class="container mx-auto px-8">
+        <div class="flex items-center justify-between py-3.5">
+          <!-- Navigation Page Left -->
+          <a
+            href="/pages/user/dashboardpeta/"
+            class="inline-block py-1 transition duration-300 focus:outline-none focus:ring focus:ring-sky-300 focus:ring-offset-2 focus:ring-offset-slate-50"
+          >
+            <img
+              src="/pages/user/dist/img/LOGO-SEMAR.png"
+              alt="SEMAR-Sistem Embaran Maritim"
+              class="h-11"
+            />
+          </a>
+          <!-- Navigation Page Right -->
+          <div class="flex items-center px-4">
+            <!-- navigation icon -->
+            <button id="icon" name="icon" type="button">
+              <img
+                src="/pages/user/dist/img/user.png"
+                alt="Profile"
+                class="mr-4 w-11 rounded"
+              />
+            </button>
           </div>
         </div>
-  </div>
-</div>
+      </div>
+    </nav>
+    <!-- Navigation Menu -->
+    <div
+      id="nav-menu"
+      class="fixed right-0 top-20 hidden h-full w-72 items-center bg-sky-900 text-slate-50"
+    >
+      <div class="p-7">
+        <div class="flex items-center py-5">
+          <img
+            src="/pages/user/dist/img/user.png"
+            alt="Profile"
+            class="mr-4 w-11 rounded"
+          />
+          <div>
+            <p class="profile-name text-lg font-semibold">Admin</p>
+            <p class="profile-role text-xs">Role : Admin</p>
+          </div>
+        </div>
+        <ul class="mt-4">
+          <li
+            class="my-2 rounded-xl py-1 px-7 hover:bg-slate-100 hover:text-sky-600"
+          >
+            <a href="/pages/user/dashboardpeta/" class="flex items-center">
+              <i class="fa-solid fa-grip icon-slate-50 fa-lg mr-2"></i>
+              <p>Dashboard</p>
+            </a>
+          </li>
+          <li
+            class="my-2 rounded-xl py-1 px-7 hover:bg-slate-100 hover:text-sky-600"
+          >
+            <a href="/pages/user-manage/" class="flex items-center">
+              <i class="fa-solid fa-user-gear icon-slate-50 fa-lg mr-2"></i>
+              <p>Management User</p>
+            </a>
+          </li>
+          <li
+            class="admin-menu-only my-2 rounded-xl py-1 px-7 hover:bg-slate-100 hover:text-sky-600"
+          >
+            <a href="/pages/user/validasi-data/" class="flex items-center">
+              <i class="fa-solid fa-clipboard icon-slate-50 fa-lg mr-2"></i>
+              <p>Validasi Data</p>
+            </a>
+          </li>
+          <li
+            class="my-2 rounded-xl py-1 px-7 hover:bg-slate-100 hover:text-sky-600"
+          >
+            <a href="/pages/user/info/" class="flex items-center">
+              <i class="fa-solid fa-circle-info icon-slate-50 fa-lg mr-2"></i>
+              <p>Info</p>
+            </a>
+          </li>
+          <li
+            class="my-2 rounded-xl py-1 px-7 hover:bg-slate-100 hover:text-sky-600"
+          >
+            <button class="logout-btn flex items-center">
+              <i
+                class="fa-solid fa-right-from-bracket icon-slate-50 fa-lg mr-2"
+              ></i>
+              <p>Logout</p>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- user management -->
+    <div class="mx-36">
+      <div class="container mx-auto my-44 h-full rounded-3xl border-2 p-10">
+        <div class="flex h-full">
+          <div>
+            <h2 class="text-2xl font-bold">Manajemen Pengguna</h2>
+            <hr class="mt-2 flex w-32 justify-center border-2 border-sky-900" />
+            <div class="flex">
+              <div>
+                <input
+                  type="search"
+                  class="mt-4 w-72 rounded-full border bg-transparent px-3 py-1 text-slate-900 focus:outline-none focus:ring focus:ring-sky-800"
+                  placeholder="🔎 cari....."
+                />
+                <button
+                  class="mt-4 w-28 rounded-full border bg-sky-800 px-3 py-1"
+                >
+                  <span class="text-white">Cari</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="ml-96">
+            <div>
+              <a href="/pages/user-manage/add_user/"
+                ><i class="fa-solid fa-user-plus fa-3x ml-20 text-sky-900"></i
+              ></a>
+              <p class="count-result mt-4 w-28 rounded-full border px-4 py-1">
+                <span class="font-semibold text-slate-500">Count:5</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div>
+            <table
+              class="border-5 mx-auto my-5 w-full table-auto border-separate border-spacing-y-2"
+            >
+              <thead class="font-bold text-sky-400">
+                <tr class="h-10 bg-sky-100 text-center">
+                  <th>No</th>
+                  <th>Nama</th>
+                  <th>Username</th>
+                  <th>Instansi</th>
+                  <th>Role</th>
+                  <th>
+                    <i class="fa-solid fa-gear"></i>
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="table-users text-center"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- Footer -->
-<footer>
-  <p class="text-center font-bold py-7">&#169;BRIN, Hak cipta dilindungi.</p>
-</footer>
+    <footer>
+      <p class="py-7 text-center font-bold">
+        &#169;BRIN, Hak cipta dilindungi.
+      </p>
+    </footer>
     <!-- user management End -->
     <script type="module" src="/pages/user-manage/script.js"></script>
     <script type="module" src="/pages/user/dist/js/script.js"></script>

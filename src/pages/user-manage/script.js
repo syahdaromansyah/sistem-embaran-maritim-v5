@@ -74,33 +74,33 @@ document.addEventListener('click', (e) => {
   }
 
   if (btnDeleteUser) {
-    var ans = confirm("Yakin akan dihapus?");
-    if(ans == true) {
-    const users = JSON.parse(window.localStorage.getItem('users'));
-    const updateUsers = users.filter((user) => user.username !== btnDeleteUser);
-
-    window.localStorage.setItem('users', JSON.stringify(updateUsers));
-
-    while (tableUsers.hasChildNodes()) {
-      tableUsers.removeChild(tableUsers.firstChild);
-    }
-    
-
-    updateUsers.forEach((user, idx) => {
-      tableUsers.insertAdjacentHTML(
-        'beforeend',
-        userList({
-          no: idx + 1,
-          ...user,
-        })
+    var ans = confirm('Yakin akan dihapus?');
+    if (ans == true) {
+      const users = JSON.parse(window.localStorage.getItem('users'));
+      const updateUsers = users.filter(
+        (user) => user.username !== btnDeleteUser
       );
-    });
 
-    countResult.textContent = `Count: ${updateUsers.length}`;
+      window.localStorage.setItem('users', JSON.stringify(updateUsers));
+
+      while (tableUsers.hasChildNodes()) {
+        tableUsers.removeChild(tableUsers.firstChild);
+      }
+
+      updateUsers.forEach((user, idx) => {
+        tableUsers.insertAdjacentHTML(
+          'beforeend',
+          userList({
+            no: idx + 1,
+            ...user,
+          })
+        );
+      });
+
+      countResult.textContent = `Count: ${updateUsers.length}`;
+    }
   }
-}
 });
-
 
 const isLogin = window.localStorage.getItem('current-user-name');
 if (isLogin === '') {
