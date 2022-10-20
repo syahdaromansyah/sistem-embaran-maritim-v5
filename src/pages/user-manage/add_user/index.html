@@ -2,59 +2,145 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Semar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <title>SEMAR-Sistem Embaran Maritim</title>
     <script
       src="https://kit.fontawesome.com/216b2461f6.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="/pages/user-manage/add_user/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
-    />
   </head>
-  <body>
+  <body class="bg-slate-100 shadow shadow-slate-200">
+       <!-- Navigation Page -->
+   <nav
+   class="sticky top-0 left-0 z-50 w-full bg-slate-50/25 shadow shadow-slate-200 backdrop-blur"
+ >
+   <!-- Navigation Page Container -->
+   <div class="container mx-auto px-8">
+     <div class="flex items-center justify-between py-3.5">
+       <!-- Navigation Page Left -->
+       <a
+         href="/pages/user/dashboardpeta/"
+         class="inline-block py-1 transition duration-300 focus:outline-none focus:ring focus:ring-sky-300 focus:ring-offset-2 focus:ring-offset-slate-50"
+       >
+         <img
+           src="/pages/user/dist/img/LOGO-SEMAR.png"
+           alt="SEMAR-Sistem Embaran Maritim"
+           class="h-11"
+         />
+       </a>
+       <!-- Navigation Page Right -->
+       <div class="flex items-center px-4">
+          <!-- navigation icon -->
+       <button id="icon" name="icon" type="button">
+         <img
+         src="/pages/user/dist/img/user.png"
+         alt="Profile"
+         class="mr-4 w-11 rounded"
+       />
+       </button>
+       </div>
+     </div>
+   </div>
+ </nav>
+ <!-- Navigation Menu -->
+ <div
+   id="nav-menu"
+   class="fixed right-0 top-20 hidden h-full w-72 items-center bg-sky-900 text-slate-50"
+ >
+   <div class="p-7">
+     <div class="flex items-center py-5">
+       <img
+         src="/pages/user/dist/img/user.png"
+         alt="Profile"
+         class="mr-4 w-11 rounded"
+       />
+       <div>
+         <p class="profile-name text-lg font-semibold">Admin</p>
+         <p class="profile-role text-xs">Role : Admin</p>
+       </div>
+     </div>
+     <ul class="p-4">
+       <li class="p-2">
+         <a
+           href="/pages/user/dashboardpeta/"
+           class="flex items-center"
+         >
+           <i class="fa-solid fa-grip icon-slate-50 fa-lg mr-2"></i>
+           <p>Dashboard</p>
+         </a>
+       </li>
+       <li class="p-2">
+         <a href="/pages/user-manage/" class="flex items-center">
+           <i class="fa-solid fa-user-gear icon-slate-50 fa-lg mr-2"></i>
+           <p>Management User</p>
+         </a>
+       </li>
+       <li class="admin-menu-only p-2">
+         <a href="/pages/user/validasi-data/" class="flex items-center">
+           <i class="fa-solid fa-clipboard icon-slate-50 fa-lg mr-2"></i>
+           <p>Validasi Data</p>
+         </a>
+       </li>
+       <li class="admin-menu-only p-2">
+         <a href="/pages/user/info/" class="flex items-center">
+           <i class="fa-solid fa-circle-info icon-slate-50 fa-lg mr-2"></i>
+           <p>Info</p>
+         </a>
+       </li>
+       <li class="p-2">
+         <button class="logout-btn flex items-center">
+           <i
+             class="fa-solid fa-right-from-bracket icon-slate-50 fa-lg mr-2"
+           ></i>
+           <p>Logout</p>
+         </button>
+       </li>
+     </ul>
+   </div>
+ </div>
+
     <!-- add user -->
-    <div id="card-content">
-      <div id="card-title">
-        <h3><b>Tambahkan Pengguna</b></h3>
-        <hr width="55px" size="7" color="aqua" />
+    <div class="mx-36">
+      <div class="container my-24 px-28 h-full border-2 rounded-3xl p-36">
+        <h2 class="font-bold text-2xl text-left -my-28 -mx-14 pt-2">Tambahkan pengguna</h2>
+        <hr class="border-2 border-sky-900 w-32 my-28 -mx-14">
         <div class="container">
           <form class="form-add-user">
-            <table>
+            <table class="table-auto -mt-20 border-separate border-spacing-y-4 py-2">
               <tr>
-                <td><i class="fa-solid fa-user"></i></td>
-                <td>Nama</td>
-                <td><input type="text" name="nama" /></td>
+                <td><i class="fa-solid fa-user"></i> Nama
+                </td>
+                <td><input type="text" name="nama" class="border border-slate-200 w-[600px] px-2 rounded-full"/></td>
               </tr>
               <tr>
-                <td><i class="fa-solid fa-user"></i></td>
-                <td>Username</td>
-                <td><input type="text" name="nama" /></td>
+                <td><i class="fa-solid fa-user"></i>
+                  Username
+                </td>
+                <td><input type="text" name="nama" class="border border-slate-200 w-[600px] px-2 rounded-full"/></td>
               </tr>
               <tr>
-                <td><i class="fa-solid fa-building-columns"></i></td>
-                <td>Instansi</td>
-                <td><input type="text" name="nama" /></td>
+                <td><i class="fa-solid fa-building-columns"></i> Instansi
+                </td>
+                <td><input type="text" name="nama" class="border border-slate-200 w-[600px] px-2 rounded-full"/></td>
               </tr>
               <tr>
-                <td><i class="fa-solid fa-envelope"></i></td>
-                <td>Email</td>
-                <td><input type="email" name="email" /></td>
+                <td><i class="fa-solid fa-envelope"></i>
+                  Email
+                </td>
+                <td><input type="email" name="email" class="border border-slate-200 w-[600px] px-2 rounded-full"/></td>
               </tr>
               <tr>
-                <td><i class="fa-solid fa-circle-nodes"></i></td>
-                <td>Role</td>
-                <td><input type="text" name="nama" /></td>
+                <td><i class="fa-solid fa-circle-nodes"></i>Role
+                </td>
+                <td><input type="text" name="nama" class="border border-slate-200 w-[600px] px-2 rounded-full"/></td>
               </tr>
               <tr>
-                <td><i class="fa-solid fa-building-columns"></i></td>
-                <td>Fitur</td>
+                <td><i class="fa-solid fa-building-columns"></i>
+                  Fitur
+                </td>
                 <td>
                   <input
                     type="checkbox"
@@ -70,28 +156,26 @@
                   <input type="checkbox" name="Fitur" value="transportation" />
                   Transportation
                   <tr>
-                    <td><i class="fa-solid fa-unlock"></i></td>
-                    <td>Password</td>
-                    <td><input type="password" name="nama" /></td>
+                    <td><i class="fa-solid fa-unlock"></i> Password
+                    </td>
+                    <td><input type="password" name="nama" class="border border-slate-200 w-[600px] px-2 rounded-full"/></td>
                   </tr>
                 </td>
               </tr>
             </table>
-
-            <button type="submit">Simpan</button>
-            <button type="button">
-              <a href="/pages/user-manage/">Batal</a>
-            </button>
+            <button type="submit" class="border bg-blue-900 text-white rounded-full px-4 py-1 float-right mx-1">Simpan</button>
+            <button type="button" class="border bg-gray-500 text-white rounded-full px-6 py-1 float-right mx-1"><a href="/pages/user-manage/">Batal</a></button>
           </form>
         </div>
       </div>
     </div>
 
-    <div id="footer">
-      <p><b>&copy;</b> BRIN,Hak cipta dilindungi.</p>
-    </div>
+    <!-- Footer -->
+<footer>
+  <p class="text-center font-bold py-7">&#169;BRIN, Hak cipta dilindungi.</p>
+</footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="/pages/user/dist/js/script.js"></script>
 
     <script type="module">
       const formAddUser = document.querySelector('.form-add-user');
