@@ -1307,4 +1307,8 @@ td {
     padding-left: 9rem;
     padding-right: 9rem;
   }
+  #map{
+    height: 100vh;
+    width: 100%;
+  }
 }

@@ -1,3 +1,4 @@
+// eslint-disable
 import { useState } from 'react';
 import { faUser, faLock } from '@fortawesome/free-solid-svg-icons';
 import SemarInputBox from '../../../components/semar-page-input/InputBox';
