@@ -2,51 +2,67 @@
 <html>
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <title>SEMAR-Sistem Embaran Maritim</title>
     <script
       src="https://kit.fontawesome.com/216b2461f6.js"
       crossorigin="anonymous"
     ></script>
-    <title>SEMAR</title>
-    <link rel="icon" href="/favicon.png" type="image/png" />
   </head>
   <body>
-    <!-- Navigation Page -->
-    <nav
-      class="sticky top-0 left-0 z-50 w-full bg-slate-50/25 shadow shadow-slate-200 backdrop-blur"
-    >
-      <!-- Navigation Page Container -->
-      <div class="container mx-auto">
-        <div class="flex items-center justify-between py-3.5">
-          <!-- Navigation Page Left -->
-          <a
-            href="/pages/user/dashboardpeta/"
-            class="inline-block py-1 transition duration-300 focus:outline-none focus:ring focus:ring-sky-300 focus:ring-offset-2 focus:ring-offset-slate-50"
-          >
-            <img
-              src="/pages/user/dist/img/LOGO-SEMAR.png"
-              alt="SEMAR-Sistem Embaran Maritim"
-              class="h-11"
-            />
-          </a>
-          <!-- Navigation Page Right -->
-          <div class="flex items-center px-4">
-            <button class="profil">
+    <div class="app">
+      <!-- Navigation Page -->
+      <nav
+        class="fixed top-0 left-0 w-full bg-slate-50/25 shadow shadow-slate-200 backdrop-blur"
+      >
+        <!-- Navigation Page Container -->
+        <div class="container mx-auto px-8">
+          <div class="flex items-center justify-between py-3.5">
+            <!-- Navigation Page Left -->
+            <a
+              href="/pages/user/dashboardpeta/"
+              class="inline-block py-1 transition duration-300 focus:outline-none focus:ring focus:ring-sky-300 focus:ring-offset-2 focus:ring-offset-slate-50"
+            >
               <img
-                src="/pages/user/dist/img/user.png"
-                alt="Profile"
-                class="border-5 mr-4 w-11 rounded"
+                src="/pages/user/dist/img/LOGO-SEMAR.png"
+                alt="SEMAR-Sistem Embaran Maritim"
+                class="h-11"
               />
-            </button>
+            </a>
+            <!-- Navigation Page Right -->
+            <div class="flex items-center px-4">
+              <button
+                id="nav"
+                class="inline-block py-1 transition duration-300 focus:outline-none focus:ring focus:ring-sky-300 focus:ring-offset-2 focus:ring-offset-slate-50"
+              >
+                <img
+                  src="/pages/user/dist/img/user.png"
+                  alt="Profile"
+                  class="mr-4 w-11 rounded"
+                />
+              </button>
+              <!-- <button id="hamburger" name="hamburger" type="button">
+              <span
+                class="hamburger-line origin-top-left transition duration-300 ease-in-out"
+              ></span>
+              <span
+                class="hamburger-line transition duration-300 ease-in-out"
+              ></span>
+              <span
+                class="hamburger-line origin-bottom-left transition duration-300 ease-in-out"
+              ></span>
+            </button> -->
+            </div>
           </div>
         </div>
-      </div>
-    </nav>
-    <!-- Navigation Menu -->
-    <div class="flex justify-end">
+      </nav>
+      <!-- Navigation Menu -->
       <div
-        class="navprofil fixed right-0 top-20 z-50 hidden h-full w-72 items-center bg-sky-700 text-slate-50"
+        id="nav-page"
+        class="fixed right-0 top-20 hidden h-full w-72 items-center bg-sky-900 text-slate-50"
       >
         <div class="p-7">
           <div class="flex items-center py-5">
@@ -56,46 +72,36 @@
               class="mr-4 w-11 rounded"
             />
             <div>
-              <p class="profile-name text-lg font-semibold"></p>
-              <p class="profile-role text-xs"></p>
+              <p class="profile-name text-lg font-semibold">Admin</p>
+              <p class="profile-role text-xs">Role : Admin</p>
             </div>
           </div>
-          <ul class="mt-4">
-            <li
-              class="my-2 rounded-xl py-1 px-7 hover:bg-slate-100 hover:text-sky-600"
-            >
+          <ul class="p-4">
+            <li class="p-2">
               <a href="/pages/user/dashboardpeta/" class="flex items-center">
-                <i class="fa-solid fa-grip icon-slate-50 fa-lg pr-2"></i>
+                <i class="fa-solid fa-grip icon-slate-50 fa-lg mr-2"></i>
                 <p>Dashboard</p>
               </a>
             </li>
-            <li
-              class="admin-menu-only my-2 rounded-xl py-1 px-7 hover:bg-slate-100 hover:text-sky-600"
-            >
+            <li class="admin-menu-only p-2">
               <a href="/pages/user-manage/" class="flex items-center">
                 <i class="fa-solid fa-user-gear icon-slate-50 fa-lg mr-2"></i>
                 <p>Management User</p>
               </a>
             </li>
-            <li
-              class="admin-menu-only my-2 rounded-xl py-1 px-7 hover:bg-slate-100 hover:text-sky-600"
-            >
+            <li class="admin-menu-only p-2">
               <a href="/pages/user/validasi-data/" class="flex items-center">
                 <i class="fa-solid fa-clipboard icon-slate-50 fa-lg mr-2"></i>
                 <p>Validasi Data</p>
               </a>
             </li>
-            <li
-              class="my-2 rounded-xl py-1 px-7 hover:bg-slate-100 hover:text-sky-600"
-            >
+            <li class="p-2">
               <a href="/pages/user/info/" class="flex items-center">
                 <i class="fa-solid fa-circle-info icon-slate-50 fa-lg mr-2"></i>
                 <p>Info</p>
               </a>
             </li>
-            <li
-              class="my-2 rounded-xl py-1 px-7 hover:bg-slate-100 hover:text-sky-600"
-            >
+            <li class="p-2">
               <button class="logout-btn flex items-center">
                 <i
                   class="fa-solid fa-right-from-bracket icon-slate-50 fa-lg mr-2"
@@ -167,7 +173,7 @@
                 </td>
               </tr>
               <tr>
-                <td><i class="fa-solid fa-circle-nodes"></i> Role</td>
+                <td><i class="fa-solid fa-circle-nodes"></i>Role</td>
                 <td>
                   <input
                     type="text"

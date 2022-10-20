@@ -1,15 +1,15 @@
 import '../../styles/global.css';
 // script delete
 /* eslint-disable */
-$(document).ready(function () {
-  $('[data-toggle="tooltip"]').tooltip();
-  var actions = $('table td:last-child').html();
-  // Delete row on delete button click
-  $(document).on('click', '.delete', function () {
-    $(this).parents('tr').remove();
-    $('.add-new').removeAttr('disabled');
-  });
-});
+// $(document).ready(function () {
+//   $('[data-toggle="tooltip"]').tooltip();
+//   var actions = $('table td:last-child').html();
+//   // Delete row on delete button click
+//   $(document).on('click', '.delete', function () {
+//     $(this).parents('tr').remove();
+//     $('.add-new').removeAttr('disabled');
+//   });
+// });
 
 const userList = (userData) => {
   return `<tr class="bg-sky-200 h-16">
@@ -34,7 +34,10 @@ const userList = (userData) => {
         class="delete-user-btn border-none bg-transparent"
         data-delete-username="${userData.username}"
       >
-        <i class="material-icons">&#xE872;</i>
+      <i 
+      class="fa-solid fa-trash"
+      style="color: rgb(41, 41, 71)"
+      ></i>
       </button>
     </td>
   </tr>`;
@@ -78,26 +81,31 @@ document.addEventListener('click', (e) => {
   }
 
   if (btnDeleteUser) {
-    const users = JSON.parse(window.localStorage.getItem('users'));
-    const updateUsers = users.filter((user) => user.username !== btnDeleteUser);
-
-    window.localStorage.setItem('users', JSON.stringify(updateUsers));
-
-    while (tableUsers.hasChildNodes()) {
-      tableUsers.removeChild(tableUsers.firstChild);
-    }
-
-    updateUsers.forEach((user, idx) => {
-      tableUsers.insertAdjacentHTML(
-        'beforeend',
-        userList({
-          no: idx + 1,
-          ...user,
-        })
+    var ans = confirm('Yakin akan dihapus?');
+    if (ans == true) {
+      const users = JSON.parse(window.localStorage.getItem('users'));
+      const updateUsers = users.filter(
+        (user) => user.username !== btnDeleteUser
       );
-    });
 
-    countResult.textContent = `Count: ${updateUsers.length}`;
+      window.localStorage.setItem('users', JSON.stringify(updateUsers));
+
+      while (tableUsers.hasChildNodes()) {
+        tableUsers.removeChild(tableUsers.firstChild);
+      }
+
+      updateUsers.forEach((user, idx) => {
+        tableUsers.insertAdjacentHTML(
+          'beforeend',
+          userList({
+            no: idx + 1,
+            ...user,
+          })
+        );
+      });
+
+      countResult.textContent = `Count: ${updateUsers.length}`;
+    }
   }
 });
 
