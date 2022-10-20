@@ -12,41 +12,90 @@ const options = {
 };
 
 // Initialize Windy API
-windyInit(options, (windyAPI) => {
-  const { map } = windyAPI;
+// windyInit(options, (windyAPI) => {
+//   const { map } = windyAPI;
+let map = L.map('map').setView([-0, 118.9213], 5);
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '© OpenStreetMap',
+}).addTo(map);
 
-  map.locate({ setView: true, maxZoom: 16 });
+map.locate({ setView: true, maxZoom: 6 });
 
-  let markerDetectUser = null;
+let markerDetectUser = null;
 
-  function onLocationFound(e) {
-    markerDetectUser = L.marker(e.latlng)
-      .addTo(map)
-      .bindPopup('Posisi terkini Anda')
-      .openPopup();
+function onLocationFound(e) {
+  markerDetectUser = L.marker(e.latlng)
+    .addTo(map)
+    .bindPopup('Posisi terkini Anda')
+    .openPopup();
+}
+
+map.on('locationfound', onLocationFound);
+
+let pinMarker = null;
+
+map.on('click', async (e) => {
+  try {
+    markerDetectUser?.remove();
+    pinMarker?.remove();
+    pinMarker = L.marker(e.latlng).addTo(map);
+
+    const { dataCuacaLokal, dataCuacaLaut } = await getWeather(
+      e.latlng.lat,
+      e.latlng.lng
+    );
+
+    updateInformasiCuaca(dataCuacaLokal, dataCuacaLaut);
+    bukaInformasiCuaca();
+  } catch (error) {
+    console.info(error.message);
   }
+});
 
-  map.on('locationfound', onLocationFound);
+// ikan
+const ikanIcon = L.icon({
+  iconUrl: '/pages/user/dist/img/fish-fins-solid.svg',
+  iconSize: [27, 32],
+  iconAnchor: [16, 37],
+  popupAnchor: [0, -30],
+});
 
-  let pinMarker = null;
+const ikan = document.querySelector('#ikan');
+ikan.addEventListener('click', function () {
+  L.marker([2, 119], { icon: ikanIcon }).addTo(map);
+  L.marker([-5, 110], { icon: ikanIcon }).addTo(map);
+  L.marker([-5, 95], { icon: ikanIcon }).addTo(map);
+  L.marker([-5, 95.9213], { icon: ikanIcon }).addTo(map);
+  L.marker([-6, 97], { icon: ikanIcon }).addTo(map);
+  L.marker([-8, 95.9213], { icon: ikanIcon }).addTo(map);
+  L.marker([-7, 92], { icon: ikanIcon }).addTo(map);
+  L.marker([-7, 100], { icon: ikanIcon }).addTo(map);
+  L.marker([-10, 110], { icon: ikanIcon }).addTo(map);
+  L.marker([-12, 115], { icon: ikanIcon }).addTo(map);
+  L.marker([-12, 97], { icon: ikanIcon }).addTo(map);
+  L.marker([-12, 99], { icon: ikanIcon }).addTo(map);
+  L.marker([-12, 105], { icon: ikanIcon }).addTo(map);
+  L.marker([-10, 105], { icon: ikanIcon }).addTo(map);
+  L.marker([-10, 102], { icon: ikanIcon }).addTo(map);
+});
 
-  map.on('click', async (e) => {
-    try {
-      markerDetectUser?.remove();
-      pinMarker?.remove();
-      pinMarker = L.marker(e.latlng).addTo(map);
+// kapal
+const kapalIcon = L.icon({
+  iconUrl: '/pages/user/dist/img/ship-solid.svg',
+  iconSize: [27, 32],
+  iconAnchor: [16, 37],
+  popupAnchor: [0, -30],
+});
 
-      const { dataCuacaLokal, dataCuacaLaut } = await getWeather(
-        e.latlng.lat,
-        e.latlng.lng
-      );
-
-      updateInformasiCuaca(dataCuacaLokal, dataCuacaLaut);
-      bukaInformasiCuaca();
-    } catch (error) {
-      console.info(error.message);
-    }
-  });
+const transportasi = document.querySelector('#transportasi');
+transportasi.addEventListener('click', function () {
+  L.marker([-6, 107], { icon: kapalIcon }).addTo(map);
+  L.marker([-7, 104], { icon: kapalIcon }).addTo(map);
+  L.marker([-8, 106], { icon: kapalIcon }).addTo(map);
+  L.marker([-3, 98], { icon: kapalIcon }).addTo(map);
+  L.marker([-5, 119], { icon: kapalIcon }).addTo(map);
+  L.marker([-8, 123], { icon: kapalIcon }).addTo(map);
+  L.marker([-10, 113], { icon: kapalIcon }).addTo(map);
 });
 
 // Tanggal jam

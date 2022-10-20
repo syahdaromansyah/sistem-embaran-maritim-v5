@@ -15,9 +15,18 @@
     <!-- CSS -->
     <link rel="stylesheet" href="/pages/user/dist/css/output.css" />
 
+    <!-- Leaflet -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+      integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+      crossorigin=""
+    />
+
     <!-- Windy -->
     <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
     <script src="https://api.windy.com/assets/map-forecast/libBoot.js"></script>
+    <link rel="icon" href="/favicon.png" type="image/png" />
   </head>
   <body class="bg-slate-100 font-inter text-slate-700">
     <!-- Navigation Page -->
@@ -29,7 +38,7 @@
         <div class="flex items-center justify-between py-3.5">
           <!-- Navigation Page Left -->
           <a
-            href="/pages/user/dashboardrangkuman/"
+            href="/pages/user/dashboardpeta/"
             class="inline-block py-1 transition duration-300 focus:outline-none focus:ring focus:ring-sky-300 focus:ring-offset-2 focus:ring-offset-slate-50"
           >
             <img
@@ -38,8 +47,16 @@
               class="h-11"
             />
           </a>
+
           <!-- Navigation Page Right -->
           <div class="flex items-center px-4">
+            <button id="nav" name="nav" type="button">
+              <img
+                src="/pages/user/dist/img/user.png"
+                alt="Profile"
+                class="mr-4 w-11 rounded"
+              />
+            </button>
             <button id="hamburger" name="hamburger" type="button">
               <span
                 class="hamburger-line origin-top-left transition duration-300 ease-in-out"
@@ -51,112 +68,269 @@
                 class="hamburger-line origin-bottom-left transition duration-300 ease-in-out"
               ></span>
             </button>
+            <!-- Navigation Menu -->
+            <div class="flex justify-end">
+              <div
+                id="nav-page"
+                class="fixed right-0 top-20 hidden h-full w-72 items-center bg-sky-900 text-slate-50"
+              >
+                <div class="p-7">
+                  <div class="flex items-center py-5">
+                    <img
+                      src="/pages/user/dist/img/user.png"
+                      alt="Profile"
+                      class="mr-4 w-11 rounded"
+                    />
+                    <div>
+                      <p class="profile-name text-lg font-semibold">Admin</p>
+                      <p class="profile-role text-xs">Role : Admin</p>
+                    </div>
+                  </div>
+                  <ul class="p-4">
+                    <li class="p-2">
+                      <a href="#" class="flex items-center">
+                        <i
+                          class="fa-solid fa-grip icon-slate-50 fa-lg mr-2"
+                        ></i>
+                        <p>Dashboard</p>
+                      </a>
+                    </li>
+                    <li class="admin-menu-only p-2">
+                      <a href="/pages/user-manage/" class="flex items-center">
+                        <i
+                          class="fa-solid fa-user-gear icon-slate-50 fa-lg mr-2"
+                        ></i>
+                        <p>Management User</p>
+                      </a>
+                    </li>
+                    <li class="admin-menu-only p-2">
+                      <a
+                        href="/pages/user/validasi-data/"
+                        class="flex items-center"
+                      >
+                        <i
+                          class="fa-solid fa-clipboard icon-slate-50 fa-lg mr-2"
+                        ></i>
+                        <p>Validasi Data</p>
+                      </a>
+                    </li>
+                    <li class="p-2">
+                      <a href="/pages/user/info/" class="flex items-center">
+                        <i
+                          class="fa-solid fa-circle-info icon-slate-50 fa-lg mr-2"
+                        ></i>
+                        <p>Info</p>
+                      </a>
+                    </li>
+                    <li class="p-2">
+                      <button class="logout-btn flex items-center">
+                        <i
+                          class="fa-solid fa-right-from-bracket icon-slate-50 fa-lg mr-2"
+                        ></i>
+                        <p>Logout</p>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </nav>
-    <!-- Navigation Menu -->
+
+    <!-- Navigation new -->
     <div class="flex justify-end">
       <div
         id="nav-menu"
-        class="fixed right-0 top-20 z-50 hidden h-full w-72 items-center bg-sky-900 text-slate-50"
+        class="fixed right-0 top-20 z-50 hidden h-full w-72 items-center bg-sky-100/60 text-slate-50"
       >
-        <div class="p-7">
-          <div class="flex items-center py-5">
-            <img
-              src="/pages/user/dist/img/user.png"
-              alt="Profile"
-              class="mr-4 w-11 rounded"
-            />
+        <div>
+          <div class="flex items-center">
             <div>
-              <p class="profile-name text-lg font-semibold">Admin01</p>
-              <p class="profile-role text-xs">Role : Admin</p>
+              <button
+                id="dropdownCheckboxButton1"
+                data-dropdown-toggle="dropdownDefaultCheckbox"
+                class="items-center bg-sky-700 px-28 py-2.5 text-center text-white hover:bg-sky-800 focus:outline-none focus:ring-4"
+                type="button"
+              >
+                Atmosfer
+              </button>
+              <ul
+                id="checkbox"
+                class="hidden space-y-3 p-3 text-sm text-gray-700 dark:text-gray-200"
+                aria-labelledby="dropdownCheckboxButton"
+              >
+                <li>
+                  <div class="flex items-center">
+                    <input
+                      id="angin"
+                      type="checkbox"
+                      value=""
+                      class="border-gray-300 bg-gray-100 text-blue-600 focus:ring-blue-500 dark:focus:ring-blue-600"
+                    />
+                    <label
+                      for="angin"
+                      class="ml-2 font-medium text-black dark:text-gray-300"
+                      >Angin</label
+                    >
+                  </div>
+                </li>
+                <li>
+                  <div class="flex items-center">
+                    <input
+                      id="udara"
+                      type="checkbox"
+                      value=""
+                      class="rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-blue-500 dark:focus:ring-blue-600"
+                    />
+                    <label
+                      for="udara"
+                      class="ml-2 font-medium text-black dark:text-gray-300"
+                      >Temperatur Udara</label
+                    >
+                  </div>
+                </li>
+                <li>
+                  <div class="flex items-center">
+                    <input
+                      id="hujan"
+                      type="checkbox"
+                      value=""
+                      class="rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-blue-500 dark:focus:ring-blue-600"
+                    />
+                    <label
+                      for="hujan"
+                      class="ml-2 font-medium text-black dark:text-gray-300"
+                      >Curah Hujan</label
+                    >
+                  </div>
+                </li>
+              </ul>
+              <button
+                id="dropdownCheckboxButton2"
+                data-dropdown-toggle="dropdownDefaultCheckbox"
+                class="items-center bg-sky-700 px-28 py-2.5 text-center text-white hover:bg-sky-800 focus:outline-none focus:ring-4"
+                type="button"
+              >
+                Kelautan
+              </button>
+              <ul
+                id="checkbox1"
+                class="hidden space-y-3 p-3 text-sm text-gray-700 dark:text-gray-200"
+                aria-labelledby="dropdownCheckboxButton"
+              >
+                <li>
+                  <div class="flex items-center">
+                    <input
+                      id="laut"
+                      type="checkbox"
+                      value=""
+                      class="rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-blue-500 dark:focus:ring-blue-600"
+                    />
+                    <label
+                      for="laut"
+                      class="ml-2 font-medium text-black dark:text-gray-300"
+                      >Suhu Laut</label
+                    >
+                  </div>
+                </li>
+                <li>
+                  <div class="flex items-center">
+                    <input
+                      id="arus"
+                      type="checkbox"
+                      value=""
+                      class="rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-blue-500 dark:focus:ring-blue-600"
+                    />
+                    <label
+                      for="arus"
+                      class="ml-2 font-medium text-black dark:text-gray-300"
+                      >Arus Laut</label
+                    >
+                  </div>
+                </li>
+                <li>
+                  <div class="flex items-center">
+                    <input
+                      id="gelombang"
+                      type="checkbox"
+                      value=""
+                      class="rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-blue-500 dark:focus:ring-blue-600"
+                    />
+                    <label
+                      for="gelombang"
+                      class="ml-2 font-medium text-black dark:text-gray-300"
+                      >Gelombang</label
+                    >
+                  </div>
+                </li>
+              </ul>
+              <button
+                id="dropdownCheckboxButton3"
+                data-dropdown-toggle="dropdownDefaultCheckbox"
+                class="items-center bg-sky-700 px-24 py-2.5 text-center text-white hover:bg-sky-800 focus:outline-none focus:ring-4"
+                type="button"
+              >
+                Transportasi
+              </button>
+              <ul
+                id="checkbox2"
+                class="hidden space-y-3 p-3 text-sm text-gray-700 dark:text-gray-200"
+                aria-labelledby="dropdownCheckboxButton"
+              >
+                <li>
+                  <div class="flex items-center">
+                    <input
+                      id="transportasi"
+                      type="checkbox"
+                      value=""
+                      class="border-gray-300 bg-gray-100 text-blue-600 focus:ring-blue-500 dark:focus:ring-blue-600"
+                    />
+                    <label
+                      for="transportasi"
+                      class="ml-2 font-medium text-black dark:text-gray-300"
+                      >Posisi Kapal</label
+                    >
+                  </div>
+                </li>
+              </ul>
+              <button
+                id="dropdownCheckboxButton4"
+                data-dropdown-toggle="dropdownDefaultCheckbox"
+                class="items-center bg-sky-700 px-28 py-2.5 text-center text-white hover:bg-sky-800 focus:outline-none focus:ring-4"
+                type="button"
+              >
+                Nelayan
+              </button>
+              <ul
+                id="checkbox3"
+                class="hidden space-y-3 p-3 text-sm text-gray-700 dark:text-gray-200"
+                aria-labelledby="dropdownCheckboxButton"
+              >
+                <li>
+                  <div class="flex items-center">
+                    <input
+                      id="ikan"
+                      type="checkbox"
+                      value=""
+                      class="border-gray-300 bg-gray-100 text-blue-600 focus:ring-blue-500 dark:focus:ring-blue-600"
+                    />
+                    <label
+                      for="ikan"
+                      class="ml-2 font-medium text-black dark:text-gray-300"
+                      >Zona Potensi Penangkapan Ikan</label
+                    >
+                  </div>
+                </li>
+              </ul>
             </div>
           </div>
-          <ul class="p-4">
-            <li class="p-2">
-              <a
-                href="/pages/user/dashboardrangkuman/"
-                class="flex items-center"
-              >
-                <i class="fa-solid fa-grip icon-slate-50 fa-lg mr-2"></i>
-                <p>Dashboard</p>
-              </a>
-            </li>
-            <li class="p-2">
-              <!-- Toggle Product -->
-              <button id="produk" class="flex items-center">
-                <i class="fa-solid fa-box icon-slate-50 fa-lg mr-2"></i>
-                <p>Produk</p>
-              </button>
-              <!-- Product -->
-              <div id="nav-produk" class="hidden">
-                <ul class="px-5 pt-2">
-                  <li class="py-2">
-                    <a href="#" class="flex items-center">
-                      <i class="fa-solid fa-cloud mr-2"></i>
-                      <p>Atmosfer</p>
-                    </a>
-                  </li>
-                  <li class="py-2">
-                    <a href="#" class="flex items-center">
-                      <i class="fa-solid fa-water mr-2"></i>
-                      <p>Kelautan</p>
-                    </a>
-                  </li>
-                  <li class="py-2">
-                    <a
-                      href="/pages/user/produk/transportasi/"
-                      class="flex items-center"
-                    >
-                      <i class="fa-solid fa-ferry mr-2"></i>
-                      <p>Transportasi</p>
-                    </a>
-                  </li>
-                  <li class="py-2">
-                    <a
-                      href="/pages/user/produk/nelayan/"
-                      class="flex items-center"
-                    >
-                      <i class="fa-solid fa-fish-fins mr-2"></i>
-                      <p>Nelayan</p>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <li class="admin-menu-only p-2">
-              <a href="/pages/user-manage/" class="flex items-center">
-                <i class="fa-solid fa-user-gear icon-slate-50 fa-lg mr-2"></i>
-                <p>Management User</p>
-              </a>
-            </li>
-            <li class="admin-menu-only p-2">
-              <a href="/pages/user/validasi-data/" class="flex items-center">
-                <i class="fa-solid fa-clipboard icon-slate-50 fa-lg mr-2"></i>
-                <p>Validasi Data</p>
-              </a>
-            </li>
-            <li class="p-2">
-              <a href="/pages/user/info/" class="flex items-center">
-                <i class="fa-solid fa-circle-info icon-slate-50 fa-lg mr-2"></i>
-                <p>Info</p>
-              </a>
-            </li>
-            <li class="p-2">
-              <button class="logout-btn flex items-center">
-                <i
-                  class="fa-solid fa-right-from-bracket icon-slate-50 fa-lg mr-2"
-                ></i>
-                <p>Logout</p>
-              </button>
-            </li>
-          </ul>
         </div>
       </div>
     </div>
 
-    <button id="informasi" class="absolute top-40 z-10 m-3 bg-slate-50 p-2">
+    <button id="informasi" class="absolute top-40 z-10 m-3 bg-sky-100/60 p-2">
       <span>
         <i class="fa-solid fa-caret-right fa-lg"></i>
       </span>
@@ -167,45 +341,31 @@
 
     <div
       id="nav-informasi"
-      class="absolute top-40 z-10 m-3 hidden min-w-[480px] bg-slate-50 p-5"
+      class="absolute top-40 z-10 m-3 hidden min-w-[480px] bg-sky-100/60 p-5"
     >
-      <p class="nilai-lokasi text-2xl font-semibold"></p>
+      <p class="nilai-lokasi text-2xl font-semibold">&deg;S, &deg;E</p>
       <p class="tanggaljam my-2"><span></span></p>
 
-      <h2 class="mb-2 text-2xl font-bold">Cuaca Lokal</h2>
       <div class="my-3">
-        <div class="mb-1 flex items-center justify-between text-lg">
-          <p>Angin Darat</p>
-          <p class="font-bold"><span class="nilai-angin-darat"></span> kph</p>
-        </div>
         <div class="mb-1 flex items-center justify-between text-lg">
           <p>Temperatur Udara</p>
           <p class="font-bold"><span class="nilai-temp-darat"></span> &deg;C</p>
         </div>
       </div>
 
-      <h2 class="mb-2 text-2xl font-bold">Cuaca Laut</h2>
       <div class="mb-1 flex items-center justify-between text-lg">
-        <p>Ketinggian <i>Swell</i></p>
-        <p class="font-bold"><span class="nilai-k-swell"></span> m</p>
-      </div>
-
-      <div class="mb-1 flex items-center justify-between text-lg">
-        <p>Arah <i>Swell</i></p>
+        <p>Gelombang</p>
         <p class="font-bold">
-          <span class="nilai-a-swell"></span>
+          <span class="nilai-k-swell"></span> m
+          <i class="fa-solid fa-location-arrow"></i>
         </p>
       </div>
 
       <div class="mb-1 flex items-center justify-between text-lg">
-        <p>Angin Laut</p>
-        <p class="font-bold"><span class="nilai-angin-laut"></span> kmph</p>
-      </div>
-
-      <div class="mb-1 flex items-center justify-between text-lg">
-        <p>Arah Angin Laut</p>
+        <p>Angin</p>
         <p class="font-bold">
-          <span class="nilai-a-angin-laut"></span>
+          <span class="nilai-angin-laut"></span> kmph
+          <i class="fa-solid fa-location-arrow"></i>
         </p>
       </div>
 
@@ -214,14 +374,16 @@
         <p class="font-bold"><span class="nilai-curah-hujan"></span> mm</p>
       </div>
 
-      <div class="mb-1 flex items-center justify-between text-lg">
-        <p>Temperatur Laut</p>
-        <p class="font-bold"><span class="nilai-temp-laut"></span> &deg;C</p>
+      <div class="my-3">
+        <div class="mb-1 flex items-center justify-between text-lg">
+          <p>Temperatur Laut</p>
+          <p class="font-bold"><span class="nilai-temp-laut"></span> &deg;C</p>
+        </div>
       </div>
     </div>
 
     <!-- Peta -->
-    <div id="windy" class="z-0 h-[600px]"></div>
+    <div id="map" class="z-0 h-[600px]"></div>
 
     <!-- Footer -->
     <footer class="relative">
@@ -240,4 +402,9 @@
       src="/pages/user/dist/js/getCurrentWeather.js"
     ></script>
   </body>
+  <script
+    src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+    integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+    crossorigin=""
+  ></script>
 </html>
