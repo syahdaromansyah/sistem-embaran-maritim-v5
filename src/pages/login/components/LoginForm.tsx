@@ -35,7 +35,7 @@ export default function LoginForm() {
       window.localStorage.setItem('current-user-remember', 'true');
     else window.localStorage.setItem('current-user-remember', 'false');
 
-    window.location.replace('/pages/user/dashboardrangkuman/');
+    window.location.replace('/pages/user/dashboardpeta/');
   };
 
   return (
