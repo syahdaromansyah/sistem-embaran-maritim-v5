@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SEMAR-Sistem Embaran Maritim</title>
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <title>Semar - Sistem Embaran Maritim | Dashboard</title>
 
     <!-- Fontawesome -->
     <script
@@ -69,80 +70,91 @@
               <p class="profile-role text-xs">Role : Admin</p>
             </div>
           </div>
-          <ul class="p-4">
-            <li class="p-2">
+          <ul class="mt-4">
+            <li
+              class="my-2 rounded-xl py-1 px-7 hover:bg-slate-100 hover:text-sky-900"
+              onclick=""
+            >
               <a href="#" class="flex items-center">
-                <i class="fa-solid fa-grip icon-slate-50 fa-lg mr-2"></i>
+                <i class="fa-solid fa-grip icon-slate-50 fa-lg pr-2"></i>
                 <p>Dashboard</p>
               </a>
             </li>
-            <li class="p-2">
+            <li class="my-2 rounded-xl hover:bg-slate-100 hover:text-sky-900">
               <!-- Toggle Product -->
-              <button id="produk" class="flex items-center">
-                <i class="fa-solid fa-box icon-slate-50 fa-lg mr-2"></i>
+              <button id="produk" class="flex items-center py-1 px-7">
+                <i class="fa-solid fa-box icon-slate-50 fa-lg pr-2"></i>
                 <p>Produk</p>
               </button>
               <!-- Product -->
-              <div id="nav-produk" class="hidden">
-                <ul class="px-5 pt-2">
-                  <li class="py-2">
+              <div id="nav-produk" class="hidden py-1">
+                <ul>
+                  <li class="my-2 py-1 px-14 hover:bg-sky-400">
                     <a
                       href="/pages/user/dashboardpeta/"
                       class="flex items-center"
                     >
-                      <i class="fa-solid fa-cloud mr-2"></i>
+                      <i class="fa-solid fa-cloud pr-2"></i>
                       <p>Atmosfer</p>
                     </a>
                   </li>
-                  <li class="py-2">
+                  <li class="my-2 py-1 px-14 hover:bg-sky-400">
                     <a
                       href="/pages/user/dashboardpeta/"
                       class="flex items-center"
                     >
-                      <i class="fa-solid fa-water mr-2"></i>
+                      <i class="fa-solid fa-water pr-2"></i>
                       <p>Kelautan</p>
                     </a>
                   </li>
-                  <li class="py-2">
+                  <li class="my-2 py-1 px-14 hover:bg-sky-400">
                     <a
                       href="/pages/user/produk/transportasi/"
                       class="flex items-center"
                     >
-                      <i class="fa-solid fa-ferry mr-2"></i>
+                      <i class="fa-solid fa-ferry pr-2"></i>
                       <p>Transportasi</p>
                     </a>
                   </li>
-                  <li class="py-2">
+                  <li class="my-2 py-1 px-14 hover:bg-sky-400">
                     <a
                       href="/pages/user/produk/nelayan/"
                       class="flex items-center"
                     >
-                      <i class="fa-solid fa-fish-fins mr-2"></i>
+                      <i class="fa-solid fa-fish-fins pr-2"></i>
                       <p>Nelayan</p>
                     </a>
                   </li>
                 </ul>
               </div>
             </li>
-            <li class="admin-menu-only p-2">
+            <li
+              class="admin-menu-only my-2 rounded-xl py-1 px-7 hover:bg-slate-100 hover:text-sky-900"
+            >
               <a href="/pages/user-manage/" class="flex items-center">
                 <i class="fa-solid fa-user-gear icon-slate-50 fa-lg mr-2"></i>
                 <p>Management User</p>
               </a>
             </li>
-            <li class="admin-menu-only p-2">
+            <li
+              class="admin-menu-only my-2 rounded-xl py-1 px-7 hover:bg-slate-100 hover:text-sky-900"
+            >
               <a href="/pages/user/validasi-data/" class="flex items-center">
                 <i class="fa-solid fa-clipboard icon-slate-50 fa-lg mr-2"></i>
                 <p>Validasi Data</p>
               </a>
             </li>
-            <li class="p-2">
+            <li
+              class="my-2 rounded-xl py-1 px-7 hover:bg-slate-100 hover:text-sky-900"
+            >
               <a href="/pages/user/info/" class="flex items-center">
                 <i class="fa-solid fa-circle-info icon-slate-50 fa-lg mr-2"></i>
                 <p>Info</p>
               </a>
             </li>
-            <li class="p-2">
+            <li
+              class="my-2 rounded-xl py-1 px-7 hover:bg-slate-100 hover:text-sky-900"
+            >
               <button class="logout-btn flex items-center">
                 <i
                   class="fa-solid fa-right-from-bracket icon-slate-50 fa-lg mr-2"
@@ -155,141 +167,150 @@
       </div>
 
       <!-- Content -->
-    </div>
-    -->
-    <div class="container mx-auto my-36 lg:px-36">
-      <!-- Content Top -->
-      <div class="flex items-center justify-between text-slate-700">
-        <!-- Content Top Left -->
-        <div>
+      <div class="container mx-auto my-36 lg:px-36">
+        <!-- Content Top -->
+        <div class="flex items-center justify-between text-slate-700">
+          <!-- Content Top Left -->
           <div>
-            <i class="fa-solid fa-cloud-sun fa-3x"></i>
-          </div>
-          <div class="px-14">
-            <p class="text-3xl font-bold">30°</p>
-            <!-- Dropdown -->
             <div>
-              <select
-                name="kota"
-                id="kota"
-                class="mr-2 bg-transparent text-3xl font-bold"
-              >
-                <option value="Pasteur" class="bg-slate-100 text-lg">
-                  Pasteur
-                </option>
-                <option value="Arcamanik" class="bg-slate-100 text-lg">
-                  Arcamanik
-                </option>
-                <option value="Antapani" class="bg-slate-100 text-lg">
-                  Antapani
-                </option>
-                <option value="Buah Batu" class="bg-slate-100 text-lg">
-                  Buah Batu
-                </option>
-                <option value="Sukajadi" class="bg-slate-100 text-lg">
-                  Sukajadi
-                </option>
-                <option value="Kopo" class="bg-slate-100 text-lg">Kopo</option>
-                <option value="Cibiru" class="bg-slate-100 text-lg">
-                  Cibiru
-                </option>
-                <option value="Bojong Soang" class="bg-slate-100 text-lg">
-                  Bojong Soang
-                </option>
-                <option value="Cibiru" class="bg-slate-100 text-lg">
-                  Cibiru
-                </option>
-                <option value="Kopo" class="bg-slate-100 text-lg">Kopo</option>
-                <option value="Ujungberung" class="bg-slate-100 text-lg">
-                  Ujungberung
-                </option>
-              </select>
+              <i class="fa-solid fa-cloud-sun fa-3x"></i>
             </div>
-            <p>Jl.Buah Batu</p>
+            <div class="px-14">
+              <p class="text-3xl font-bold">30°</p>
+              <!-- Dropdown -->
+              <div>
+                <select
+                  name="kota"
+                  id="kota"
+                  class="mr-2 bg-transparent text-3xl font-bold"
+                >
+                  <option value="Pasteur" class="bg-slate-100 text-lg">
+                    Pasteur
+                  </option>
+                  <option value="Arcamanik" class="bg-slate-100 text-lg">
+                    Arcamanik
+                  </option>
+                  <option value="Antapani" class="bg-slate-100 text-lg">
+                    Antapani
+                  </option>
+                  <option value="Buah Batu" class="bg-slate-100 text-lg">
+                    Buah Batu
+                  </option>
+                  <option value="Sukajadi" class="bg-slate-100 text-lg">
+                    Sukajadi
+                  </option>
+                  <option value="Kopo" class="bg-slate-100 text-lg">
+                    Kopo
+                  </option>
+                  <option value="Bojong Soang" class="bg-slate-100 text-lg">
+                    Bojong Soang
+                  </option>
+                  <option value="Cibiru" class="bg-slate-100 text-lg">
+                    Cibiru
+                  </option>
+                  <option value="Ujungberung" class="bg-slate-100 text-lg">
+                    Ujungberung
+                  </option>
+                </select>
+              </div>
+              <p>Jl.Buah Batu</p>
+            </div>
+          </div>
+          <!-- Content Top Right -->
+          <div>
+            <p class="jam text-3xl font-bold"></p>
+            <p class="tanggalwaktu"></p>
           </div>
         </div>
-        <!-- Content Top Right -->
-        <div>
-          <p class="jam text-3xl font-bold">09.00</p>
-          <p class="tanggalwaktu"></p>
+        <!-- Content Center -->
+        <div class="my-12 flex items-center justify-evenly text-sky-800">
+          <a href="#" class="hover:ring-2 hover:ring-sky-800">
+            <div class="rounded bg-slate-50 py-7 px-11 shadow shadow-slate-200">
+              <div class="text-center">
+                <i class="fa-solid fa-stopwatch fa-2x"></i>
+              </div>
+              <div class="my-2 text-center">
+                <p class="text-xl">
+                  <span class="nilai-k-swell font-semibold"></span>m
+                </p>
+                <p class="text-sm">Gelombang</p>
+              </div>
+              <div class="text-center">
+                <i class="fa-solid fa-location-arrow fa-2x -rotate-90"></i>
+              </div>
+            </div>
+          </a>
+          <a href="#" class="hover:ring-2 hover:ring-sky-800">
+            <div class="rounded bg-slate-50 py-7 px-11 shadow shadow-slate-200">
+              <div class="text-center">
+                <i class="fa-solid fa-temperature-half fa-2x"></i>
+              </div>
+              <div class="my-2 text-center">
+                <p class="text-xl"><span class="font-semibold">2.5</span>m/s</p>
+                <p class="text-sm">Angin</p>
+              </div>
+              <div class="text-center">
+                <i class="fa-solid fa-location-arrow fa-2x"></i>
+              </div>
+            </div>
+          </a>
+          <a href="#" class="hover:ring-2 hover:ring-sky-800">
+            <div
+              class="rounded bg-slate-50 py-11 px-11 shadow shadow-slate-200"
+            >
+              <div class="text-center">
+                <i class="fa-solid fa-temperature-half fa-2x"></i>
+              </div>
+              <div class="my-2 text-center">
+                <p class="text-xl"><span class="font-semibold">15.5</span>°C</p>
+                <p class="text-sm">Temperatur</p>
+              </div>
+            </div>
+          </a>
+          <a href="#" class="hover:ring-2 hover:ring-sky-800">
+            <div class="rounded bg-slate-50 py-7 px-11 shadow shadow-slate-200">
+              <div class="text-center">
+                <i class="fa-solid fa-water fa-2x"></i>
+              </div>
+              <div class="my-2 text-center">
+                <p class="text-xl"><span class="font-semibold">0.1</span>m/s</p>
+                <p class="text-sm">Arus</p>
+              </div>
+              <div class="text-center">
+                <i class="fa-solid fa-location-arrow fa-2x rotate-90"></i>
+              </div>
+            </div>
+          </a>
         </div>
-      </div>
-      <!-- Content Center -->
-      <div class="my-12 flex items-center justify-evenly text-sky-800">
-        <a href="#" class="hover:ring-2 hover:ring-sky-800">
-          <div class="rounded bg-slate-50 py-7 px-11 shadow shadow-slate-200">
-            <div class="text-center">
-              <i class="fa-solid fa-stopwatch fa-2x"></i>
-            </div>
-            <div class="my-2 text-center">
-              <p class="text-xl"><span class="font-semibold">0.2</span>m</p>
-              <p class="text-sm">Gelombang</p>
-            </div>
-            <div class="text-center">
-              <i class="fa-solid fa-arrow-left-long fa-2x"></i>
-            </div>
+        <!-- Content Bottom -->
+        <div class="my-8">
+          <p class="text-center text-2xl font-bold text-slate-700">
+            Temperatur
+          </p>
+          <div>
+            <canvas id="myChart"></canvas>
           </div>
-        </a>
-        <a href="#" class="hover:ring-2 hover:ring-sky-800">
-          <div class="rounded bg-slate-50 py-7 px-11 shadow shadow-slate-200">
-            <div class="text-center">
-              <i class="fa-solid fa-temperature-half fa-2x"></i>
-            </div>
-            <div class="my-2 text-center">
-              <p class="text-xl"><span class="font-semibold">2.5</span>m/s</p>
-              <p class="text-sm">Angin</p>
-            </div>
-            <div class="text-center">
-              <i class="fa-solid fa-arrow-trend-up fa-2x"></i>
-            </div>
-          </div>
-        </a>
-        <a href="#" class="hover:ring-2 hover:ring-sky-800">
-          <div class="rounded bg-slate-50 py-11 px-11 shadow shadow-slate-200">
-            <div class="text-center">
-              <i class="fa-solid fa-temperature-half fa-2x"></i>
-            </div>
-            <div class="my-2 text-center">
-              <p class="text-xl"><span class="font-semibold">15.5</span>°C</p>
-              <p class="text-sm">Temperatur</p>
-            </div>
-          </div>
-        </a>
-        <a href="#" class="hover:ring-2 hover:ring-sky-800">
-          <div class="rounded bg-slate-50 py-7 px-11 shadow shadow-slate-200">
-            <div class="text-center">
-              <i class="fa-solid fa-water fa-2x"></i>
-            </div>
-            <div class="my-2 text-center">
-              <p class="text-xl"><span class="font-semibold">0.1</span>m/s</p>
-              <p class="text-sm">Arus</p>
-            </div>
-            <div class="text-center">
-              <i class="fa-solid fa-arrow-trend-down fa-2x"></i>
-            </div>
-          </div>
-        </a>
-      </div>
-      <!-- Content Bottom -->
-      <div>
-        <p class="my-8 text-center text-2xl font-bold text-slate-700">
-          Temperatur
-        </p>
-        <div>
-          <canvas id="myChart"></canvas>
         </div>
-      </div>
 
-      <!-- Footer -->
-      <footer>
-        <p class="py-7 text-center font-bold">
-          &#169;BRIN, Hak cipta dilindungi.
-        </p>
-      </footer>
+        <!-- Footer -->
+        <footer>
+          <p class="py-7 text-center font-bold">
+            &#169;BRIN, Hak cipta dilindungi.
+          </p>
+        </footer>
+      </div>
     </div>
 
     <!-- js -->
     <script type="module" src="/pages/user/dist/js/script.js"></script>
+    <script
+      type="module"
+      src="/pages/user/dist/js/getCurrentWeather.js"
+    ></script>
+    <script
+      type="module"
+      src="/pages/user/dist/js/updateInformasiCuaca.js"
+    ></script>
 
     <!-- Chart Js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

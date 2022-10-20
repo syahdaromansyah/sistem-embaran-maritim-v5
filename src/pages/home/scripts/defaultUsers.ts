@@ -1,4 +1,4 @@
-const defaultUsers = [
+const Kapal = [
   {
     name: 'Admin',
     username: 'admin',
@@ -71,4 +71,4 @@ const defaultUsers = [
   },
 ];
 
-export default defaultUsers;
+export default Kapal;

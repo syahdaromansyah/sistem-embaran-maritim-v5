@@ -12,7 +12,7 @@ $(document).ready(function () {
 });
 
 const userList = (userData) => {
-  return `<tr>
+  return `<tr class="bg-sky-200 h-16">
     <td>${userData.no}</td>
     <td>${userData.name}</td>
     <td>${userData.username}</td>
@@ -39,6 +39,13 @@ const userList = (userData) => {
     </td>
   </tr>`;
 };
+
+const profil = document.querySelector('.profil');
+const navprofil = document.querySelector('.navprofil');
+
+profil.addEventListener('click', () => {
+  navprofil.classList.toggle('hidden');
+});
 
 const countResult = document.querySelector('.count-result');
 const tableUsers = document.querySelector('.table-users');
