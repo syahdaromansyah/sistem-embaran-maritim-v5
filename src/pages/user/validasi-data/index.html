@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/favicon.png" type="image/png" />
     <title>SEMAR-Sistem Embaran Maritim</title>
 
     <!-- Fontawesome -->
@@ -26,7 +27,7 @@
           <div class="flex items-center justify-between py-3.5">
             <!-- Navigation Page Left -->
             <a
-              href="/pages/user/dashboardrangkuman/"
+              href="/pages/user/dashboardpeta/"
               class="inline-block py-1 transition duration-300 focus:outline-none focus:ring focus:ring-sky-300 focus:ring-offset-2 focus:ring-offset-slate-50"
             >
               <img
@@ -37,17 +38,14 @@
             </a>
             <!-- Navigation Page Right -->
             <div class="flex items-center px-4">
-              <button id="hamburger" name="hamburger" type="button">
-                <span
-                  class="hamburger-line origin-top-left transition duration-300 ease-in-out"
-                ></span>
-                <span
-                  class="hamburger-line transition duration-300 ease-in-out"
-                ></span>
-                <span
-                  class="hamburger-line origin-bottom-left transition duration-300 ease-in-out"
-                ></span>
-              </button>
+               <!-- navigation icon -->
+            <button id="icon" name="icon" type="button">
+              <img
+              src="/pages/user/dist/img/user.png"
+              alt="Profile"
+              class="mr-4 w-11 rounded"
+            />
+            </button>
             </div>
           </div>
         </div>
@@ -72,60 +70,12 @@
           <ul class="p-4">
             <li class="p-2">
               <a
-                href="/pages/user/dashboardrangkuman/"
+                href="/pages/user/dashboardpeta/"
                 class="flex items-center"
               >
                 <i class="fa-solid fa-grip icon-slate-50 fa-lg mr-2"></i>
                 <p>Dashboard</p>
               </a>
-            </li>
-            <li class="p-2">
-              <!-- Toggle Product -->
-              <button id="produk" class="flex items-center">
-                <i class="fa-solid fa-box icon-slate-50 fa-lg mr-2"></i>
-                <p>Produk</p>
-              </button>
-              <!-- Product -->
-              <div id="nav-produk" class="hidden">
-                <ul class="px-5 pt-2">
-                  <li class="py-2">
-                    <a
-                      href="/pages/user/dashboardpeta/"
-                      class="flex items-center"
-                    >
-                      <i class="fa-solid fa-cloud mr-2"></i>
-                      <p>Atmosfer</p>
-                    </a>
-                  </li>
-                  <li class="py-2">
-                    <a
-                      href="/pages/user/dashboardpeta/"
-                      class="flex items-center"
-                    >
-                      <i class="fa-solid fa-water mr-2"></i>
-                      <p>Kelautan</p>
-                    </a>
-                  </li>
-                  <li class="py-2">
-                    <a
-                      href="/pages/user/produk/transportasi/"
-                      class="flex items-center"
-                    >
-                      <i class="fa-solid fa-ferry mr-2"></i>
-                      <p>Transportasi</p>
-                    </a>
-                  </li>
-                  <li class="py-2">
-                    <a
-                      href="/pages/user/produk/nelayan/"
-                      class="flex items-center"
-                    >
-                      <i class="fa-solid fa-fish-fins mr-2"></i>
-                      <p>Nelayan</p>
-                    </a>
-                  </li>
-                </ul>
-              </div>
             </li>
             <li class="p-2">
               <a href="/pages/user-manage/" class="flex items-center">
