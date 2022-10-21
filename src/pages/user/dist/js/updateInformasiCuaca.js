@@ -1,8 +1,6 @@
 import sixteenCompassDirID from './sixteenCompassDirID';
 
 export default function updateInformasiCuaca(dataCuacaLokal, dataCuacaLaut) {
-  // const nilaiLokasi = document.querySelector('.nilai-lokasi');  
-
   const nilaiTempDarat = document.querySelector('.nilai-temp-darat');
 
   const nilaiKSwell = document.querySelector('.nilai-k-swell');
@@ -13,7 +11,6 @@ export default function updateInformasiCuaca(dataCuacaLokal, dataCuacaLaut) {
   
   arahSwell[0].style.transform = `rotate(${sixteenCompassDirID[dataCuacaLaut.swellDir16Point] - 45}deg)`
   arahSwell[1].style.transform = `rotate(${sixteenCompassDirID[dataCuacaLaut.winddir16Point] + 135}deg)`
-  // nilaiLokasi.textContent = `${Math.round(dataCuacaLokal.lat *1e4)/1e4}°${dataCuacaLokal.lat < 0 ? "S" : "N"}, ${Math.round(dataCuacaLokal.lng *1e4)/1e4}°E`;
   
   nilaiTempDarat.textContent = dataCuacaLokal.current.temp_c;
   nilaiKSwell.textContent = dataCuacaLaut.swellHeight_m;
