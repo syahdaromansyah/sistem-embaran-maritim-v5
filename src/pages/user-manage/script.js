@@ -1,15 +1,5 @@
 import '../../styles/global.css';
-// script delete
 /* eslint-disable */
-$(document).ready(function () {
-  $('[data-toggle="tooltip"]').tooltip();
-  var actions = $('table td:last-child').html();
-  // Delete row on delete button click
-  $(document).on('click', '.delete', function () {
-    $(this).parents('tr').remove();
-    $('.add-new').removeAttr('disabled');
-  });
-});
 
 const userList = (userData) => {
   return `<tr class="bg-sky-200 h-16">
@@ -40,20 +30,15 @@ const userList = (userData) => {
   </tr>`;
 };
 
-const profil = document.querySelector('.profil');
-const navprofil = document.querySelector('.navprofil');
-
-profil.addEventListener('click', () => {
-  navprofil.classList.toggle('hidden');
-});
-
 const countResult = document.querySelector('.count-result');
 const tableUsers = document.querySelector('.table-users');
 
 const users = JSON.parse(window.localStorage.getItem('users'));
 
 const totalUsers = users.length;
-countResult.textContent = `Count: ${totalUsers}`;
+if (countResult) {
+  countResult.textContent = `Count: ${totalUsers}`;
+}
 
 users.forEach((user, idx) => {
   tableUsers.insertAdjacentHTML(

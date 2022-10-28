@@ -6,7 +6,6 @@ import updateInformasiCuaca from '../dist/js/updateInformasiCuaca';
 import bukaInformasiCuaca from '../dist/js/bukaInformasiCuaca';
 import kapal from './kapal';
 import zppi from './zppi';
-import apiKey from '../../../api-key';
 
 // Initializasi Leaflet Js
 var map = L.map('map').setView([-5, 118.9213], 13);
@@ -72,39 +71,51 @@ map.on('click', async (e) => {
 });
 
 // transportasi
-const datakapal = document.querySelector('.posisi-kapal');
+const showShipCheckbox = document.querySelector('.posisi-kapal');
+const shipIcon = L.icon({
+  iconUrl: '../dist/img/ship-solid.svg',
+  iconSize: [27, 32],
+  iconAnchor: [16, 37],
+  popupAnchor: [0, -30],
+});
+const dummyShipPosition = L.geoJSON(kapal, {
+  pointToLayer: function (feature, layer) {
+    return L.marker(layer, { icon: shipIcon });
+  },
+});
 
-datakapal.addEventListener('click', function () {
-  const kapalIcon = L.icon({
-    iconUrl: '../dist/img/ship-solid.svg',
-    iconSize: [27, 32],
-    iconAnchor: [16, 37],
-    popupAnchor: [0, -30],
-  });
+showShipCheckbox.addEventListener('click', function (e) {
+  const isChecked = e.target.checked;
 
-  L.geoJSON(kapal, {
-    pointToLayer: function (feature, layer) {
-      return L.marker(layer, { icon: kapalIcon });
-    },
-  }).addTo(map);
+  if (isChecked) {
+    dummyShipPosition.addTo(map);
+  } else {
+    dummyShipPosition.removeFrom(map);
+  }
 });
 
 // nelayan
-const dataikan = document.querySelector('#ZPPI');
+const showFishCheckbox = document.querySelector('#ZPPI');
+const fishIcon = L.icon({
+  iconUrl: '/pages/user/dist/img/fish-fins-solid.svg',
+  iconSize: [27, 32],
+  iconAnchor: [16, 37],
+  popupAnchor: [0, -30],
+});
+const dummyFish = L.geoJSON(zppi, {
+  pointToLayer: function (feature, layer) {
+    return L.marker(layer, { icon: fishIcon });
+  },
+});
 
-dataikan.addEventListener('click', function () {
-  const ikanIcon = L.icon({
-    iconUrl: '/pages/user/dist/img/fish-fins-solid.svg',
-    iconSize: [27, 32],
-    iconAnchor: [16, 37],
-    popupAnchor: [0, -30],
-  });
+showFishCheckbox.addEventListener('click', function (e) {
+  const isChecked = e.target.checked;
 
-  L.geoJSON(zppi, {
-    pointToLayer: function (feature, layer) {
-      return L.marker(layer, { icon: ikanIcon });
-    },
-  }).addTo(map);
+  if (isChecked) {
+    dummyFish.addTo(map);
+  } else {
+    dummyFish.removeFrom(map);
+  }
 });
 
 // Tanggal jam

@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.tailwindcss.com"></script>
     <script
       src="https://kit.fontawesome.com/216b2461f6.js"
       crossorigin="anonymous"
@@ -21,7 +20,7 @@
         <div class="flex items-center justify-between py-3.5">
           <!-- Navigation Page Left -->
           <a
-            href="/pages/user/dashboardpeta/"
+            href="/pages/user/dashboardrangkuman/"
             class="inline-block py-1 transition duration-300 focus:outline-none focus:ring focus:ring-sky-300 focus:ring-offset-2 focus:ring-offset-slate-50"
           >
             <img
@@ -56,8 +55,8 @@
               class="mr-4 w-11 rounded"
             />
             <div>
-              <p class="profile-name text-lg font-semibold"></p>
-              <p class="profile-role text-xs"></p>
+              <p class="profile-name text-lg font-semibold">Admin</p>
+              <p class="profile-role text-xs">Admin</p>
             </div>
           </div>
           <ul class="mt-4">
@@ -237,105 +236,98 @@
     </footer>
 
     <script type="module" src="/pages/user/dist/js/script.js"></script>
-    <script type="module" src="/pages/user-manage/script.js"></script>
+    <!-- <script type="module" src="/pages/user-manage/script.js"></script> -->
 
     <script type="module">
-      const profil = document.querySelector('.profil');
-      const navprofil = document.querySelector('.navprofil');
+      // const formAddUser = document.querySelector('.form-add-user');
 
-      profil.addEventListener('click', () => {
-        navprofil.classList.toggle('hidden');
-      });
+      // const currentChangeUser = window.localStorage.getItem(
+      //   'current-change-user'
+      // );
 
-      const formAddUser = document.querySelector('.form-add-user');
+      // const usersLocalStorage = JSON.parse(
+      //   window.localStorage.getItem('users')
+      // );
 
-      const currentChangeUser = window.localStorage.getItem(
-        'current-change-user'
-      );
+      // const userIdx = usersLocalStorage.findIndex(
+      //   (user) => user.username === currentChangeUser
+      // );
 
-      const usersLocalStorage = JSON.parse(
-        window.localStorage.getItem('users')
-      );
+      // const currentUserData = usersLocalStorage[userIdx];
 
-      const userIdx = usersLocalStorage.findIndex(
-        (user) => user.username === currentChangeUser
-      );
+      // formAddUser['0'].value = currentUserData.name;
+      // formAddUser['1'].value = currentUserData.username;
+      // formAddUser['2'].value = currentUserData.agency;
+      // formAddUser['3'].value = currentUserData.email;
+      // formAddUser['4'].value = currentUserData.role;
+      // formAddUser['5'].checked = currentUserData.feature.atmosphere;
+      // formAddUser['6'].checked = currentUserData.feature.ocean;
+      // formAddUser['7'].checked = currentUserData.feature.fisherman;
+      // formAddUser['8'].checked = currentUserData.feature.transportation;
+      // formAddUser['9'].value = currentUserData.password;
 
-      const currentUserData = usersLocalStorage[userIdx];
+      // formAddUser.addEventListener('submit', (e) => {
+      //   e.preventDefault();
 
-      formAddUser['0'].value = currentUserData.name;
-      formAddUser['1'].value = currentUserData.username;
-      formAddUser['2'].value = currentUserData.agency;
-      formAddUser['3'].value = currentUserData.email;
-      formAddUser['4'].value = currentUserData.role;
-      formAddUser['5'].checked = currentUserData.feature.atmosphere;
-      formAddUser['6'].checked = currentUserData.feature.ocean;
-      formAddUser['7'].checked = currentUserData.feature.fisherman;
-      formAddUser['8'].checked = currentUserData.feature.transportation;
-      formAddUser['9'].value = currentUserData.password;
+      //   const currentChangeUser = window.localStorage.getItem(
+      //     'current-change-user'
+      //   );
 
-      formAddUser.addEventListener('submit', (e) => {
-        e.preventDefault();
+      //   const usersLocalStorage = JSON.parse(
+      //     window.localStorage.getItem('users')
+      //   );
 
-        const currentChangeUser = window.localStorage.getItem(
-          'current-change-user'
-        );
+      //   const userIdx = usersLocalStorage.findIndex(
+      //     (user) => user.username === currentChangeUser
+      //   );
 
-        const usersLocalStorage = JSON.parse(
-          window.localStorage.getItem('users')
-        );
+      //   const eventTarget = e.target;
+      //   const nameValue = eventTarget['0'].value;
+      //   const unameValue = eventTarget['1'].value
+      //     .split('')
+      //     .filter((char) => char !== ' ')
+      //     .join('')
+      //     .toLowerCase();
+      //   const uAgencyValue = eventTarget['2'].value;
+      //   const uEmailValue = eventTarget['3'].value
+      //     .split('')
+      //     .filter((char) => char !== ' ')
+      //     .join('')
+      //     .toLowerCase();
+      //   const uRoleValue = eventTarget['4'].value;
+      //   const atmosphereValue = eventTarget['5'].checked;
+      //   const oceanValue = eventTarget['6'].checked;
+      //   const fishermanValue = eventTarget['7'].checked;
+      //   const transportationValue = eventTarget['8'].checked;
+      //   const uPwdValue = eventTarget['9'].value;
 
-        const userIdx = usersLocalStorage.findIndex(
-          (user) => user.username === currentChangeUser
-        );
+      //   const updatedUsers = usersLocalStorage.map((user, idx) => {
+      //     if (idx === userIdx) {
+      //       const updateUserData = {
+      //         name: nameValue || user.name,
+      //         username: unameValue || user.username,
+      //         agency: uAgencyValue || user.agency,
+      //         email: uEmailValue || user.email,
+      //         role: uRoleValue || user.role,
+      //         password: uPwdValue || user.password,
+      //         feature: {
+      //           atmosphere: atmosphereValue || user.feature.atmosphere,
+      //           ocean: oceanValue || user.feature.ocean,
+      //           transportation:
+      //             transportationValue || user.feature.transportation,
+      //           fisherman: fishermanValue || user.feature.fisherman,
+      //         },
+      //       };
+      //       return updateUserData;
+      //     }
+      //     return user;
+      //   });
 
-        const eventTarget = e.target;
-        const nameValue = eventTarget['0'].value;
-        const unameValue = eventTarget['1'].value
-          .split('')
-          .filter((char) => char !== ' ')
-          .join('')
-          .toLowerCase();
-        const uAgencyValue = eventTarget['2'].value;
-        const uEmailValue = eventTarget['3'].value
-          .split('')
-          .filter((char) => char !== ' ')
-          .join('')
-          .toLowerCase();
-        const uRoleValue = eventTarget['4'].value;
-        const atmosphereValue = eventTarget['5'].checked;
-        const oceanValue = eventTarget['6'].checked;
-        const fishermanValue = eventTarget['7'].checked;
-        const transportationValue = eventTarget['8'].checked;
-        const uPwdValue = eventTarget['9'].value;
+      //   window.localStorage.setItem('users', JSON.stringify(updatedUsers));
+      //   window.localStorage.setItem('current-change-user', '');
 
-        const updatedUsers = usersLocalStorage.map((user, idx) => {
-          if (idx === userIdx) {
-            const updateUserData = {
-              name: nameValue || user.name,
-              username: unameValue || user.username,
-              agency: uAgencyValue || user.agency,
-              email: uEmailValue || user.email,
-              role: uRoleValue || user.role,
-              password: uPwdValue || user.password,
-              feature: {
-                atmosphere: atmosphereValue || user.feature.atmosphere,
-                ocean: oceanValue || user.feature.ocean,
-                transportation:
-                  transportationValue || user.feature.transportation,
-                fisherman: fishermanValue || user.feature.fisherman,
-              },
-            };
-            return updateUserData;
-          }
-          return user;
-        });
-
-        window.localStorage.setItem('users', JSON.stringify(updatedUsers));
-        window.localStorage.setItem('current-change-user', '');
-
-        window.location.replace('/pages/user-manage/');
-      });
+      //   window.location.replace('/pages/user-manage/');
+      // });
 
       const isLogin = window.localStorage.getItem('current-user-name');
       if (isLogin === '') {

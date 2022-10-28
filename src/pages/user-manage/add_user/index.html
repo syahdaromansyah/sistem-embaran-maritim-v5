@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.tailwindcss.com"></script>
     <script
       src="https://kit.fontawesome.com/216b2461f6.js"
       crossorigin="anonymous"
@@ -21,7 +20,7 @@
         <div class="flex items-center justify-between py-3.5">
           <!-- Navigation Page Left -->
           <a
-            href="/pages/user/dashboardpeta/"
+            href="/pages/user/dashboardrangkuman/"
             class="inline-block py-1 transition duration-300 focus:outline-none focus:ring focus:ring-sky-300 focus:ring-offset-2 focus:ring-offset-slate-50"
           >
             <img
@@ -56,8 +55,8 @@
               class="mr-4 w-11 rounded"
             />
             <div>
-              <p class="profile-name text-lg font-semibold"></p>
-              <p class="profile-role text-xs"></p>
+              <p class="profile-name text-lg font-semibold">Admin</p>
+              <p class="profile-role text-xs">Admin</p>
             </div>
           </div>
           <ul class="mt-4">
@@ -237,18 +236,11 @@
     </footer>
 
     <script type="module" src="/pages/user/dist/js/script.js"></script>
-    <script type="module" src="/pages/user-manage/script.js"></script>
+    <!-- <script type="module" src="/pages/user-manage/script.js"></script> -->
 
     <script type="module">
-      const profil = document.querySelector('.profil');
-      const navprofil = document.querySelector('.navprofil');
-
-      profil.addEventListener('click', () => {
-        navprofil.classList.toggle('hidden');
-      });
-
       const formAddUser = document.querySelector('.form-add-user');
-      formAddUser.addEventListener('submit', (e) => {
+      formAddUser?.addEventListener('submit', (e) => {
         e.preventDefault();
         const eventTarget = e.target;
         const nameValue = eventTarget['0'].value;
